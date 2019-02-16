@@ -1,0 +1,109 @@
+<div id="company_list_parent">
+	<div class="y-page-title"><%company_system%></div>
+	<div class="y-page-body">
+		<form id="company_list_form" action="" class="layui-form layui-form-pane" >
+			<div class="layui-form-item ">
+				<div class="layui-form-inline  y-left-pane ">
+					<label class="layui-form-label  "><i class="fa fa-calendar fa-lg"></i></label>
+					<div class="layui-input-inline">
+						<input name="date" type="text" class="layui-input" id="company_list_date" v-bind:placeholder="apply_date"/>
+					</div>
+				</div>
+				<!-- <div class="layui-form-inline  y-right-pane y-select" >
+						<div class="layui-input-inline">
+							<select name="handle_state"  style="border-radius: 0px 100px 100px 0px;">
+							</select>
+						</div>
+					</div> -->
+				<div class="layui-form-inline  y-right-pane ">
+					<div class="y-right-box">
+						<input name="search_string" v-bind:placeholder="company_name" type="text" class="layui-input" /> 
+						<label onclick="layui.company_list.getData(1,20);" class="layui-form-label  "><i class="fa fa-search fa-lg"></i></label>
+					</div>
+				</div>
+			</div>
+		</form>
+		<div class="y-data-table">
+			<div id="company_list_table"></div>
+			<div id="company_list_page"></div>
+		</div>
+	</div>
+</div>
+<input type="hidden" id="cp_id_hide" value=""/>
+
+<script type="text/html" id="companyListInfo">
+<div style="text-align: center"><span style="line-height: 80px;font-size:24px">{{d.cp_name}}--<%specific_detail%></span></div>
+<div class="y-page-body" style="margin-left:20px;padding:0px;width:960px;">
+        <table class="y-page-table" id="company_verify_info" style="border:1px solid #dcdcdc;">
+        	<tr>
+        		<td class="td_bg"><%cp_real_name%></td>
+        		<td>{{ d.cp_name }}</td>
+        		<td class="td_bg"><%cp_contact_person%></td>
+        		<td>{{ d.cp_contact_person }}</td>
+        		<td class="td_bg"><%cp_mobile%></td>
+        		<td>{{ d.cp_mobile }}</td>
+        	</tr>
+        	<tr>
+        		<td class="td_bg"><%cp_leg_person%></td>
+        		<td>{{ d.cp_leg_person }}</td>
+        		<td class="td_bg"><%cp_email%></td>
+        		<td>{{ d.cp_email }}</td>
+        		<td class="td_bg"><%cp_address%></td>
+        		<td>{{ d.cp_address }}</td>
+        	</tr>
+        	<tr>
+        		<td class="td_bg"><%cp_num%></td>
+        		<td>{{ d.cp_num }}</td>
+        		<td class="td_bg"><%cp_code%></td>
+        		<td>{{ d.cp_code }}</td>
+        		<td class="td_bg"><%cp_country%></td>
+        		<td>{{ d.country_name }}</td>
+        	</tr>
+        	<tr>
+        		<td class="td_bg"><%business_card%></td>
+        		<td colspan="5">
+					{{# layui.each(d.business_card,function(index,item){ }}
+						<img class="y-img-li" onclick="showImg(this)" src="{{item.image_url}}"/>
+					{{# }); }}
+				</td>
+        	</tr>
+        	<tr>
+        		<td class="td_bg"><%contract%></td>
+        		<td colspan="5">
+					{{# layui.each(d.cp_contract,function(index,item){ }}
+						<img class="y-img-li" onclick="showImg(this)" src="{{item.image_url}}"/>
+					{{# }); }}
+				</td>
+        	</tr>
+			<tr>
+        		<td class="td_bg"><%applay_status%></td>
+        		<td>
+					{{# if(d.apply_status == '0'){ }}
+						<%pass%>
+					{{# }else if(d.apply_status == '1'){ }}
+						<%refuse%>
+					{{# }else if(d.apply_status == '2'){ }}
+						<%to_be_verify%>
+					{{# }else if(d.apply_status == '3'){ }}
+						<%during_verify%>
+					{{# }else{ }}
+					{{# } }}
+				</td>
+        		<td class="td_bg"><%apply_admin_name%></td>
+        		<td>{{ d.apply_admin_name || '' }}</td>
+        		<td class="td_bg"><%apply_date%></td>
+        		<td>{{ d.apply_date || '' }}</td>
+        	</tr>
+        </table>
+</div>
+</script>
+<!--  
+<div id="company_list_detail"></div>
+</div>
+-->
+<script type="text/javascript">
+	layui.use([ 'company_list' ], function() {
+
+		layui.company_list.initView();
+	});
+</script>

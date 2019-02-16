@@ -1,0 +1,49 @@
+
+
+
+
+		<div style="margin: 10px 10px;">
+
+
+
+			<div class="layui-row">
+				<div class="layui-col-md6">
+					<div id="cuiShouKaoHe" style="width: 600px; height: 500px;">催收考核报表</div>
+
+				</div>
+				<div class="layui-col-md6">
+
+					<div id="cuiDingDanZouShi" style="width: 600px; height: 500px;">催收订单走势报表</div>
+
+					<div class="layui-form-item " style="width:240px;position: absolute;top:0px; left:170px;">
+
+						<div class="layui-form-item y-echars-date ">
+							<label class="layui-form-label  " style="border: #A7EDD8 solid 1px;"><i class="fa fa-calendar fa-lg"></i></label>
+							<div class="layui-input-block" style="margin-left: 49px;">
+								<input name="date" type="text" class="layui-input" id="date2" v-bind:placeholder="create_date" />
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="layui-col-md6">
+					<div id="feiYongJianMian"  style="width: 600px; height: 500px;"></div>
+					<div class="layui-form-item " style="width:240px;position: absolute;top:0px; left:170px;">
+					<div class="layui-form-item y-echars-date ">
+							<label class="layui-form-label  " style="border: #A7EDD8 solid 1px;"><i class="fa fa-calendar fa-lg"></i></label>
+							<div class="layui-input-block" style="margin-left: 49px;">
+								<input name="date" type="text" class="layui-input" id="date3" v-bind:placeholder="create_date" />
+							</div>
+						</div>
+						</div>
+				</div>
+				<div class="layui-col-md6"></div>
+			</div>
+
+
+<script type="text/javascript">
+	layui.use([ 'myEchars' ], function() {
+
+		layui.myEchars.initView();
+	});
+</script>

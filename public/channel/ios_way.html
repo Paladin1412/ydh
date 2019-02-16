@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+	<link rel="shortcut icon" href="./images/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="./css/main.css"/>
+
+	<title>易贷还APP下载</title>
+	<style type="text/css">
+		* {
+			padding: 0px;
+			margin: 0px;
+			outline: none;
+			border: 0px;
+			box-sizing: border-box;
+			box-shadow: none;
+			border-radius: 0px;
+			background-color: transparent;
+			background-image: none;
+			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+			-webkit-appearance: none;
+		}
+		.clearfix:after {
+			content: ".";
+			display: block;
+			height: 0;
+			clear: both;
+			visibility: hidden;
+		}
+		html {
+			font-family: "Microsoft YaHei", "HanHei SC";
+			width: 100%;
+			min-height: 100%;
+			background-color: #fff;
+		}
+		body {
+			max-width: 768px;
+			margin: 0 auto;
+			border: 0;
+		}
+		.bg{
+			font-size: 0;
+		}
+		.bg img{
+			width:100%;
+		}
+		.download_box{
+			height:3em;
+			position: relative;
+		}
+		.download_bg{
+			position: fixed;
+			bottom: 0;
+			width: 100%;
+			max-width: 768px;
+			background-image: url(images/d1.jpg);
+			background-repeat: no-repeat;
+			text-align: center;
+			height: 3em;
+			line-height: 3em;
+			padding: 0;
+		}
+		.download_bg a{
+			text-decoration: none;
+			color: #fff;
+			display: block;
+		}
+		.download_btn{
+			background-image: url(images/btn.png);
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			padding: .7em 1em;
+			display: inline-block;
+			width: 8em;
+			color: #fff;
+			text-decoration: none;
+			text-align: center;
+			margin: 0 .8em;
+		}
+		.download_btn1{
+			width: 66%;
+			background-image: url(images/btn1.png);
+		}
+		.top_tips{
+			color:#fff;
+			height:2.4em;
+			line-height: 2.4em;
+			text-align: center;
+		}
+		.top_tips .txt{
+			position: fixed;
+			top:0;
+			width:100%;
+			max-width: 768px;
+		}
+		.m_tips{
+			padding:.5em;
+		}
+		.m_tips h1{
+			font-size: 1em;
+			margin:.5em;
+		}
+		.m_tips p{
+			font-size: .75em;
+			color: #555;
+			text-indent: 2em;
+			margin-bottom: 1em;
+		}
+		img{
+			max-width: 90%;
+			display: block;
+			margin: 0 auto .5em;
+
+
+		}
+		.mt2{
+			display: block;
+			margin-top:2em;
+		}
+		.load {
+			display: inline-block;
+			height:2em;
+			width:2em;
+			border: 1px solid #32B2A7;
+			border-left-color: transparent;
+			border-top-color: transparent;
+			border-radius: 40px;
+			color: #fff;
+			vertical-align: middle;
+			-webkit-transition: all .25s;
+			transition: all .25s;
+		}
+		.load.loading {
+			-webkit-animation: rotate .6s linear infinite;
+			animation: rotate .6s linear infinite;
+			background: 0 0
+		}
+		.load.loading_ten {
+			-webkit-animation: rotate_r .6s linear infinite;
+			animation: rotate_r .6s linear infinite;
+			background: 0 0
+		}
+		.down .load{
+			border-right-color: #fff;
+			border-bottom-color: #fff;
+		}
+		.tips{
+			display: none;
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0,0,0,.6);
+			z-index: 100;
+			top: 0;
+			left: 0;
+			text-align: center;
+		}
+		.tips img{
+			width:100%;
+			max-width: 750px;
+		}
+		.tips_txt{
+			width: 300px;
+			background-color: #fff;
+			margin: 0 auto;
+			padding: 2em 0;
+			border-radius: 6px;
+		}
+		.tips_txt p{
+			margin-bottom: 1em;
+		}
+		.tips_txt button{
+			background-image: url(images/btn.png);
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			padding: .7em 1em;
+			display: inline-block;
+			width: 8em;
+			color: #fff;
+			text-decoration: none;
+			text-align: center;
+			margin: 0 .8em;
+		}
+		@-webkit-keyframes rotate {
+			0% {
+				-webkit-transform: rotate(0);
+				transform: rotate(0)
+			}
+			100% {
+				-webkit-transform: rotate(360deg);
+				transform: rotate(360deg)
+			}
+		}
+		@keyframes rotate {
+			0% {
+				-webkit-transform: rotate(0);
+				transform: rotate(0)
+			}
+			100% {
+				-webkit-transform: rotate(360deg);
+				transform: rotate(360deg)
+			}
+		}
+		@-webkit-keyframes rotate_r {
+			0% {
+				-webkit-transform: rotate(360deg);
+				transform: rotate(360deg)
+			}
+			100% {
+				-webkit-transform: rotate(0);
+				transform: rotate(0)
+			}
+		}
+		@keyframes rotate_r {
+			0% {
+				-webkit-transform: rotate(360deg);
+				transform: rotate(360deg)
+			}
+			100% {
+				-webkit-transform: rotate(0);
+				transform: rotate(0)
+			}
+		}
+	</style>
+</head>
+<body id="iosDownload">
+<div class="top_tips"><div class="txt">请按照说明操作，否则无法正常使用APP</div></div>
+<div class="m_tips">
+	<h1>苹果系统信任易贷还应用证书操作指导</h1>
+	<p>苹果系统，下载和安装易贷还APP后，启动应用时会出现信任证书提示。</p>
+	<!--<img src="/assets/images/t0.jpg" alt="" />-->
+	<p>这是正常的情况，因为易贷还是企业版的苹果应用。</p>
+	<p>只需要按照以下方法进行操作就可以正常使用易贷还APP。</p>
+		<h1 style="padding-bottom: 1em;border-bottom: dashed 1px #555;">方法/步骤</h1>
+	<p><strong class="mt2">1、打开手机设置</strong></p>
+	<img src="image/ios_way/t1.jpg" alt="" />
+	<p><strong class="mt2">2、找到通用项，点击进入</strong></p>
+	<img src="image/ios_way/t2.jpg" alt="" />
+	<p><strong class="mt2">3、上拉界面，点击描述文件</strong></p>
+	<img src="image/ios_way/t3.jpg" alt="" />
+	<p><strong class="mt2">4、出现企业级应用，点击该应用证书</strong></p>
+	<img src="image/ios_way/t4.jpg" alt="" />
+	<p><strong class="mt2">5、选择信任证书操作</strong></p>
+	<img src="image/ios_way/t5.jpg" alt="" />
+	<img src="image/ios_way/t6.jpg" alt="" />
+	<p><strong class="mt2">6、完成验证</strong></p>
+	<img src="image/ios_way/t7.jpg" alt="" />
+</div>
+<div class="download_box">
+	<div class="download_bg">
+		<a class="down" id="ios-download-url"
+		   href="">易贷还企业版下载</a>
+	</div>
+</div>
+<div class="tips">
+	<img src="image/ios_way/top1.png" alt="" />
+	<div class="tips_txt">
+		<p>微信不支持下载，请点击右上角，选择在Safari中打开</p>
+		<button class="close_tips" type="button">知道了</button>
+	</div>
+</div>
+<script src="./js/jquery-1.11.3.min.js?t=1542161676"></script>
+<script src="./js/config.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#ios-download-url").attr("href",ios_download_url);
+		if(navigator.userAgent.indexOf("MicroMessenger") !=-1){
+			$(".down").on("click",function(){
+				$(".tips").show();
+				return false;
+			});
+			$(".close_tips").on("click",function(){
+				$(".tips").hide();
+			});
+		} else {
+			$(".down").on("click", function () {
+				var $this = $(this);
+				$this.html('<span class="load loading_ten">&nbsp;</span>');
+				setTimeout(function () {
+					$this.text("正在安装，请按Home键在桌面查看");
+				}, 3000)
+				$.post(record_download,{code:channel_code}, function(data){
+					//console.log(data);
+					//alert(data);
+					//alert(JSON.stringify(data));
+				});
+			});
+		}
+	})
+</script>
+
+</body>
+<html>

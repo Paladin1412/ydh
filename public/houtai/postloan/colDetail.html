@@ -1,0 +1,383 @@
+<div class="details_box" style=" height: 100% ;margin-bottom: 0px;" >
+        <!--催收详情-->
+        <div class="y_title_detail" >{{d.field.title}}
+             <i style=" float:right;  margin-right:10px;" onclick="layui.col_common.showColDetailPage('parent');"> <img src="image/close.png"  style="width:38px;height:38px;"alt=""></i>
+        </div>
+        <input type="hidden" name="user_id"  value="{{d.user.user_id}}">
+        <input type="hidden" name="order_no"  value="{{d.order.order_no}}">
+    <!--客户信息-->
+        <div class="y-page-body y-page-top10" style="">
+            <div class="layui-inline y-page-info" >
+                <span class="detail_tab_title" style="border-left:3px solid #0bc07d ">&nbsp;<%user_main%></span>
+            </div>
+            <table class="y-page-table detail_tab " id="customer_info"  >
+                <colgroup>
+                    <col width="10%">
+                    <col width="20%">
+                    <col width="10%">
+                    <col width="20%">
+                    <col width="10%">
+                    <col width="20%">
+                </colgroup>
+
+                <tr>
+                    <td class="td_bg">{{d.field.user.name}}</td> <!--姓名-->
+                    <td>{{d.user.name || ''}}</td>
+                    <td class="td_bg">{{d.field.user.sex}}</td><!--性别-->
+                    <td>{{d.user.sex || ''}}</td>
+                    <td class="td_bg">{{d.field.user.idcode}}</td><!--身份证-->
+                    <td>{{d.user.idcode || ''}}</td>
+                </tr>
+                <tr>
+                    <td class="td_bg">{{d.field.user.card_type}}<!--账户类型-->
+                    <td>{{d.user.card_type || ''}}</td>
+                    <td class="td_bg">{{d.field.user.bankcard_name}}</td><!--开户银行-->
+                    <td>{{d.user.bankcard_name || ''}}</td>
+                    <td class="td_bg">{{d.field.user.card_num}}</td><!--银行卡号-->
+                    <td>{{d.user.card_num || ''}}</td>
+                </tr>
+                <tr>
+                    <!--婚姻状况-->
+                    <td class="td_bg">{{d.field.user.is_marrey}}</td>
+                    <td>{{d.user.is_marrey || ''}}</td>
+                    <!--邮件(改为年龄)-->
+                    <td class="td_bg"><%detail_age%></td>
+                    <td>{{d.user.age || ''}}</td>
+                    <!--教育程度-->
+                    <td class="td_bg">{{d.field.user.education}}</td>
+                    <td>{{d.user.education || ''}}</td>
+                </tr>
+
+                <!-- 新增客户信息 start-->
+                <tr>
+                    <!--手机号码-->
+                    <td class="td_bg"><%phone_no%></td>
+                    <td>{{d.user.phone || ''}}</td>
+                    <!--职业类别-->
+                    <td class="td_bg"><%occupation_category%></td>
+                    <td>{{d.user.profession || ''}}</td>
+                    <!--行业类别-->
+                    <td class="td_bg"><%industry_category%></td>
+                    <td>{{d.user.industry || ''}}</td>
+                </tr>
+                <tr>
+                    <!--现居住地址-->
+                    <td class="td_bg"><%now_live_address%></td>
+                    <td>{{d.user.city || ''}}{{d.user.address || ''}}</td>
+                    <!--现公司/单位地址	-->
+                    <!--<td class="td_bg"><%now_company_address%></td>-->
+                    <!--<td>{{d.user.company_add || ''}}</td>-->
+                    <td class="td_bg"></td>
+                    <td></td>
+                    <!--GPS地址-->
+                    <td class="td_bg"><%gps_address%></td>
+                    <td>{{d.user.gps_address || ''}}</td>
+
+                </tr>
+                <tr>
+                    <!--公司名称-->
+                    <td class="td_bg"><%cp_real_name%></td>
+                    <td>{{d.user.company || ''}}</td>
+                    <!--公司地址-->
+                    <td class="td_bg"><%cp_address%></td>
+                    <td>{{d.user.company_add || ''}}</td>
+                    <!--公司电话-->
+                    <td class="td_bg"><%cp_mobile%></td>
+                    <td>{{d.user.company_tel || ''}}</td>
+
+                </tr>
+                <tr id="idCard_best_credit">
+                    <!--身份证图片-->
+                    <td class="td_bg"><%id_card_photo%></td>
+                    <td>
+                        {{# if(d.face_log.image_ref1){ }}
+                        <img class="y-img-li"   src="{{d.face_log.image_ref1}}" alt="{{d.field.lang_img.id_card_photo}}"/>
+                        {{# } }}
+                    </td>
+
+                    <!--最佳图片-->
+                    <!--<td class="td_bg"><%best_photo%></td>-->
+                    <td class="td_bg"></td>
+                    <td>
+                        <!--{{# if(d.face_log.image_best){ }}-->
+                        <!--<img class="y-img-li"   src="{{d.face_log.image_best}}" alt="{{d.field.lang_img.best_photo}}"/>-->
+                        <!--{{# } }}-->
+                    </td>
+
+
+                    <!--征信图片-->
+                    <td class="td_bg"><%credit_photo%></td>
+                    <td>
+                        {{# if(d.user.credit_img){ }}
+                        <img class="y-img-li"   src="{{d.user.credit_img}}"  alt="{{d.field.lang_img.credit_photo}}"/>
+                        {{# } }}
+                    </td>
+                </tr>
+                <tr id="others_photos">
+                    <!--其它照片（税卡、社保卡、家庭卡、员工卡、工资卡、在职证明）-->
+                    <td class="td_bg"><%other_photos%></td>
+                    <td colspan="5" >
+                        {{# if(d.user.tax_card){ }}
+                        <img class="y-img-li"  src="{{d.user.tax_card}}" alt="{{d.field.lang_img.tax_card}}"/>
+                        {{# } }}
+                        {{# if(d.user.security_card){ }}
+                        <img class="y-img-li"  src="{{d.user.security_card}}" alt="{{d.field.lang_img.security_card}}"/>
+                        {{# } }}
+                        {{# if(d.user.family_card){ }}
+                        <img class="y-img-li"  src="{{d.user.family_card}}" alt="{{d.field.lang_img.family_card}}"/>
+                        {{# } }}
+                        {{# if(d.user.staff_card){ }}
+                        <img class="y-img-li"   src="{{d.user.staff_card}}" alt="{{d.field.lang_img.staff_card}}"/>
+                        {{# } }}
+                        {{# if(d.user.salary_card){ }}
+                        <img class="y-img-li"   src="{{d.user.salary_card}}" alt="{{d.field.lang_img.salary_card}}"/>
+                        {{# } }}
+                        {{# if(d.user.work_prove){ }}
+                        <img class="y-img-li"   src="{{d.user.work_prove}}" alt="{{d.field.lang_img.work_prove}}"/>
+                        {{# } }}
+                    </td>
+                </tr>
+                <!-- 新增客户信息 end-->
+
+            </table>
+        </div>
+
+    <!--联系方式-->
+        <div  class="y-page-body y-page-top10"  >
+            <div class="layui-inline y-page-info" >
+                <span class="detail_tab_title" >&nbsp;<%contact_way%></span>
+                  <button class="layui-btn layui-btn-radius layui-btn-sm y-btn-red detail_btn"   onclick="layui.colDetail.PhoneBook('{{d.user.user_id}}','{{d.order.order_id}}','','phone_list');" ><%phone_book%></button>
+            </div>
+            <table class="y-page-table" id="contact_info"></table>
+        </div>
+
+    <!--费用明细-->
+        <div  class="y-page-body y-page-top10"  >
+            <div class="layui-inline y-page-info">
+                <span class="detail_tab_title">&nbsp;<%cost_detail%></span>
+            </div>
+            <table class="y-page-table detail_tab" id="cost_info">
+                <colgroup>
+                    <col width="10%">
+                    <col width="20%">
+                    <col width="10%">
+                    <col width="20%">
+                    <col width="10%">
+                    <col width="20%">
+                </colgroup>
+                <tr>
+                    <!--本金-->
+                    <td class="td_bg">{{d.field.order.principal}}</td>
+                    <td>{{d.order.principal  || ''}}</td>
+                    <!--利息-->
+                    <td class="td_bg">{{d.field.order.interest}}</td>
+                    <td>{{d.order.interest || ''}}</td>
+                    <!--罚息-->
+                    <td class="td_bg">{{d.field.order.over_interest}}</td>
+                    <td>{{d.order.over_interest  || ''}}</td>
+                </tr>
+                <tr>
+                    <!--应还金额<-->
+                    <td class="td_bg">{{d.field.order.repay_amount}}</td>
+                    <td>{{d.order.repay_amount  || ''}}</td>
+                    <!--逾期天数-->
+                    <td class="td_bg">{{d.field.order.due_day}}</td>
+                    <td>{{d.order.due_day  || ''}}</td>
+                    <!--费用减免-->
+                    <td class="td_bg"><%derate_amount%></td>
+                    <td>
+                        {{d.order.reduction_fee  ||  ''}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td_bg"> {{d.field.fee.price}}</td>
+                    <td>{{d.order.price  ||  ''}}</td>
+                    <td class="td_bg">  </td>
+                    <td> </td>
+                    <td class="td_bg">{{d.field.fee.add_time}}</td>
+                    <td>{{d.order.success_time  ||  ''}}</td>
+                </tr>
+
+
+            </table>
+        </div>
+
+    <!--跟进记录-->
+        <div  class="y-page-body y-page-top10" id="follow_record"   >
+            <div class="layui-inline y-page-info">
+                <span class="detail_tab_title" >&nbsp;<%follow_record%></span>
+                <button id="record_btn"    class="layui-btn layui-btn-radius layui-btn-sm y-btn-red detail_btn"   style="display:none;"  onclick="layui.colDetail.recordSubmit();"><%add_follow%></button>
+                <button id="apply_derate_btn"  class="layui-btn layui-btn-radius layui-btn-sm y-btn-red detail_btn"   style="display:none;"  onclick="layui.colDetail.applyDerate('{{d.order.order_no}}','{{d.user.name}}','{{d.order.repay_amount}}','{{d.order.over_interest}}');" ><%apply_derate%></button>
+
+            </div>
+            <table class="y-page-table" id="add_follow" style="display: none;">
+                <input type="hidden" class="layui-input " id="order_no"  name="order_no" value="{{d.order.order_no}}"  />
+                <input type="hidden" class="layui-input " id="user_id"   name="user_id"  value="{{d.user.user_id}}"  />
+                <colgroup>
+                    <col width="7%">
+                    <col width="10%">
+                    <col width="10%">
+                    <col width="10%">
+                    <col width="10%">
+                    <col width="20%">
+                </colgroup>
+                <tr>
+                    <td class="td_bg_addrecord"><%real_name%></td>  <!--姓名-->
+                    <td class="td_bg_addrecord"><%cllection_target%></td> <!--跟进对象-->
+                    <td class="td_bg_addrecord"><%cllection_contact_phone%></td><!--联系电话-->
+                    <td class="td_bg_addrecord"><%cllection_contact_state%></td><!--电话状态-->
+                    <td class="td_bg_addrecord"><%cllection_collection_feedback%></td><!--催收反馈-->
+                    <td class="td_bg_addrecord"><%follow_record%></td><!--跟进记录-->
+                </tr>
+                <tr>
+                    <td>
+                            <div class="layui-input-inline" style="width:80%" >
+                                 <input type="text" class="layui-input " id="target_name"  name="target_name" value=""/>
+                            </div>
+                    </td>  <!--姓名-->
+                    <td>
+                        <div class="layui-input-inline" style="width:80%">
+                            <select class="sel-style" id="target" name="target" >
+                                <option value="0"><%please_sel%></option><!--请选择-->
+                            </select>
+                        </div>
+                    </td> <!--跟进对象-->
+                    <td>
+                        <div class="layui-input-inline" style="width:80%" >
+                            <input id="contact_phone" type="text" class="layui-input "  name="contact_phone" value=""   />
+                        </div>
+                    </td><!--联系电话-->
+                    <td>
+                        <div class="layui-input-inline"  style="width:80%">
+                            <select class="sel-style" id="contact_state" name="contact_state" >
+                                <option value="0"><%please_sel%></option><!--请选择-->
+                            </select>
+                        </div>
+                    </td><!--电话状态-->
+                    <td>
+                        <div class="layui-input-inline" style="width:80%">
+                                <select  class="sel-style" id="follow_feed" name="follow_feed">
+                                    <option value="0"><%please_sel%></option><!--请选择-->
+                                </select>
+                        </div>
+                    </td><!--催收反馈-->
+                    <td>
+                        <div class="layui-input-inline" style="margin-top: 10px;">
+                        <textarea  class="sel-textarea" id="content" name="content"  v-bind:placeholder="input_info"  style="min-width:300px;max-width:360px;max-height:130px;"></textarea>
+                        </div>
+                    </td><!--跟进记录-->
+                </tr>
+            </table>
+            <table class="y-page-table" id="follow_info" style="margin-top: 10px;"></table>
+        </div>
+
+
+
+
+</div>
+
+    <!-- 定义手机通讯录 start -->
+    <script type="text/html" id="phoneList">
+        <div style="margin:20px auto;width:93%;" id="phone">
+            <form class="layui-form layui-form-pane" id="inCollectionForm" action="" style="margin-top: 10px;">
+                <div class="y-right-pane">
+                    <div class="y-right-box searching" >
+                        <input type="text" name="search_string" id="phone_search_string"  v-bind:placeholder="phone_no"   autocomplete="off" class="layui-input"  />
+                        <label class="layui-form-label" onclick="layui.colDetail.PhoneBookSearch('phone_list')"><i class="fa fa-search fa-lg"></i></label>
+                     </div>
+                </div>
+            </form>
+            <div class="layui-inline" style="margin:10px " ><!--手机通讯录 -->
+                <button class="layui-btn layui-btn-radius layui-btn-sm contact_btn"  id="tab1"  onclick="layui.colDetail.PhoneBookSwitch('benren_list');" ><%benren%></button>
+                <button class="layui-btn layui-btn-radius layui-btn-sm contact_btn"  id="tab2"  onclick="layui.colDetail.PhoneBookSwitch('contact_list1');" ><%contact_1%></button>
+                <button class="layui-btn layui-btn-radius layui-btn-sm contact_btn"  id="tab3"  onclick="layui.colDetail.PhoneBookSwitch('contact_list2');" ><%contact_2%></button>
+                <!--<button class="layui-btn layui-btn-radius layui-btn-sm contact_btn"  id="tab4"  onclick="layui.colDetail.PhoneBookSwitch('contact_list3');" ><%contact_3%></button>-->
+                <!--<button class="layui-btn layui-btn-radius layui-btn-sm contact_btn"  id="tab5"  onclick="layui.colDetail.PhoneBookSwitch('contact_list4');" ><%contact_4%></button>-->
+                <button class="layui-btn layui-btn-radius layui-btn-sm contact_btn"  id="tab6"  onclick="layui.colDetail.PhoneBookSwitch('phone_list');" ><%phone_book%></button>
+            </div>
+            <table class="y-page-table" id="phone_list"></table>
+        </div>
+    </script>
+
+        <!-- 定义通话记录 start -->
+        <script type="text/html" id="callList">
+            <div style="margin:20px auto;width:93%;" >
+                <table class="y-page-table" id="call_list"></table>
+            </div>
+        </script>
+        <!-- 定义短信记录 start -->
+        <script type="text/html" id="smsList">
+            <div style="margin:20px" id="sms_div">
+                <table class="y-page-table" id="sms_list"></table>
+            </div>
+        </script>
+
+    <!-- 定义申请减免 start -->
+    <script type="text/html" id="applyDreate">
+        <div class="y-page-body" style=" padding:0 20px;margin:10px auto; color:#999999;border:none;">
+            <form  id="applyDreateForm" class="layui-form" action="" autocomplete="off">
+                <div class="layui-form-item">
+                    <label class="layui-form-label layui-form-label-title"><%order_no%></label><!--订单号-->
+                    <div class="layui-input-inline">
+                        <input type="text" class="layui-input"  name="order_no"   id="derate_order_no"  value=" "  readonly="" style="border:none;">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label layui-form-label-title"><%reduction_user_name%></label><!--客户姓名-->
+                    <div class="layui-input-inline ">
+                         <input type="text"  class="layui-input"  name="real_name" id="derate_real_name"  value=" "   readonly="readonly" style=" border:none; "/>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label layui-form-label-title"><%reduction_repay_amount%></label><!--应还款总额-->
+                    <div class="layui-input-inline ">
+                         <input type="text"  class="layui-input"  name="repay_amount"  id="derate_repay_amount" value=""  readonly="readonly" style=" border:none; " />
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label layui-form-label-title"><%reduction_over_fee%></label><!--罚息金额-->
+                    <div class="layui-input-inline ">
+                        <input type="text" class="layui-input"  name="over_interest"  id="derate_over_interest" value=" "   readonly="readonly" style=" border:none; "/>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label layui-form-label-title"><%derate_amount%></label><!--减免费用-->
+                    <div class="layui-input-inline">
+                        <input type="text" name="reduction_fee" lay-verify="reduction_fee"   id="derate_reduction_fee"  placeholder="<%derate_amount%>" autocomplete="off" class="layui-input" />
+                    </div>
+                    <div class="layui-form-mid layui-word-aux"><%jmnogtfx%></div><!--减免金额不能大于罚息-->
+                </div>
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label layui-form-label-title"><%reduction_remark%></label><!--备注-->
+                    <div class="layui-input-inline">
+                        <textarea name="reduction_remark"  lay-verify="reduction_remark"  id="derate_reduction_remark"  placeholder="<%input_info%>" class="layui-textarea" style="width:300px; height:80px;" /><!--请输入内容-->
+                    </div>
+                </div>
+                <div class="layui-form-item" style="text-align: center;margin-top:30px;">
+                    <div class="layui-inline" style=" text-align: center">
+                         <button  type="button" class="layui-btn layui-btn-radius layui-btn-sm y-btn-red"   id="addApplyDreate_submit"  onclick="layui.colDetail.derateSubmit(); " style="min-width:100px;"  lay-submit lay-filter="addApplyDreateForm"  ><%submit%></button><!--确认提交-->
+                    </div>
+                </div>
+            </form>
+        </div>
+    </script>
+    <!-- 定义申请减免 end -->
+
+<script type="text/javascript">
+    layui.use(['colDetail'], function () {
+        var colDetail = layui.colDetail;
+    });
+</script>
+
+<script src="viewer/js/jquery.min.js"></script>
+<script src="viewer/js/viewer-jquery.min.js"></script>
+<script>
+    $(function() {
+        $('#others_photos').viewer({
+            url: 'data-original',
+        });
+        $('#idCard_best_credit').viewer({
+            url: 'data-original',
+        });
+    });
+</script>

@@ -1,0 +1,67 @@
+<div  id="viewDetail">
+    <div id="channelList">
+        <div class="y-page-title"><%channel_list%></div><!--渠道列表-->
+        <div class="y-page-body">
+            <form class="layui-form layui-form-pane" id="loanListForm" action="" style="margin-top: 10px;">
+                <div class="layui-form-item  y-left-pane" >
+
+                    <div class="layui-inline" id="freeDistribution">
+                        <button type="button"   class="layui-btn layui-btn-radius layui-btn-sm y-btn-red distr_btn"  style="min-width:65px;margin-left:10px;margin-bottom:5px;" type="button"   onclick="layui.channelList.addChannel()" ><%addChannel%></button><!--添加渠道-->
+                    </div>
+                    <!--<label class="layui-form-label  "><i class="fa fa-calendar fa-lg"></i></label>-->
+                    <!--<div class="layui-input-inline">-->
+                        <!--<input type="text" class="layui-input" id="date"   name="date" v-bind:placeholder="loan_date"   autocomplete="off" />-->
+                    <!--</div>-->
+                    <!--<div class="layui-form-inline  y-right-pane y-select"  id="companyList" style="display: none;">-->
+                        <!--<div class="layui-input-inline" >-->
+                            <!--<select name="company_id" id="company_id" lay-filter="company_id"  style="border-radius: 0px 100px 100px 0px;"></select>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="y-right-pane">-->
+                        <!--<div class="y-right-box searching" >-->
+                            <!--<input type="text" name="search_string" id="search_string"  v-bind:placeholder="order_no+'/'+fullname"   autocomplete="off" class="layui-input"  />-->
+                            <!--<label class="layui-form-label" onclick="layui.loanList.getData(1,20)"><i class="fa fa-search fa-lg"></i></label>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                </div>
+
+            </form>
+
+            <!-- 渠道页面列表-->
+            <div id="channelListTable" class="layui-table" lay-filter="channelListTableEvent" ></div>
+            <!--<div id="channelListPage"></div>-->
+
+        </div>
+    </div>
+
+    <!--渠道详情-->
+    <div id="channelDetail"></div>
+
+</div>
+
+<!-- 定义新增和修改页面start -->
+<script type="text/html" id="saveChannel">
+    <div class="y-page-body" style=" padding:0 20px;margin:15px auto; color:#999999;border:none;">
+        <form class="layui-form">
+            <div class="layui-form-item">
+                <label class="layui-form-label layui-form-label-id"><%channel_name%></label>
+                <div class="layui-input-inline layui-input-inline-id">
+                    <input type="text" id="channel_name" name="channel_name" v-bind:placeholder="channel_name" class="layui-input" value="" />
+                </div>
+            </div>
+            <div class="layui-form-item" style="text-align: center;margin-top:30px;">
+                <div class="layui-inline">
+                    <button class="layui-btn layui-btn-radius layui-btn-sm y-btn-red" onclick="layui.channelList.submitAddChannel();"><%now_submit%></button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</script>
+<!-- 定义新增和修改页面end -->
+
+<script type="text/javascript">
+    layui.use(['channelList'], function(){
+        layui.channelList.initView();
+    });
+</script>

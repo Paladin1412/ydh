@@ -1,0 +1,163 @@
+<div  id="viewDetail">
+    <div id="referraList">
+        <div class="y-page-title"><%referra_link%><%list%></div><!--推广链接列表-->
+        <div class="y-page-body">
+                <div class="layui-form-item  y-left-pane" >
+                    <div class="layui-inline" id="freeDistribution">
+                        <button class="layui-btn layui-btn-radius layui-btn-sm y-btn-red distr_btn"  type="button"   onclick="layui.referralLink.addLink()" ><%tianjia%><%referra_link%></button><!--添加推广链接-->
+                    </div>
+                </div>
+            <div id="referralLinkListTable" class="layui-table" lay-filter="referralLinkListTableEvent" ></div>
+            <div id="referralLinklListPage"></div>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- 定义新增和修改页面start -->
+<script type="text/html" id="addLinkList">
+    <div class="y-page-body" style=" margin:20px 20px 5px; color:#999999;border:none;">
+        <form class="layui-form">
+            <div class="layui-form-item">
+                <label class="layui-form-label layui-form-label-id"><%company_url%></label>
+                <div class="layui-input-inline">
+                    <input type="text" id="company_url" name="company_url"  v-bind:placeholder="company_url" class="layui-input" style="width:450px">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label layui-form-label-id"><%ios_url%></label>
+                <div class="layui-input-inline">
+                    <input type="text" id="appurl" name="appurl"  v-bind:placeholder="ios_url" class="layui-input" style="width:450px">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label layui-form-label-id"><%android_url%></label>
+                <div class="layui-input-inline">
+                    <input type="text" id="android_url" name="android_url"  v-bind:placeholder="android_url" class="layui-input" style="width:450px">
+                </div>
+            </div>
+            <input type="hidden"  name="image"      id="image_code"  value="" class="layui-input"/>
+            <input type="hidden"  name="image_url"  id="image_url"   value="" class="layui-input"/>
+            <!--<input type="hidden"  id="android_code" value="">-->
+            <!--<input type="hidden"  id="android_url"  value="">-->
+            <div class="layui-form-item">
+                <fieldset class="layui-elem-field layui-field-title layui-elem-field-id" style="margin-top: 30px;">
+                    <legend><%image_name%></legend>
+                </fieldset>
+                <div class="layui-upload-drag layui-upload-drag-id" id="image_upload">
+                    <i class="layui-icon"></i>
+                    <!--<p><%drag_and_upload%></p>-->
+                </div>
+                <blockquote class="layui-elem-quote layui-quote-nm layui-elem-quote-id" style="margin-top: 10px;">
+                    <%look_picture%>：
+                    <div class="layui-upload-list" id="image_all"></div>
+                </blockquote>
+            </div>
+            <!--<div class="layui-form-item">-->
+                <!--<fieldset class="layui-elem-field layui-field-title layui-elem-field-id" style="margin-top: 30px;">-->
+                    <!--<legend><%android_name%></legend>-->
+                <!--</fieldset>-->
+                <!--<div class="layui-upload-drag layui-upload-drag-id" id="android_url_upload">-->
+                    <!--<i class="layui-icon"></i>-->
+                <!--</div>-->
+                <!--<blockquote class="layui-elem-quote layui-quote-nm layui-elem-quote-id" style="margin-top: 10px;">-->
+                    <!--<%look_picture%>：-->
+                    <!--<div class="layui-upload-list" >-->
+                          <!--<label id="upload_res"></label>-->
+                    <!--</div>-->
+                <!--</blockquote>-->
+
+            <!--</div>-->
+            <div class="layui-form-item" style="text-align: center;margin-top:30px;">
+                <div class="layui-inline">
+                    <button class="layui-btn layui-btn-radius layui-btn-sm y-btn-red"  type="button" onclick="layui.referralLink.submitAddLink();"><%now_submit%></button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</script>
+<!-- 定义新增和修改页面end -->
+
+
+<!--&lt;!&ndash; 定义新增和修改页面start &ndash;&gt;-->
+<!--<script type="text/html" id="editLinkList">-->
+    <!--<div class="y-page-body" style=" margin:20px 20px 5px; color:#999999;border:none;">-->
+        <!--<form class="layui-form">-->
+            <!--<div class="layui-form-item">-->
+                <!--<label class="layui-form-label layui-form-label-id"><%company_url%></label>-->
+                <!--<div class="layui-input-inline">-->
+                    <!--<input type="text" id="company_url" name="company_url"  v-bind:placeholder="company_url" class="layui-input" style="width:450px">-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="layui-form-item">-->
+                <!--<label class="layui-form-label layui-form-label-id"><%ios_url%></label>-->
+                <!--<div class="layui-input-inline">-->
+                    <!--<input type="text" id="appurl" name="appurl"  v-bind:placeholder="ios_url" class="layui-input" style="width:450px">-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="layui-form-item">-->
+                <!--<label class="layui-form-label layui-form-label-id"><%android_url%></label>-->
+                <!--<div class="layui-input-inline">-->
+                    <!--<input type="text" id="android_url" name="android_url"  v-bind:placeholder="android_url" class="layui-input" style="width:450px">-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<input type="hidden"  name="image"      id="image_code"    value="" class="layui-input"/>-->
+            <!--<input type="hidden"  name="image_url"  id="image_url"  value="" class="layui-input"/>-->
+            <!--&lt;!&ndash;<input type="hidden"  id="android_code" value="">&ndash;&gt;-->
+            <!--&lt;!&ndash;<input type="hidden"  id="android_url"  value="">&ndash;&gt;-->
+            <!--<div class="layui-form-item">-->
+                <!--<fieldset class="layui-elem-field layui-field-title layui-elem-field-id" style="margin-top: 30px;">-->
+                    <!--<legend><%image_name%></legend>-->
+                <!--</fieldset>-->
+                <!--<div class="layui-upload-drag layui-upload-drag-id" id="image_upload">-->
+                    <!--<i class="layui-icon"></i>-->
+                    <!--&lt;!&ndash;<p><%drag_and_upload%></p>&ndash;&gt;-->
+                <!--</div>-->
+                <!--<blockquote class="layui-elem-quote layui-quote-nm layui-elem-quote-id" style="margin-top: 10px;">-->
+                    <!--<%look_picture%>：-->
+                    <!--<div class="layui-upload-list" id="image_all"></div>-->
+                <!--</blockquote>-->
+            <!--</div>-->
+            <!--&lt;!&ndash;<div class="layui-form-item">&ndash;&gt;-->
+            <!--&lt;!&ndash;<fieldset class="layui-elem-field layui-field-title layui-elem-field-id" style="margin-top: 30px;">&ndash;&gt;-->
+            <!--&lt;!&ndash;<legend><%android_name%></legend>&ndash;&gt;-->
+            <!--&lt;!&ndash;</fieldset>&ndash;&gt;-->
+            <!--&lt;!&ndash;<div class="layui-upload-drag layui-upload-drag-id" id="android_url_upload">&ndash;&gt;-->
+            <!--&lt;!&ndash;<i class="layui-icon"></i>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;<blockquote class="layui-elem-quote layui-quote-nm layui-elem-quote-id" style="margin-top: 10px;">&ndash;&gt;-->
+            <!--&lt;!&ndash;<%look_picture%>：&ndash;&gt;-->
+            <!--&lt;!&ndash;<div class="layui-upload-list" >&ndash;&gt;-->
+            <!--&lt;!&ndash;<label id="upload_res"></label>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;</blockquote>&ndash;&gt;-->
+
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--<div class="layui-form-item" style="text-align: center;margin-top:30px;">-->
+                <!--<div class="layui-inline">-->
+                    <!--<button class="layui-btn layui-btn-radius layui-btn-sm y-btn-red"  type="button" onclick="layui.referralLink.submitAddLink();"><%now_submit%></button>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</form>-->
+    <!--</div>-->
+
+<!--</script>-->
+<!--&lt;!&ndash; 定义新增和修改页面end &ndash;&gt;-->
+
+
+<script type="text/javascript">
+    layui.use(['referralLink'], function(){
+        layui.referralLink.initView();
+    });
+</script>
+<script src="viewer/js/jquery.min.js"></script>
+<script src="viewer/js/viewer-jquery.min.js"></script>
+<script>
+    $(function() {
+        $('#link_background').viewer({
+            url: 'data-original',
+        });
+    });
+</script>

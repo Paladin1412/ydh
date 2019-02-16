@@ -1,0 +1,66 @@
+<div  id="viewDetail">
+    <div id="paramPage">
+        <div class="y-page-title"><%repayments%></div><!--已还款-->
+        <div class="y-page-body" >
+            <form class="layui-form layui-form-pane"   id="closed_search_form"  action="" style="margin-top:10px;">
+                <div class="layui-form-item  y-left-pane" >
+                    <input type="hidden"  id="order_field"  name="order_field" value=""> <!-- 排序字段 -->
+                    <input type="hidden"  id="order_sort"   name="order_sort"  value=""> <!-- 排序类型 -->
+                    <label class="layui-form-label  "><i class="fa fa-calendar fa-lg"></i></label>
+                    <div class="layui-input-inline"  >
+                        <input type="text" class="layui-input"  name="date"  id="date"  v-bind:placeholder="repay_date" autocomplete="off" />
+                    </div>
+                    <label class="layui-form-label  "><i class="fa fa-calendar fa-lg"></i></label>
+                    <div class="layui-input-inline"  >
+                        <input type="text" class="layui-input" name="due_date" id="due_date"   v-bind:placeholder="yhk_date" autocomplete="off" />
+                    </div>
+                    <div class="layui-form-inline  y-right-pane y-select"  id="companyList" style="display: none; ">
+                        <div class="layui-input-inline">
+                            <select name="company_id" id="company_id" lay-filter="company_id"  style="border-radius: 0px 100px 100px 0px;"></select>
+                        </div>
+                    </div>
+                    <div class="layui-form-inline  y-right-pane y-select " id="csyList" style="display: none;">
+                        <!-- <label class="layui-form-label "><span style="color: #A7EDD8;" class="fa fa-user fa-lg"></span></label> -->
+                        <div class="layui-input-inline">
+                            <select name="admin_id"  id="admin_id" style="border-radius: 0px 100px 100px 0px;"></select>
+                        </div>
+                    </div>
+                    <div class="y-right-pane cuishou" >
+                        <div class="y-right-box searching" >
+                            <input type="text"  name="search_string" id="search_string"  v-bind:placeholder="order_no+'/'+fullname+'/'+phone_no"  autocomplete="off" class="layui-input"  />
+                            <label class="layui-form-label" onclick="layui.Repayments.getData(1,50)"><i class="fa fa-search fa-lg"></i></label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+                <div id="closedListTable" class="layui-table" lay-filter="closedListTableEvent" ></div>
+                <div id="closedListPage"></div>
+        </div>
+    </div>
+
+    <!--催收详情-->
+    <div id="allColDetail"></div>
+</div>
+
+<!-- 页面的部分操作属性start -->
+<script type="text/html" id="closedListTool">
+    <button class="layui-btn layui-btn-radius layui-btn-xs y-btn-red" lay-event="followRecord" ><%follow_record%></button><!--跟进记录-->
+</script>
+
+<!-- 定义已还款跟进记录start -->
+<script type="text/html" id="derateApprove">
+    <div style="margin:30px auto;width:95%;">
+        <table class="layui-table" lay-skin="line"  id="closed_follow_list"> </table>
+    </div>
+</script>
+
+<script type="text/javascript">
+    layui.use(['Repayments'],function(){
+        //初始化页面
+        layui.Repayments.initView();
+        //处理监听事件
+        layui.Repayments.tool();
+    })
+
+</script>

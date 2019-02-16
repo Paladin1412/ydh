@@ -1,0 +1,35 @@
+<div id="page_employee_log">
+<div class="y-page-title"><%employee_log%></div>
+<div class="y-page-body" style="padding:20px">
+	<form class="layui-form layui-form-pane">
+		<div class="layui-form-item">
+			<div class="layui-form-inline y-left-pane">
+				<label class="layui-form-label  "><i class="fa fa-calendar fa-lg"></i></label>
+				<div class="layui-input-inline"  >
+					<input type="text" class="layui-input" id="date"  v-bind:placeholder="operate_time" autocomplete="off" />
+				</div>
+				<div class="layui-form-inline y-right-pane cuishou">
+					<div class="y-right-box" style="width:300px;">
+						<input type="text" id="search_string" v-bind:placeholder="user_name +'/'+ fullname" autocomplete="off" class="layui-input"  />
+						<label class="layui-form-label" onclick="layui.employeeLog.getData(1,20)"><i class="fa fa-search fa-lg"></i></label>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+	<div class="y-data-table">
+		<div id="employeeLogTable" class="layui-table"></div>
+		<div id="employeeLogPage"></div>
+	</div>
+</div>
+</div>
+
+<script type="text/javascript">
+layui.use(['employeeLog'],function(){
+	var employeeLog = layui.employeeLog;
+	//初始化页面
+	employeeLog.initView();
+})
+
+</script>
+

@@ -1,0 +1,41 @@
+<style>
+    /*.layui-table-main .layui-table-cell{ height:10px;line-height: 10px;}*/
+    /*.layui-table-header table tr th { height:20px;}*/
+</style>
+<div  id="viewLoan">
+    <div id="paramPage">
+        <div class="y-page-title"><%loan_statistic%></div><!--放款统计-->
+        <div class="y-page-body" style="">
+            <div class="layui-row" style="">
+                <div class="layui-col-xs6 layui-col-md12" style="">
+                    <form class="layui-form layui-form-pane" id="loanStatisticsListForm">
+                         <div class="layui-form-item  y-left-pane">
+                            <label class="layui-form-label"><i class="fa fa-calendar fa-lg"></i></label>
+                            <div class="layui-input-inline">
+                                 <input type="text" class="layui-input" id="date"   name="date"   v-bind:placeholder="loan_date"   autocomplete="off"/>
+                            </div>
+                            <div class="layui-form-inline  y-right-pane y-select"  id="companyList" style="display: none;">
+                                <div class="layui-input-inline" >
+                                    <select name="company_id" id="company_id" lay-filter="company_id"  style="border-radius: 0px 100px 100px 0px;"></select>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- 放款统计页面列表-->
+                    <div id="caiwulist">
+                         <div id="loanStatisticsListTable" class="layui-table"  lay-filter="loanStatisticsListTableEvent"  style="margin-top:5px;"></div>
+                         <div id="loanStatisticsListPage"></div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    layui.use(['loanStatistics'], function(){
+        layui.loanStatistics.initView();
+    });
+</script>

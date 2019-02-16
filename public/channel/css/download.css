@@ -1,0 +1,90 @@
+.download-box{
+    width: 100%;
+    position: relative;
+}
+.download_header{
+    position:relative;
+    top: 0px;
+    width: 100%;
+
+}
+.download_footer{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    max-width: 750px;
+    z-index: 1000;
+
+}
+
+
+.download_box{
+    width: 100%;
+    max-width: 750px;
+    height: 40px;
+    position: absolute;
+    top:40%;
+
+    background: none;
+}
+
+.download_click_box{
+    z-index: 10000;
+    width: 80%;
+    max-width: 450px;
+    height: 40px;
+    background: none;
+    margin: 0 auto;
+    position: relative;
+}
+.download_android{
+    width: 100%;
+    height: 55px;
+    background: none;
+    position: absolute;
+    top:-55px;
+    left: 0px;
+    border: 2px solid #fff;
+    border-radius: 25px;
+
+}
+.download_ios{
+    width: 100%;
+    height: 55px;
+    background: none;
+    position: absolute;
+    bottom:-55px;
+    left: 0px;
+    border: 2px solid #fff;
+    border-radius: 25px;
+
+}
+
+
+.select{
+    background: #fff;
+}
+.icon-android{
+    width: 100%;
+    height:100%;
+    display: block;
+    background: url("../image/android.png") center no-repeat;
+}
+.icon-ios{
+    width: 100%;
+    height:100%;
+    display: block;
+    background: url("../image/ios.png") center no-repeat;
+}
+.select .icon-android{
+    width: 100%;
+    height:100%;
+    display: block;
+    background: url("../image/android_action.png") center no-repeat;
+}
+.select .icon-ios{
+    width: 100%;
+    height:100%;
+    display: block;
+    background: url("../image/ios_action.png") center no-repeat;
+}

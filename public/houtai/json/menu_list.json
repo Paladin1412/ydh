@@ -1,0 +1,221 @@
+{
+  "code": 200,
+  "message": "完成",
+  "data": {
+    "home": {
+      "name": "Home",
+      "url": "home/homeIndex.html",
+      "child": []
+    },
+    "Loan": {
+      "name": "贷款管理",
+      "child": [
+        {
+          "id": "11",
+          "name": "所有审批",
+          "url": "loanManage/all-verify.html"
+        },
+        {
+          "id": "11",
+          "name": "未审批",
+          "url": "loanManage/not-verify.html"
+        },
+        {
+          "id": "12",
+          "name": "业务列表",
+          "url": "loanManage/orderList.html"
+        },
+        {
+          "id": "13",
+          "name": "费用配置",
+          "url": "loanManage/feeConfig.html"
+        }
+      ]
+    },
+    "Collection": {
+      "name": "催收系统",
+      "child": [
+        {
+          "id": "14",
+          "name": "所有催收",
+          "url": "postloanManage/allCollection.html"
+        },
+        {
+          "id": "15",
+          "name": "催收中",
+          "url": "postloanManage/inCollection.html"
+        },
+        {
+          "id": "16",
+          "name": "已还款",
+          "url": "postloanManage/Repayments.html"
+        },
+        {
+          "id": "17",
+          "name": "提早派单",
+          "url": "postloanManage/advanceDispatch.html"
+        },
+        {
+          "id": "18",
+          "name": "费用减免",
+          "url": "postloanManage/costDerate.html"
+        }
+      ]
+    },
+    "Bid": {
+      "name": "投标管理",
+      "child": [
+        {
+          "id": "19",
+          "name": "标的列表",
+          "url": "bidManage/bidList.html"
+        },
+        {
+          "id": "20",
+          "name": "新增标的",
+          "url": "bidManage/addBid.html"
+        },
+        {
+          "id": "21",
+          "name": "满标审核",
+          "url": "bidManage/bidAudit.html"
+        }
+      ]
+    },
+    "Fund": {
+      "name": "资金管理",
+      "child": [
+        {
+          "id": "22",
+          "name": "提现管理",
+          "url": "fundManage/putForward.html"
+        },
+        {
+          "id": "23",
+          "name": "充值管理",
+          "url": "fundManage/rechargeManage.html"
+        },
+        {
+          "id": "24",
+          "name": "资金记录",
+          "url": "fundManage/capitalRecord.html"
+        }
+      ]
+    },
+    "User": {
+      "name": "用户管理",
+      "child": [
+        {
+          "id": "203",
+          "name": "用户列表",
+          "url": "userManage/userList.html"
+        },
+        {
+          "id": "204",
+          "name": "投资资质审核",
+          "url": "userManage/investmentQualificationAudit.html"
+        },
+        {
+          "id": "209",
+          "name": "投资账户管理",
+          "url": "userManage/investmentAccountManage"
+        }
+      ]
+    },
+    "System": {
+      "name": "系统管理",
+      "child": [
+        {
+          "id": "206",
+          "name": "员工管理",
+          "url": "systemManage/employeeList.html"
+        },
+        {
+          "id": "206",
+          "name": "角色管理",
+          "url": "systemManage/roleManager.html"
+        },
+        {
+          "id": "211",
+          "name": "员工日志",
+          "url": "systemManage/employeeLog.html"
+        },
+        {
+          "id": "211",
+          "name": "业务开关",
+          "url": "systemManage/businessSwitch.html"
+        },
+        {
+          "id": "211",
+          "name": "菜单列表",
+          "url": "systemManage/menuList.html"
+        }
+      ]
+    },
+    "Analysis": {
+      "name": "经营分析",
+      "child": [
+        {
+          "id": "203",
+          "name": "业务统计",
+          "url": "analysis/businessStatistics.html"
+        },
+        {
+          "id": "204",
+          "name": "风控统计",
+          "url": "analysis/riskStatistics.html"
+        },
+        {
+          "id": "209",
+          "name": "逾期统计",
+          "url": "analysis/dueStatistics.html"
+        },
+        {
+          "id": "215",
+          "name": "逾期报表",
+          "url": "analysis/dueReport.html"
+        }
+      ]
+    },
+    "Finance": {
+      "name": "财务系统",
+      "child": [
+        {
+          "id": "206",
+          "name": "还款统计",
+          "url": "financeSystem/repaymentStatistics.html"
+        },
+        {
+          "id": "211",
+          "name": "放款统计",
+          "url": "financeSystem/loanStatistics.html"
+        },
+        {
+          "id": "211",
+          "name": "充值统计",
+          "url": "financeSystem/rechargeStatistics.html"
+        },
+        {
+          "id": "211",
+          "name": "提现统计",
+          "url": "financeSystem/putforwardStatistics.html"
+        }
+      ]
+    },
+    "Opera": {
+      "name": "运营数据",
+      "child": [
+        {
+          "id": "206",
+          "name": "用户情况统计",
+          "url": "operaDatas/usersStatistics.html"
+        },
+        {
+          "id": "211",
+          "name": "标的情况统计",
+          "url": "operaDatas/bidStatistics.html"
+        }
+      ]
+    }
+  }
+}

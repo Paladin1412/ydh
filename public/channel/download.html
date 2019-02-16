@@ -1,0 +1,80 @@
+﻿<html><head>
+    <meta content="text/html; charset=UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta content="width=320, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>易贷还</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <link href="./css/common6.css" rel="stylesheet" type="text/css">
+    <link href="./css/download.css?v=1.01" rel="stylesheet" type="text/css">
+</head>
+<body id="id1">
+
+<style>
+    @media (min-device-width:414px) and (max-device-width:736px) and (-webkit-min-device-pixel-ratio:3){
+        /*iphone6plus*/
+    }
+</style>
+
+    <div class="download_header">
+        <img src="./image/download_header.png"/>
+    </div>
+    <div class="download_box">
+        <div class="download_click_box">
+            <div class="download_android select"><a href="" download="" id="android-download-url"><i class="icon-android"></i></a></div>
+            <div class="download_ios"><a href="./ios_way.html"><i class="icon-ios"></i></a></div>
+        </div>
+    </div>
+
+    <div class="download_footer">
+        <img src="./image/download-footer.jpg"/>
+    </div>
+
+    <div id="alert-dialog" class="alert-dialog" style="display:none;">
+        <div class="alert-box">
+            <a href="javascript:$('#alert-dialog').hide();" class="close icon-close"></a>
+            <div class="alert-header">
+                <i class="icon-warning"></i>
+            </div>
+            <div class="alert-content">
+            </div>
+            <div class="alert-footer">
+                <a href="javascript:void(0)" class="action-btn">好</a>
+            </div>
+        </div>
+        <div class="mask"></div>
+    </div>
+<script src="./js/jQuery-2.1.4.min.js"></script>
+<script src="./js/config.js"></script>
+<script type="text/javascript">
+    $(function() {
+        var u = navigator.userAgent;
+        if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {//安卓手机
+
+            $('.download_android').addClass('select');
+            $('.download_ios').removeClass('select');
+
+        } else if (u.indexOf('iPhone') > -1) {//苹果手机
+
+
+            $('.download_ios').addClass('select');
+            $('.download_android').removeClass('select');
+        }
+        $("#android-download-url").attr("download",android_download_url);
+        $("#android-download-url").attr("href",android_download_url);
+        //alert(channel_code);
+            $("#android-download-url").on("click", function () {
+
+                $.post(record_download,{code:channel_code}, function(data){
+                    //console.log(data);
+                    //alert(data);
+                    //alert(JSON.stringify(data));
+                });
+            });
+
+    })
+</script>
+
+</body>
+</html>

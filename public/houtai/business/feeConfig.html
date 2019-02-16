@@ -1,0 +1,91 @@
+<div id="page_fee_config">
+<div class="y-page-title"><%fee_config%></div>
+<div class="y-page-body" style="padding:20px">
+	<div class="y-data-table">
+		<div id="feeConfigTable" class="layui-table" lay-filter="feeConfigEvent"></div>
+		<div id="feeConfigPage"></div>
+	</div>
+</div>
+</div>
+
+<script type="text/html" id="feeConfigTool">
+	<a class="layui-btn layui-btn-xs y-btn-red" lay-event="edit"><%edit%></a>
+</script>
+
+
+<!-- 定义修改页面start -->
+<script type="text/html" id="addFeeConfig">
+<div class="y-page-body" style=" padding:0 20px;margin:15px auto; color:#999999;border:none;">
+<form id="addFeeConfigForm" class="layui-form" autocomplete="off">
+	<input type="hidden" name="type_id" value="{{d.type_id}}" />
+	<div class="layui-form-item">
+		<label class="layui-form-label layui-form-label-id"><%apply_term%></label>
+		<div class="layui-input-inline layui-input-inline-id">
+			<input type="text" id="apply_term" name="apply_term" lay-verify="applyTerm" v-bind:placeholder="input_apply_term" class="layui-input" value="{{d.apply_term}}"/>
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label layui-form-label-id"><%apply_amount%></label>
+		<div class="layui-input-inline layui-input-inline-id">
+			<input type="text" id="apply_amount" name="apply_amount" lay-verify="applyAmount" v-bind:placeholder="input_apply_amount" class="layui-input" value="{{d.apply_amount}}" />
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label layui-form-label-id"><%rate%></label>
+		<div class="layui-input-inline layui-input-inline-id">
+			<input type="text" id="rate" name="rate" lay-verify="rate" v-bind:placeholder="input_rate" class="layui-input" value="{{d.rate}}" />
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label layui-form-label-id"><%service_fee%></label>
+		<div class="layui-input-inline layui-input-inline-id">
+			<input type="text" id="service_fee" name="service_fee" lay-verify="serviceFee" v-bind:placeholder="input_service_fee" class="layui-input" value="{{d.service_fee}}" />
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label layui-form-label-id"><%approval_fee%></label>
+		<div class="layui-input-inline layui-input-inline-id">
+			<input type="text" id="approval_fee" name="approval_fee" lay-verify="approvalFee" v-bind:placeholder="input_approval_fee" class="layui-input" value="{{d.approval_fee}}" />
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label layui-form-label-id"><%over_fee%></label>
+		<div class="layui-input-inline layui-input-inline-id">
+			<input type="text" id="over_fee" name="over_fee" lay-verify="overFee" v-bind:placeholder="input_over_fee" class="layui-input" value="{{d.over_fee}}" />
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label layui-form-label-id"><%term_fee%></label>
+		<div class="layui-input-inline layui-input-inline-id">
+			<input type="text" id="term_fee" name="term_fee" lay-verify="termFee" v-bind:placeholder="input_term_fee" class="layui-input" value="{{d.term_fee}}" />
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label layui-form-label-id"><%max_money%></label>
+		<div class="layui-input-inline layui-input-inline-id">
+			<input type="text" id="max_money" name="max_money" lay-verify="maxMoney" v-bind:placeholder="input_max_money" class="layui-input" value="{{d.max_money}}" />
+		</div>
+	</div>
+	<div class="layui-form-item" style="text-align:center;margin-top:30px;">
+  		<div class="layui-inline" >
+    		<button class="layui-btn layui-btn-sm layui-btn-radius y-btn-red" lay-submit lay-filter="addFeeConfigForm"><%now_submit%></button>
+  		</div>
+	</div>
+</form>
+</div>
+
+</script>
+<!-- 定义修改页面end -->
+
+
+
+<script type="text/javascript">
+layui.use(['feeConfig'],function(){
+	var feeConfig = layui.feeConfig;
+	//初始化页面
+	feeConfig.initView();
+	//处理监听事件
+	feeConfig.tool();
+})
+
+</script>

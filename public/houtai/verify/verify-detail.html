@@ -1,0 +1,447 @@
+<div class="details_box">
+<div>
+	<div class="y_title_detail"><%customer_verify_details%>
+		<i style="float:right;  margin-right:10px;" onclick="layui.verify_common.showDetailPage('parent');"> <img src="image/close.png"  style="width:38px;height:38px;"alt=""></i>
+	</div>
+</div>
+<div id="user_info" class="y-page-body y-page-top10" >
+	<input type="hidden" id="verify_detail_order_no" value="{{d.order_info.order_no}}" />
+            <div class="layui-inline y-page-info ">
+                <span class="detail_tab_title" >&nbsp;<%customer_info%></span>
+            </div>
+            <table class="y-page-table" >
+				<colgroup>
+					<col width="10%">
+					<col width="20%">
+					<col width="10%">
+					<col width="20%">
+					<col width="10%">
+					<col width="20%">
+				</colgroup>
+
+            	<tr>
+            		<td class="td_bg"><%phone_no%></td>
+            		<td>{{d.order_info.phone || ''}}</td>
+            		<td class="td_bg"><%real_name%></td>
+            		<td>{{d.order_info.name || ''}}</td>
+            		<td class="td_bg"><%idcard_no%></td>
+            		<td>{{d.order_info.idcode || ''}}</td>
+            	</tr>
+            	<tr>
+            		<td class="td_bg"><%now_live_address%></td>
+            		<td>{{d.order_info.city || ''}}{{d.order_info.address || ''}}</td>
+            		<td class="td_bg"><%now_company_address%></td>
+            		<td>{{d.order_info.company_add || ''}}</td>
+            		<td class="td_bg"><%gps_address%></td>
+            		<td>{{d.order_info.gps_address || ''}}</td>
+            	</tr>
+            	<tr>
+            		<td class="td_bg"><%education_level%></td>
+            		<td>{{d.order_info.education || ''}}</td>
+            		<td class="td_bg"><%cp_name%></td>
+            		<td>{{d.order_info.company || ''}}</td>
+            		<td class="td_bg"><%is_or_not_marry%></td>
+					<!--0未婚1已婚2离异3其他-->
+            		<td>{{# if(d.order_info.is_marrey == '0'){ }}
+            				<%not_marry%>
+            			{{# }else if(d.order_info.is_marrey == '1'){ }}
+							<%is_marry%>
+						{{# }else if(d.order_info.is_marrey == '2'){ }}
+							<%liyi_marry%>
+						{{# }else { }}
+							<%others%>
+            			{{# } }}
+					</td>
+            	</tr>
+            	<tr>
+            		<td class="td_bg"><%cp_mobile%></td>
+            		<td>{{d.order_info.company_tel || ''}}</td>
+            		<td class="td_bg"><%occupation_category%></td>
+            		<td>{{d.order_info.profession || ''}}</td>
+            		<td class="td_bg"><%detail_age%></td>
+            		<td>{{d.order_info.age || ''}}</td>
+            	</tr>
+            	
+            	<tr id="others_photo">
+            		<td class="td_bg"><%other_photos%></td>
+            		<td colspan="3">
+            		{{# if(d.order_info.tax_card){ }}
+            		    <img class="y-img-li"  data-original="{{d.order_info.tax_card}}"  src="{{d.order_info.tax_card}}"  alt="{{d.field.lang_img.tax_card}}" />
+            		{{# } }}
+            		{{# if(d.order_info.security_card){ }}
+            		    <img class="y-img-li"  data-original="{{d.order_info.security_card}}"  src="{{d.order_info.security_card}}" alt="{{d.field.lang_img.security_card}}"  />
+            		    {{# } }}
+            		{{# if(d.order_info.family_card){ }}
+            		    <img class="y-img-li"  data-original="{{d.order_info.family_card}}"  src="{{d.order_info.family_card}}" alt="{{d.field.lang_img.family_card}}"/>
+            		    {{# } }}
+            		{{# if(d.order_info.staff_card){ }}
+            		    <img class="y-img-li"  data-original="{{d.order_info.staff_card}}"  src="{{d.order_info.staff_card}}"  alt="{{d.field.lang_img.staff_card}}"/>
+            		    {{# } }}
+            		{{# if(d.order_info.salary_card){ }}
+            		    <img class="y-img-li"  data-original="{{d.order_info.salary_card}}" src="{{d.order_info.salary_card}}" alt="{{d.field.lang_img.salary_card}}"/>
+            		    {{# } }}
+            		{{# if(d.order_info.work_prove){ }}
+            		    <img class="y-img-li"  data-original="{{d.order_info.work_prove}}"  src="{{d.order_info.work_prove}}"  alt="{{d.field.lang_img.work_prove}}"/>
+            		{{# } }}
+            		
+            		</td>
+
+            		<td class="td_bg"><%credit_photo%></td>
+            		<td>
+	            		{{# if(d.order_info.credit_img){ }}
+	            		<img class="y-img-li" data-original="{{d.order_info.credit_img}}"   src="{{d.order_info.credit_img}}" alt="{{d.field.lang_img.credit_photo}}" />
+	            		{{# } }}
+            		</td>
+            	</tr>
+
+            </table>
+    </div>
+    
+         
+    <div class="y-page-body y-page-top10" >
+            <div class="layui-inline y-page-info">
+                <span class="detail_tab_title">&nbsp;<%order_details%></span>
+				<button   onclick="layui.verify_detail.operationData('{{d.order_info.order_no}}','{{d.order_info.phone}}');" class="layui-btn layui-btn-sm layui-btn-radius y-btn-red detail_btn" style="float:right;margin-top:10px;margin-right: 10px; border-radius: 8px;min-width:80px;">运营商数据</button>
+				<button   onclick="layui.verify_detail.bairongData('{{d.order_info.order_no}}');" class="layui-btn layui-btn-sm layui-btn-radius y-btn-red detail_btn" style="float:right;margin-top:10px;margin-right: 10px; border-radius: 8px;min-width:80px;">百融</button>
+				<button   onclick="layui.verify_detail.xinyanData('{{d.order_info.order_no}}');" class="layui-btn layui-btn-sm layui-btn-radius y-btn-red detail_btn" style="float:right;margin-top:10px;margin-right: 10px; border-radius: 8px;min-width:80px;">新颜</button>
+				<button id="phone_book"  onclick="layui.verify_detail.PhoneBook('{{d.order_info.user_id}}','{{d.order_info.order_id}}','','phone_list');" class="layui-btn layui-btn-sm layui-btn-radius y-btn-red detail_btn" style="float:right;margin-top:10px;margin-right: 10px; border-radius: 8px;min-width:80px;"><%phone_book%></button>
+			</div>
+            <table class="y-page-table" >
+				<colgroup>
+					<col width="10%">
+					<col width="20%">
+					<col width="10%">
+					<col width="20%">
+					<col width="10%">
+					<col width="20%">
+				</colgroup>
+            	<tr>
+            		<td class="td_bg"><%order_no%></td>
+            		<td>{{d.order_info.order_no || ''}}</td>
+            		<td class="td_bg"><%chushen_time%></td>
+            		<td>{{d.order_info.review_time1  || ''}}</td>
+            		<td class="td_bg"><%zhongshen_time%></td>
+					<td>{{d.order_info.review_time2  || ''}}</td>
+            	</tr>
+            	<tr>
+            		<td class="td_bg"><%application_amount%></td>
+            		<td>{{d.order_info.application_amount || ''}}</td>
+            		<td class="td_bg"><%paid_amount%></td>
+            		<td>{{d.order_info.paid_amount || ''}}</td>
+					<td class="td_bg"><%add_time%></td>
+					<td>{{d.order_info.add_time || '-'}}</td>
+            	</tr>
+            	<tr>
+					<td class="td_bg"><%bankcard_name%></td>
+					<td>{{d.order_info.bankcard_name || ''}}</td>
+            		<td class="td_bg"><%card_num%></td>
+            		<td>{{d.order_info.card_num || ''}}</td>
+            		<td class="td_bg"></td>
+            		<td></td>
+            	</tr>
+            	
+            	<tr>
+            		<td class="td_bg"><%relations%></td>
+            		<td>{{d.contact_list&&d.contact_list[0]?d.contact_list[0].relaname:''}}</td>
+            		<td class="td_bg"><%real_name%></td>
+            		<td>{{d.contact_list&&d.contact_list[0]?d.contact_list[0].name:''}}</td>
+            		<td class="td_bg"><%phone_no%></td>
+            		<td>{{d.contact_list&&d.contact_list[0]?d.contact_list[0].phone:''}}</td>
+            	</tr>
+            	
+            	<tr>
+            		<td class="td_bg"><%relations%></td>
+            		<td>{{d.contact_list&&d.contact_list[1]?d.contact_list[1].relaname:''}}</td>
+            		<td class="td_bg"><%real_name%></td>
+            		<td>{{d.contact_list&&d.contact_list[1]?d.contact_list[1].name:''}}</td>
+            		<td class="td_bg"><%phone_no%></td>
+            		<td>{{d.contact_list&&d.contact_list[1]?d.contact_list[1].phone:''}}</td>
+            	</tr>
+            	<tr>
+            		<td class="td_bg"><%lending_time%></td>
+            		<td>{{d.order_info.lending_time || '-'}}</td>
+            		<td class="td_bg"><%end_time%></td>
+            		<td>{{d.order_info.end_time || '-'}}</td>
+            		<td class="td_bg"><%verify_status%></td>
+            		<td>{{d.order_info.handle_state || ''}}</td>
+            	</tr>
+            </table>
+    </div>
+
+    <!--审核结果-->
+     <div class="y-page-body y-page-top10" >
+            <div class="layui-inline y-page-info" style="line-height: 48px;">
+                <span class="detail_tab_title"  style="position:relative">&nbsp;<%approve_jieguo%></span>
+            </div>
+		 {{# if( d.order_info.now_state=='1' || d.order_info.now_state=='4'  ){ }}
+		 <table class="y-page-table" id="add_approve_jieguo" style="margin-bottom: 10px;">
+			 {{# if(d.order_info.now_state=='1'){ }}
+			 <colgroup>
+				 <col width="25%">
+				 <col width="50%">
+				 <col width="25%">
+			 </colgroup>
+			 {{# } }}
+			 {{# if(d.order_info.now_state=='4'){ }}
+			 <colgroup>
+				 <col width="60%">
+				 <col width="40%">
+			 </colgroup>
+			 {{# } }}
+			 <tr>
+				 {{# if(d.order_info.now_state=='1'){ }}
+				 <td class="td_bg_addrecord"><%shenhe_reason%></td>  <!--审核原因-->
+				 {{# } }}
+				 <td class="td_bg_addrecord"><%reduction_remark%></td> <!--备注-->
+				 <td class="td_bg_addrecord"><%caozuo%></td> <!--操作-->
+
+			 </tr>
+			 <tr>
+				 {{# if(d.order_info.now_state=='1'){ }}
+				 <td>
+					 <div class="layui-input-inline" >
+						 --
+					 </div>
+				 </td> <!--审核原因-->
+				 {{# } }}
+				 <td>
+					 <div class="layui-input-inline" style="margin-top: 15px;">
+						 <textarea  class="sel-textarea" id="approve_remark" name="remark"  v-bind:placeholder="reduction_remark" style="max-height:40px;width:400px;max-width:550px;" ></textarea>
+					 </div>
+				 </td><!--备注-->
+
+				 <td>
+					 <div class="layui-input-inline" style="margin-top: 10px;">
+						 {{# if(d.order_info.now_state=='1'){ }}
+							 <button onclick="layui.verify_detail.ShenHeSubmit('1')" class="layui-btn layui-btn-sm layui-btn-radius y-btn-red" style=" border-radius: 8px;min-width:80px;"><%pass%></button>
+							 {{# } }}
+						 {{# if(d.order_info.now_state=='4'){ }}
+							 <button onclick="layui.verify_detail.ShenHeSubmit('3')" class="layui-btn layui-btn-sm layui-btn-radius y-btn-red" style=" border-radius: 8px;min-width:80px;"><%pass%></button>
+						 {{# } }}
+					  </div>
+				 </td><!--操作-->
+
+			 </tr>
+			 <tr>
+				 {{# if(d.order_info.now_state=='1'){ }}
+				 <td>
+					 <div class="layui-input-inline" >
+						 <select class="sel-style" id="approve_flow_type" name="flow_type" ></select>
+					 </div>
+				 </td> <!--审核原因-->
+				 {{# } }}
+				 <td>
+					 <div class="layui-input-inline" style="margin-top: 15px;">
+						 <textarea  class="sel-textarea" id="approve_remark_reject" name="remark"  v-bind:placeholder="reduction_remark" style="max-height:40px;width:400px;max-width:550px;" ></textarea>
+					 </div>
+				 </td><!--备注-->
+
+				 <td>
+					 <div class="layui-input-inline" >
+						 {{# if(d.order_info.now_state=='1'){ }}
+						 <button onclick="layui.verify_detail.ShenHeSubmit('2')" class="layui-btn layui-btn-sm layui-btn-radius y-btn-red" style=" border-radius: 8px;min-width:80px;"><%refuse%></button>
+						 {{# } }}
+						 {{# if(d.order_info.now_state=='4'){ }}
+						 <button onclick="layui.verify_detail.ShenHeSubmit('4')" class="layui-btn layui-btn-sm layui-btn-radius y-btn-red" style=" border-radius: 8px;min-width:80px;"><%tuihui_btn%></button>
+						 {{# } }}
+					 </div>
+				 </td><!--操作-->
+
+			 </tr>
+
+
+
+		 </table>
+		 {{# } }}
+
+		 <div style="margin-top: 10px;">
+			 <table class="y-page-table" id="approve_log"></table>
+			 <div id="approve_logPage"></div>
+		 </div>
+
+      </div>
+
+	<!--电核记录-->
+	<div class="y-page-body y-page-top10" >
+		<div class="layui-inline y-page-info" style="line-height: 48px;">
+			<span class="detail_tab_title"  style="position:relative">&nbsp;<%dianhe_record%></span>
+			{{# if(d.order_info.now_state=='1'){ }}
+			<button onclick="layui.verify_detail.submitDianhe()" id="add_dianhe" class="layui-btn layui-btn-sm layui-btn-radius y-btn-red" style="float:right;margin-top:10px;margin-right: 10px; border-radius: 8px;min-width:80px;"><%add_follow%></button>
+			{{# } }}
+		</div>
+		{{# if(d.order_info.now_state=='1'){ }}
+		<table class="y-page-table" id="add_follow_main" style="margin-bottom: 10px;">
+			<colgroup>
+				<col width="7%">
+				<col width="10%">
+				<col width="10%">
+				<col width="10%">
+				<col width="10%">
+				<col width="20%">
+			</colgroup>
+			<tr>
+				<td class="td_bg_addrecord"><%real_name%></td>  <!--姓名-->
+				<td class="td_bg_addrecord"><%cllection_target%></td> <!--跟进对象-->
+				<td class="td_bg_addrecord"><%cllection_contact_phone%></td><!--联系电话-->
+				<td class="td_bg_addrecord"><%cllection_contact_state%></td><!--电话状态-->
+				<td class="td_bg_addrecord"><%follow_record%></td><!--跟进记录-->
+			</tr>
+			<tr>
+				<td>
+					<div class="layui-input-inline" style="width:80%" >
+						<input type="text" class="layui-input " id="flow_name"  name="flow_name" value=""/>
+					</div>
+				</td>  <!--姓名-->
+				<td>
+					<div class="layui-input-inline" style="width:80%">
+						<select class="sel-style" id="flow_relation" name="flow_relation" >
+							<option value="0"><%please_sel%></option><!--请选择-->
+						</select>
+					</div>
+				</td> <!--跟进对象-->
+				<td>
+					<div class="layui-input-inline" style="width:80%" >
+						<input id="flow_phone" type="text" class="layui-input "  name="flow_phone" value=""   />
+					</div>
+				</td><!--联系电话-->
+				<td>
+					<div class="layui-input-inline"  style="width:80%">
+						<select class="sel-style" id="phone_status" name="phone_status" >
+							<option value="0"><%please_sel%></option><!--请选择-->
+						</select>
+					</div>
+				</td><!--电话状态-->
+				<td>
+					<div class="layui-input-inline" style="margin-top: 10px;">
+						<textarea  class="sel-textarea" id="flow_desc" name="flow_desc"  v-bind:placeholder="input_info"  style="max-width:360px;max-height:130px;"></textarea>
+					</div>
+				</td><!--跟进记录-->
+			</tr>
+		</table>
+		{{# } }}
+		<div style="margin-top: 5px;">
+			<table class="y-page-table" id="handle_log"></table>
+			<div id="handle_logPage"></div>
+		</div>
+	</div>
+
+	<div class="y-page-body y-page-top10" >
+            <div class="layui-inline y-page-info">
+                <span class="detail_tab_title">&nbsp;<%living_certification_record%></span>
+            </div>
+            <table class="y-page-table" >
+				<colgroup>
+					<col width="10%">
+					<col width="20%">
+					<col width="10%">
+					<col width="20%">
+					<col width="10%">
+					<col width="20%">
+				</colgroup>
+            	<tr id="idCard_living_photos">
+            		<td class="td_bg"><%id_card_photo%></td>
+            		<td>
+            			{{# if(d.face_log.image_ref1){ }}
+            		    <img class="y-img-li" data-original="{{d.face_log.image_ref1}}" src="{{d.face_log.image_ref1}}" alt="{{d.field.lang_img.id_card_photo}}"/>
+            		    {{# } }}
+            		</td>
+            		<td class="td_bg"><%living_photo%></td>
+            		<td colspan="3">
+            			 {{#  layui.each(d.face_log.face_image, function(index, item){ }}
+						    <img class="y-img-li" data-original="{{item}}" src="{{item}}" alt='{{d.field.lang_img.living_photo}} {{index}}'/>
+						  {{#  }); }}
+            		</td>
+            	</tr>
+            	<tr>
+            		<td class="td_bg"><%error_tips%></td>
+            		<td>{{d.face_log.error_message?d.face_log.error_message:''}}</td>
+            		<td class="td_bg"><%match_scores%></td>
+            		<td>{{d.face_log.match_score || ''}}</td>
+
+					<td class="td_bg"><%apply_time%></td>
+					<td>{{d.face_log.add_time || '-'}}</td>
+            	</tr>
+            </table>
+    </div>
+
+	<div class="y-page-body y-page-top10" >
+		<div class="layui-inline y-page-info" style="line-height: 48px;">
+			<span class="detail_tab_title" >&nbsp;<%history_order_record%></span><!-- 历史订单记录 -->
+		</div>
+		<div>
+			<table class="y-page-table"  id="history_order_record"></table>
+		</div>
+	</div>
+</div>
+
+<!-- 定义手机通讯录 start -->
+<script type="text/html" id="phoneList">
+	<div style="margin:20px;" id="phone">
+		<form class="layui-form layui-form-pane" id="inCollectionForm" action="" style="margin-top: 10px;">
+			<div class="y-right-pane">
+				<div class="y-right-box searching" >
+					<input type="text" name="search_string" id="phone_search_string"  placeholder="姓名/手机号"   autocomplete="off" class="layui-input"  />
+					<label class="layui-form-label" onclick="layui.verify_detail.PhoneBookSearch('phone_list')"><i class="fa fa-search fa-lg"></i></label>
+				</div>
+			</div>
+		</form>
+		<div class="layui-inline" style="margin:10px " ><!--手机通讯录 三个table-->
+			<button class="layui-btn layui-btn-radius layui-btn-sm contact_btn"  id="tab1"  onclick="layui.verify_detail.PhoneBookSwitch('benren_list');" ><%benren%></button>
+			<button class="layui-btn layui-btn-radius layui-btn-sm contact_btn"  id="tab2"  onclick="layui.verify_detail.PhoneBookSwitch('contact_list1');" ><%contact_1%></button>
+			<button class="layui-btn layui-btn-radius layui-btn-sm contact_btn"  id="tab3"  onclick="layui.verify_detail.PhoneBookSwitch('contact_list2');" ><%contact_2%></button>
+			<button class="layui-btn layui-btn-radius layui-btn-sm contact_btn"  id="tab6"  onclick="layui.verify_detail.PhoneBookSwitch('phone_list');" ><%phone_book%></button>
+			<button class="layui-btn layui-btn-radius layui-btn-sm contact_btn"    onclick="layui.verify_detail.operationData('{{d.order_info.order_no}}')" >运营商数据</button>
+		</div>
+		<table class="y-page-table" id="phone_list"></table>
+	</div>
+</script>
+
+<!-- 定义通话记录 start -->
+<script type="text/html" id="callList">
+	<div style="margin:20px;"  >
+		<table class="y-page-table" id="call_list"></table>
+	</div>
+</script>
+
+<!-- 定义短信记录 start -->
+<script type="text/html" id="smsList">
+	<div style="margin:20px"  id="sms_div" >
+		<table class="y-page-table" id="sms_list"></table>
+	</div>
+</script>
+
+<link rel="stylesheet" href="css/iconfont.css">
+<link rel="stylesheet" type="text/css" href="css/reportNew.css?v=201708101"/>
+<!-- 定义百融反欺诈数据 start -->
+<script type="text/html" id="bairongDatas">
+	<div class="operation_main">
+		<div class="info baseInfo" id="bairong_html_div">
+		</div>
+	</div>
+</script>
+<!-- 定义百融反欺诈数据 end -->
+
+<!-- 定义新颜数据 start -->
+<script type="text/html" id="xinyanDatas">
+	<div class="operation_main">
+		<div class="info baseInfo" id="xinyan_html_div">
+		</div>
+	</div>
+</script>
+<!-- 定义新颜数据 end -->
+
+<script src="viewer/js/jquery.min.js"></script>
+<script src="viewer/js/viewer-jquery.min.js"></script>
+<script>
+    $(function() {
+        $('#others_photo').viewer({
+            url: 'data-original',
+        });
+        $('#idCard_living_photos').viewer({
+            url: 'data-original',
+        });
+        $('#best_face_photos').viewer({
+            url: 'data-original',
+        });
+    });
+</script>

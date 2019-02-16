@@ -1,0 +1,39 @@
+<div id="page_business_switch">
+<div class="y-page-title"><%business_switch%></div>
+<div class="y-page-body" style="padding:20px">
+	<form id="businessForm" class="layui-form" autocomplete="off">
+		<input type="hidden" id="type_id" name="type_id">
+		<div class="layui-form-item">
+			<label class="layui-form-label layui-form-label-lan"><%status%></label>
+			<div class="layui-input-block">
+				<input type="checkbox" id="status" name="status" lay-skin="switch" lay-filter="switchbusiness" v-bind:lay-text="open_gate +'|'+ close_gate">
+			</div>
+		</div>
+		<div id="hid_code" class="layui-form-item" style="display: none;">
+			<label class="layui-form-label layui-form-label-lan"><%captcha_status%></label>
+			<div class="layui-input-block">
+				<input type="checkbox" id="code_status" name="code_status" lay-skin="switch" lay-filter="switchCodeStatus" v-bind:lay-text="opened +'|'+ closed">
+			</div>
+		</div>
+	
+		<!--<div id="sms_set" class="layui-form-item" style="display: none;">-->
+			<!--<label class="layui-form-label layui-form-label-lan"><%sms_set%></label>-->
+				<!--<div class="layui-input-block" style="padding: 5px;">-->
+					<!--<input type="radio" name="sms_choice" lay-filter="sms_choice"  title="创蓝"   value="1"  >-->
+					<!--<input type="radio" name="sms_choice" lay-filter="sms_choice"  title="天一弘" value="2"  >-->
+				<!--</div>-->
+		<!--</div>-->
+	</form>
+</div>
+</div>
+
+<script type="text/javascript">
+layui.use(['businessSwitch'],function(){
+	var businessSwitch = layui.businessSwitch;
+	//初始化页面
+	businessSwitch.initView();
+	//处理监听事件
+	businessSwitch.tool();
+})
+
+</script>

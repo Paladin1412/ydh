@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="Expires" content="0"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Cache-control" content="no-cache"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>资信云报告</title>
+    <link rel="stylesheet" href="https://credit.baiqishi.com/clweb/resources/lib/iconfont/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="https://credit.baiqishi.com/clweb/resources/css/reportNew.css?v=201708101"/>
+    <script src="https://credit.baiqishi.com/clweb/resources/lib/jquery-2.1.1/jquery.min.js"></script>
+    <script src="https://credit.baiqishi.com/clweb/resources/lib/echarts/echarts.common.min.js"></script>
+    <script src="https://credit.baiqishi.com/clweb/resources/lib/html2canvas/html2canvas.js"></script>
+    <script src="https://credit.baiqishi.com/clweb/resources/js/reportNew.js"></script>
+
+
+    <script>
+        $(function () {
+            $("#downloadToPdf").click(function () {
+                var partnerId = $("#hid_partnerId").val();
+
+                $("#downloadToPdf").hide();
+                html2canvas(document.body).then(function(canvas) {
+                    var src = canvas.toDataURL('image/png');
+                    $("#downloadToPdf").show();
+                    var resRoot = 'https://credit.baiqishi.com/clweb/resources';
+                    var reportSn = $("#reportSn").text();
+                    var name= $("#name").text();
+                    var certNo= $("#certNo").text();
+                    var mobile= $("#mobile").text();
+                    var type="资信云报告";
+
+                    jQuery.ajax({
+                        url: "/clweb/api/common/generatepdf",
+                        type: 'POST',
+                        dataType: 'json',
+                        contentType:'application/x-www-form-urlencoded; charset=utf-8',
+                        data: {
+                            "reportSn": reportSn,
+                            "src": src,
+                            "partnerId": partnerId
+                        },
+                        success: function (data) {
+                            var resultCode = data.resultCode;
+                            if(resultCode == "CCOM1000"){
+                                window.open("/clweb/api/common/download?reportSn="+reportSn+"&name="+name+"&certNo="+certNo+"&mobile="+mobile+"&type="+type+"&partnerId="+partnerId);
+                            }else{
+                                $.message.pop(data.resultDesc, "error", 3000);
+                            }
+                        }
+                    });
+                });
+            });
+        });
+
+    </script>
+
+</head>
+<body>
+    <header class="header">
+        <figure class="logo">
+            <i class="iconfont icon-logo"></i>
+            <span>资信云报告</span>
+        </figure>
+        <p>请求过于频繁，请稍后再试</p>
+    </header>
+
+    <footer class="footer">
+        <p>资信报告声明：</p>
+        <p>本报告中所呈现的信息由申请人授权提供，数据所有权归申请人所有，如申请人与其互联网服务提供商对呈现数据所有权产生的纠纷，本公司将不承担相关责任。</p>
+    </footer>
+
+
+
+
+</body>
+</html>

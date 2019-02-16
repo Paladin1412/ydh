@@ -1,0 +1,107 @@
+
+
+
+
+<div id="page_company_apply">
+	<div class="y-page-title"><%apply_company%></div>
+	<div class="y-page-body">
+		<form id="applyCompanyForm" class="layui-form" autocomplete="off">
+			<div class="layui-form-item">
+				<label class="layui-form-label layui-form-label-id"><%cp_num%></label>
+				<div class="layui-input-inline">
+						<input type="text" id="cp_num" name="cp_num" lay-verify="cpNum" v-bind:placeholder="cp_num" class="layui-input" style="width:300px">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label layui-form-label-id"><%cp_name%></label>
+				<div class="layui-input-inline">
+						<input type="text" id="cp_name" name="cp_name" lay-verify="cpName" v-bind:placeholder="cp_name" class="layui-input" style="width:300px">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label layui-form-label-id"><%cp_mobile%></label>
+				<div class="layui-input-inline">
+						<input type="text" id="cp_mobile" name="cp_mobile" lay-verify="cpMobile" v-bind:placeholder="cp_mobile" class="layui-input" style="width:300px">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label layui-form-label-id"><%cp_contact_person%></label>
+				<div class="layui-input-inline">
+						<input type="text" id="cp_contact_person" name="cp_contact_person" lay-verify="cpContactPerson" v-bind:placeholder="cp_contact_person" class="layui-input" style="width:300px">
+				</div>
+			</div>
+					<div class="layui-form-item">
+				<label class="layui-form-label layui-form-label-id"><%cp_leg_person%></label>
+				<div class="layui-input-inline">
+						<input type="text" id="cp_leg_person" name="cp_leg_person" lay-verify="cpLegPerson" v-bind:placeholder="cp_leg_person" class="layui-input" style="width:300px">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label layui-form-label-id"><%cp_email%></label>
+				<div class="layui-input-inline">
+						<input type="text" id="cp_email" name="cp_email" lay-verify="cpEmail" v-bind:placeholder="cp_email" class="layui-input" style="width:300px">
+				</div>
+			</div>
+			<div class="layui-form-item layui-form-text">
+				<label class="layui-form-label layui-form-label-id"><%cp_address%></label>
+				<div class="layui-input-inline">
+					<textarea id="cp_address" name="cp_address" lay-verify="cpaddress" v-bind:placeholder="cp_address" class="layui-textarea" style="width:300px"></textarea>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label layui-form-label-id"><%cp_country%></label>
+				<div class="layui-input-inline" style="width:300px">
+					<select id="cp_country" name="cp_country" class="layui-select" lay-verify="cpCountry">
+					</select>
+				</div>
+			</div>
+
+			<input type="hidden" id="business_card" name="business_card" id="business_card" lay-verify="businessCard" value="" class="layui-input"/>
+			<input type="hidden" id="cp_contract" name="cp_contract" id="cp_contract" lay-verify="cpContract" value="" class="layui-input"/>
+
+			<div class="layui-form-item">
+				<fieldset class="layui-elem-field layui-field-title layui-elem-field-id" style="margin-top: 30px;">
+					<legend><%business_card%></legend>
+				</fieldset> 
+				<div class="layui-upload-drag layui-upload-drag-id" id="business_card_upload">
+					<i class="layui-icon"></i>
+					<p><%drag_and_upload%></p>
+				</div>
+				<blockquote class="layui-elem-quote layui-quote-nm layui-elem-quote-id" style="margin-top: 10px;">
+					<%look_picture%>：
+					<div class="layui-upload-list" id="business_card_all">
+					</div>
+				</blockquote>
+			</div>
+			<div class="layui-form-item">
+				<fieldset class="layui-elem-field layui-field-title layui-elem-field-id" style="margin-top: 30px;">
+					<legend><%contract%></legend>
+				</fieldset> 
+				<div class="layui-upload-drag layui-upload-drag-id" id="cp_contract_upload">
+					<i class="layui-icon"></i>
+					<p><%drag_and_upload%></p>
+				</div>
+				<blockquote class="layui-elem-quote layui-quote-nm layui-elem-quote-id" style="margin-top: 10px;">
+					<%look_picture%>：
+					<div class="layui-upload-list" id="cp_contract_all">
+					</div>
+				</blockquote>
+			</div>
+			<div class="layui-form-item">
+				<div class="layui-input-block">
+					<button class="layui-btn layui-btn-radius y-btn-red layui-btn-id" lay-submit lay-filter="applyCompanyForm"><%now_submit%></button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<script type="text/javascript">
+	layui.use([ 'company_apply' ], function() {
+		var company_apply = layui.company_apply;
+		//初始化
+		company_apply.initView();
+		//处理监听事件
+		company_apply.tool();
+	});
+</script>

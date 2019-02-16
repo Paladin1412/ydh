@@ -1,0 +1,199 @@
+body{
+    background-color: #f6f7fb;
+}
+
+.y-page-title{
+    color:#f03232;
+}
+.y-page-title-span{
+    color:#f03232;
+}
+.y-btn-deepblue{ /*深蓝色*/
+    background-color: #1c3368;
+    padding-right:10px;
+    padding-left:10px;
+}
+.y-btn-red{ /*红色*/
+    background-color: #f03232;
+    padding-right:10px;
+    padding-left:10px;
+}
+.y-btn-diblue{ /*浅蓝色*/
+    background-color: #e2ebff;
+}
+.y-btn-oldLace{ /*老饰带色*/
+    background-color: #fdf6ee;
+}
+.layui-btn-normal{
+    background-color: #f03232!important;
+}
+
+.y-btn-green {/*绿色*/
+    background-color: #0bc07d;
+    padding-right:10px;
+    padding-left:10px;
+}
+
+.y-left-pane .layui-input:hover
+,.y-left-pane .layui-form-selected .layui-input
+,.y-left-pane .layui-form-selectup .layui-input
+,.y-left-pane .layui-form-unselect .layui-input
+,.y-left-pane .layui-input
+,.y-right-pane .layui-input:hover
+,.y-right-pane .layui-form-selected .layui-input
+,.y-right-pane .layui-form-selectup .layui-input
+,.y-right-pane .layui-form-unselect .layui-input
+,.y-right-pane .layui-input{
+    border-color: #f03232;!important;
+}
+
+
+.y-left-pane .layui-form-label{ /*日期icon*/
+
+    border-color: #f03232;!important;
+    color: #f03232!important;
+}
+.y-left-pane .layui-input {
+    border-radius:  0px 100px 100px 0px;
+    border-color: #f03232;
+}
+.y-right-pane .layui-input {
+    border-radius: 100px 100px  100px 100px;
+    border-color: #f03232;
+}
+.layui-edge { /*select 向下箭头*/
+    border-top-color:#f03232!important;
+}
+.layui-form-select dl { /*select下拉框*/
+    border-color: #f03232!important;
+}
+.layui-form-select dl dd.layui-this, .layui-form-select dl dd:hover{
+    background-color: #FFF!important;
+    color: #f03232!important;
+}
+
+.layui-laypage .layui-laypage-curr .layui-laypage-em {
+    background-color: #f03232!important;
+}
+
+.y-right-pane .layui-input:hover, .y-left-pane .layui-input:hover{
+    border-color: #f03232!important;
+}
+.y-right-pane .layui-input:focus, .y-left-pane .layui-input:focus{
+    border-color: #f03232!important;
+}
+.y-right-pane .layui-input:active, .y-left-pane .layui-input:active{
+    border-color: #f03232!important;
+}
+
+.y-right-pane .layui-form-label {
+    position: absolute;
+    right:0px;
+    top:0px;
+    border-radius:  0px 100px 100px 0px ;
+    width:48px;
+    border-color: #f03232!important;
+}
+.cuishou .y-right-box .layui-form-label{
+    border-radius:  0px 100px 100px 0px !important;
+    border-color: #f03232!important;
+}
+
+.lanItem a{
+    border:1px solid #f03232;
+    border-radius: 50px;
+    height: 25px;
+    display:inline-block;
+    line-height: 25px;min-width:120px;
+}
+#subLan{
+    border:1px solid #f03232;
+    border-radius: 3px;
+    background-color:#ffffff;
+    margin-top: 7px;
+    z-index:10;
+}
+/*表格标题栏颜色*/
+.layui-table-header table  tr th {
+    background-color:#fdf6ee;
+    font-weight:bold;
+}
+.show_span{
+   color:#b5b5b5;
+}
+
+.td_a{
+    color:#f03232!important;
+}
+.td_bg {
+    background-color: #fdf6ee;
+    text-align: left;
+}
+.td_bg_addrecord{
+    background-color: #fdf6ee;
+    text-align: center;
+    font-weight: bold;
+}
+
+.contact_btn{
+    background-color: #f03232;
+    margin-right: 10px;
+    border-radius: 8px;
+}
+.detail_tab_title{
+    color:#565656;
+    border-left:3px solid #fdf6ee;
+    margin-left:26px;
+    font-size:26px;
+}
+
+.layui-form-radioed>i {
+    color:#f03232;
+}
+
+.layui-nav-itemed li a,.layui-nav-tree .layui-nav-child dd.layui-this>a,li.layui-nav-itemed>a {
+    background-color: #FFF!important;
+    color:#f03232!important;
+}
+
+
+
+.layui-form-onswitch{
+    border-color: #f03232;
+    background-color: #f03232;
+}
+.y-echars-date .layui-input  {
+    border-radius: 0px 100px 100px 0px;
+    border-color: #f03232 !important;
+    height:40px !important;
+}
+.lay-echarts-date-btn{
+    border:1px solid #f03232!important;
+}
+.y-echars-date .layui-form-label {
+    border: #f03232 solid 1px!important;
+    color: #f03232!important;
+}
+.lay-echarts-date-btn .layui-form-label:hover{
+    border-color: #f03232!important;
+}
+.y-echars-date .layui-input:hover{
+    border-color: #f03232!important;
+}
+
+/*角色编辑复选框*/
+.layui-form-checked[lay-skin=primary] i{
+    border-color: #f03232!important;
+    background-color: #f03232!important;
+    color: #fff!important;
+}
+.layui-form-checked i, .layui-form-checked:hover i{
+    color: #f03232!important;
+}
+.fa-lg{
+    color:#f03232;
+}
+/*数据报告*/
+.operation_main{
+    margin:30px 20px;
+}

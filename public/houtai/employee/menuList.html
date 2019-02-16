@@ -1,0 +1,280 @@
+<style>
+    .menu_th{
+       text-align:center;
+        /*font-family: Adobe 黑体 Std;*/
+        font-weight: bold;
+       background-color: #E2EBFF!important;
+    }
+    .menu_th_name{
+        /*font-family:"微软雅黑";*/
+        /*font-family:"Adobe 黑体 Std" !important;*/
+        font-weight: bold;
+        background-color: #E2EBFF!important;
+    }
+    .menu_td{
+       text-align:center
+    }
+</style>
+<div  id="viewDetail">
+    <div id="paramPage">
+        <div class="y-page-title"><%menu_list%></div>
+        <div class="y-page-body" style="padding:20px">
+                        <div class="layui-row" style="">
+                            <div class="layui-col-xs6 layui-col-md12" style="">
+                                <div class="layui-btn-group">
+                                    <!--<a class="layui-btn" lay-filter="expand">展开节点</a>-->
+                                    <a class="layui-btn y-btn-red layui-btn-sm" lay-filter="expandAll"><%all_show%></a><!--全部展开-->
+                                </div>
+                                <div class="layui-btn-group">
+                                    <!--<a class="layui-btn" lay-filter="collapse">折叠节点</a>-->
+                                    <a class="layui-btn y-btn-red layui-btn-sm" lay-filter="collapseAll"><%all_hide%></a><!--全部折叠-->
+                                </div>
+                                <div class="layui-form-inline" style="float:right;width:100px;">
+                                    <a class="layui-btn layui-btn-radius layui-btn-sm y-btn-red" onclick="layui.menuList.menuAdd()"><%menu_add%></a>
+                                </div>
+                                <div id="treeMenuNew" class="grid" style="margin-top:20px;"> </div>
+                            </div>
+                        </div>
+
+        </div>
+
+    </div>
+</div>
+
+<script id="view" type="text/html">
+    <table class="layui-table menu_table">
+        <thead>
+        <tr style="	background-color:#E2EBFF;">
+            <td class="menu_th_name" style="text-align: left"><%menu_name%></td><!--菜单名称-->
+            <td class="menu_th">ID</td>
+            <td class="menu_th">PID</td>
+            <td class="menu_th"><%level%></td><!--位置-->
+            <td class="menu_th"><%status%></td><!--状态-->
+            <td class="menu_th">排序</td><!--排序-->
+            <td class="menu_th"><%caozuo%></td><!--操作-->
+        </tr>
+        </thead>
+        <tbody>
+        {{# layui.each(d.rows,function(index,r){ }}
+        <tr>
+            {{# if (r.level == "Top") { }}
+                  <td class="menu_td_green" style="text-align: left">&nbsp;&nbsp;<i class="layui-icon">&#xe658;</i>&nbsp;&nbsp;{{r.name}}</td>
+            {{# } else if(r.level == "Left") { }}
+                 <td class="menu_td_blue" style="text-align: left"> │ ──&nbsp;&nbsp;{{r.name}}</td>
+            {{# } else if(r.level == "Right") { }}
+                 <td class="menu_td_yellow" style="text-align: left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; │&nbsp; └─&nbsp;&nbsp;{{r.name}}</td>
+            {{# } }}
+
+            <td class="menu_td">{{r.id}}</td>
+            <td class="menu_td">{{r.pid}}</td>
+
+            {{# if (r.level == "Top") { }}
+             <td class="menu_td_green" >{{r.level}}</td>
+            {{# } else if(r.level == "Left") { }}
+            <td class="menu_td_blue" style="font-weight: bold;"> {{r.level}}</td>
+            {{# } else if(r.level == "Right") { }}
+            <td class="menu_td_yellow" style="font-weight: bold;">{{r.level}}</td>
+            {{# } }}
+
+            {{# if (r.status == "0") { }}
+            <!--<td><a class="layui-btn  layui-btn-sm layui-btn-warm"><%active%></a></td>&lt;!&ndash;正常&ndash;&gt;-->
+            <td><a class="menu_td_yellow" style="font-weight: bold;"><%active%></a></td><!--正常-->
+            {{# } else { }}
+            <td><a class="" style="font-weight: bold;color: red;"><%forbidden%></a></td><!--禁用-->
+            {{# } }}
+            <td class="menu_td">{{r.sort || ""}}</td>
+            <td style="text-align:center">
+                <a class="layui-btn layui-btn-sm y-btn-red" style="display:inline-block;text-align:center" onclick="layui.menuList.menuEdit('{{r.id}}' ,'1')">
+                <!--<i class="layui-icon">&#xe642;</i>-->
+                    &nbsp;<%edit%>&nbsp; </a>
+            </td><!--编辑-->
+        </tr>
+        {{# }); }}
+        </tbody>
+    </table>
+</script>
+
+
+
+<!-- 定义添加菜单页面start -->
+<script type="text/html" id="addMenu">
+    <div class="y-page-body" style="padding:0 20px;margin:25px auto; color:#999999;border:none;">
+        <form  id="addMenuForm" class="layui-form" action="" autocomplete="off">
+            <div class="layui-form-item">
+                <label class="layui-form-label layui-form-label-title" ><%menu_name%></label><!--菜单名称-->
+                <div class="layui-input-inline ">
+                    <input type="text" class="layui-input open_main"   name="name" lay-verify="name"  value="" placeholder="<%example%> 菜单列表"  />
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label layui-form-label-title" >英语</label><!--英语-->
+                <div class="layui-input-inline ">
+                    <input type="text" class="layui-input open_main "  name="en_name"  lay-verify="en_name" value=""  />
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label layui-form-label-title" ><%group_mark%></label><!--所属分组 -->
+                <div class="layui-input-inline ">
+                    <input type="text" class="layui-input open_main"   name="group"  lay-verify="group"  value="" placeholder="<%example%> Approval" />
+                </div>
+                <!--<div class="layui-form-mid layui-word-aux" style="left: 10px" > 如:审批系统=>Approval</div>-->
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label layui-form-label-title" ><%higher_level%></label><!-- 上级 -->
+                <div class="layui-input-inline" style="width:330px;">
+                    <select  id="pid"  name="pid" lay-verify="pid" ></select>
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label layui-form-label-title" ><%sort%></label><!--排序 -->
+                <div class="layui-input-inline ">
+                    <input type="text" class="layui-input open_main"   name="sort"  lay-verify="sort"  value="" placeholder="<%example%> 1-100" />
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label layui-form-label-title" ><%level%></label><!-- 位置 -->
+                <div class="layui-input-inline open_main" style="width:330px">
+                    <select id="level"  name="level" lay-verify="level" >
+                        <option value="Top"> <%level_one%> </option>
+                        <option value="Left"> <%level_two%> </option>
+                        <option value="Right"> <%level_three%> </option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label layui-form-label-title" ><%status%></label><!-- 状态 -->
+                <div class="layui-input-block open_main" style="text-align: left">
+                    <input type="radio" name="status" value="0" title="<%active%>"  checked="checked" /> <!--正常 /激活-->
+                    <input type="radio" name="status" value="1" title="<%forbidden%>" /><!--禁用-->
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label layui-form-label-title" ><%power%></label><!--控制器@方法-->
+                <div class="layui-input-inline ">
+                    <input type="text" class="layui-input open_main"  name="right"  lay-verify="right"  value=""  placeholder="<%example%> Menu@menu_list"/>
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label layui-form-label-title" >URL</label><!--URL-->
+                <div class="layui-input-inline ">
+                    <input type="text" class="layui-input open_main "  name="url" lay-verify=""  value="" placeholder="<%example%> business/userList.html" />
+                </div>
+            </div>
+
+            <div class="layui-form-item" style="text-align: center;margin-top:30px;">
+                <div class="layui-inline" style=" text-align: center">
+                    <button class="layui-btn layui-btn-radius layui-btn-sm y-btn-red"  id="add_menu_sub" style="min-width:100px;"  lay-submit lay-filter="addMenuForm"  ><%submit%></button><!--确认提交-->
+                </div>
+            </div>
+        </form>
+    </div>
+</script>
+<!-- 定义添加菜单页面end -->
+
+
+<!-- 定义编辑菜单页面start -->
+<script type="text/html" id="editMenu">
+    <div class="y-page-body" style="padding:0 20px;margin:10px auto; color:#999999;border:none;">
+        <form  id="editMenuForm" class="layui-form" action="" autocomplete="off">
+            <input type="hidden"   id="edit_menu_id" lay-verify="edit_menu_id"  value="{{d.id}}" />
+            <div class="layui-form-item">
+                <label class="layui-form-label layui-form-label-title" ><%menu_name%></label><!--菜单名称-->
+                <div class="layui-input-inline ">
+                    <input type="text" class="layui-input open_main"   name="name" lay-verify="name"  value="{{d.name}}" />
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label layui-form-label-title" >英语</label><!--英语-->
+                <div class="layui-input-inline ">
+                    <input type="text" class="layui-input open_main "  name="en_name"  lay-verify="en_name" value="{{d.en_name}}"  />
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label layui-form-label-title" ><%group_mark%></label><!--所属分组 -->
+                <div class="layui-input-inline ">
+                    <input type="text" class="layui-input open_main"   name="group"  lay-verify="group"  value="{{d.group}}" />
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label layui-form-label-title" ><%higher_level%></label><!-- 上级 -->
+                <div class="layui-input-inline" style="width:330px;">
+                    <select  id="pid_edit"  name="pid" lay-verify="pid" >
+                    </select>
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label layui-form-label-title" ><%sort%></label><!--排序 -->
+                <div class="layui-input-inline ">
+                    <input type="text" class="layui-input open_main"   name="sort"  lay-verify="sort"  value="{{d.sort || ""}}" placeholder="<%example%> 1-100" />
+                </div>
+                <!--<div class="layui-form-mid layui-word-aux" style="left: 10px" > <%example%>1-100 排序</div>-->
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label layui-form-label-title" ><%level%></label><!-- 位置 -->
+                <div class="layui-input-inline open_main" style="width:330px">
+                    <select id="level_edit"  name="level" lay-verify="level" >
+                        <option value="Top"> <%level_one%> </option>
+                        <option value="Left"> <%level_two%> </option>
+                        <option value="Right"> <%level_three%> </option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label layui-form-label-title" ><%status%></label><!-- 状态 -->
+                <div class="layui-input-block open_main" style="text-align: left">
+                    {{# if(d.status == '0'){ }}
+                     <input type="radio" name="status" value="0" title="<%active%>"  checked="checked" /> <!--正常 /激活-->
+                     <input type="radio" name="status" value="1" title="<%forbidden%>" /><!--禁用-->
+                    {{# } }}
+
+                    {{# if(d.status == '1'){ }}
+                    <input type="radio" name="status" value="0" title="<%active%>"   /> <!--正常 /激活-->
+                    <input type="radio" name="status" value="1" title="<%forbidden%>" checked="checked"/><!--禁用-->
+                    {{# } }}
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label layui-form-label-title" ><%power%></label><!--控制器@方法-->
+                <div class="layui-input-inline ">
+                    <input type="text" class="layui-input open_main"  name="right"  lay-verify="right"  value="{{d.right}}" />
+                </div>
+                <!--<div class="layui-form-mid layui-word-aux">例如:Menu@menu_list</div>&lt;!&ndash;控制器名称@方法   Menu@menu_list&ndash;&gt;-->
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label layui-form-label-title" >URL</label><!--URL-->
+                <div class="layui-input-inline ">
+                    <input type="text" class="layui-input open_main "  name="url" lay-verify=""  value="{{d.url || ''}}" placeholder="<%example%> business/userList.html" />
+                </div>
+            </div>
+
+            <div class="layui-form-item" style="text-align: center;margin-top:30px;">
+                <div class="layui-inline" style=" text-align: center">
+                    <button class="layui-btn layui-btn-radius layui-btn-sm y-btn-red"  id="edit_menu_sub" style="min-width:100px;"  lay-submit lay-filter="editMenuForm"  ><%submit%></button><!--确认提交-->
+                </div>
+            </div>
+        </form>
+    </div>
+</script>
+
+<script type="text/javascript">
+    layui.use(['menuList'],function(){
+        //初始化页面
+        layui.menuList.initView();
+        // <!--//处理监听事件-->
+        layui.menuList.tool();
+    })
+
+</script>

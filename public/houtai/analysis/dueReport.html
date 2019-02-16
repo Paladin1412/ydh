@@ -1,0 +1,35 @@
+<div id="due_report">
+	<div class="y-page-title"><%due_report%></div>
+	<div class="y-page-body" style="padding:20px">
+		<form class="layui-form layui-form-pane">
+			<div class="layui-form-item">
+				<div class="layui-form-inline y-left-pane">
+					<label class="layui-form-label"><i class="fa fa-calendar fa-lg"></i></label>
+					<div class="layui-input-inline">
+						<input type="text" class="layui-input" id="date"  v-bind:placeholder="repay_time" autocomplete="off" />
+					</div>
+				</div>
+            <div id="hid_company" class="layui-form-inline  y-right-pane y-select" style="display: none;">
+                <div class="layui-input-inline" >
+                    <select name="company_id" id="company_id" lay-filter="company_id"  style="border-radius: 0px 100px 100px 0px;"></select>
+                </div>
+            </div>
+			</div>
+		</form>
+		<div class="y-data-table">
+			<div id="dueReportTable" class="layui-table"></div>
+			<div id="dueReportPage"></div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+layui.use(['dueReport'],function(){
+	var dueReport = layui.dueReport;
+	//初始化页面
+	dueReport.initView();
+	
+	//处理监听事件
+	dueReport.tool();
+})
+</script>

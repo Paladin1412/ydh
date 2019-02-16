@@ -1,0 +1,99 @@
+<html></html>
+<div id="page_not_verify">
+    <div id="all_verify_parent">
+        <div class="y-page-title"><%dai_zhongshen%></div>
+        <div class="y-page-body">
+            <div style="margin-bottom:20px;">
+                <span class="raunwen-title"><%verify_not_order%></span>
+                <div id="hid_fenpei" style="display:none;float:left;">
+                    <div class="layui-inline" >
+                        <button type="button" onclick="layui.finalAppeal.piliangFen()" class="layui-btn layui-btn-sm layui-btn-radius y-btn-red" style="min-width:65px;margin-left:10px;"><%batch_distribution%></button>
+                    </div>
+                    <div class="layui-inline" >
+                        <button type="button" onclick="layui.finalAppeal.autoFen()" class="layui-btn layui-btn-sm  layui-btn-radius y-btn-red" style="min-width:65px;margin-left:10px;"> <%auto_distribution%></button>
+                    </div>
+                </div>
+            </div>
+            <form id="not_verify_form" action="" class="layui-form layui-form-pane">
+                <div class="layui-form-item ">
+                    <div class="layui-form-inline  y-left-pane ">
+                        <label class="layui-form-label  "><i class="fa fa-calendar fa-lg"></i></label>
+                        <div class="layui-input-inline">
+                            <input name="date" type="text" class="layui-input" id="not_verify_date" v-bind:placeholder="apply_date" />
+                        </div>
+                    </div>
+
+
+                    <div id="hid_company" class="layui-form-inline  y-right-pane y-select" style="display:none;">
+                        <div class="layui-input-inline">
+                            <select lay-filter="company_id" name="company_id" id="company_id"  style="border-radius: 0px 100px 100px 0px;"></select>
+                        </div>
+
+                    </div>
+                    <input name="order_field" type="hidden" id="order_field"/><!-- 排序字段 -->
+                    <input name="order_sort" type="hidden" id="order_sort"/><!-- 排序类型 -->
+
+                    <div id="hid_user" class="layui-form-inline y-right-pane y-select" style="display:none;">
+                        <!-- <label class="layui-form-label "><span style="color: #A7EDD8;" class="fa fa-user fa-lg"></span></label> -->
+                        <div class="layui-input-inline">
+                            <select name="admin_id"  id="admin_id" style="border-radius: 0px 100px 100px 0px;">
+                            </select>
+                        </div>
+                    </div>
+
+                    <!--专案客户-->
+                    <div class="layui-form-inline  y-right-pane y-select">
+                        <div class="layui-input-inline" style="width:150px;">
+                            <select id="quality" name="quality"  style="border-radius: 0px 100px 100px 0px;"></select>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-inline  y-right-pane ">
+                        <div class="y-right-box" style="width:240px;">
+                            <input name="search_string" type="text" id="search_string" class="layui-input" v-bind:placeholder="order_no+'/'+fullname+'/'+phone_no+'/'+idcard_no" />
+                            <label onclick="layui.finalAppeal.getData(1,50)" class="layui-form-label  "><i class="fa fa-search fa-lg"></i></label>
+                        </div>
+
+                    </div>
+
+
+
+
+                </div>
+            </form>
+            <!-- <div id="hid_fenpei" class="layui-form-item " style="display:none;margin-top:20px;">
+                        <button onclick="layui.not_verify.autoFen()" class="layui-btn  layui-btn-radius y-btn-red"><%auto_distribution%></button>
+                        <button  onclick="layui.not_verify.piliangFen()" class="layui-btn  layui-btn-radius y-btn-red"><%batch_distribution%></button>
+                    </div> -->
+
+            <div class="y-data-table">
+                <div id="not_verify_table" lay-filter="notVerifyTableEvent"></div>
+                <div id="not_verify_page"></div>
+            </div>
+        </div>
+    </div>
+    <div id="all_verify_detail"></div>
+</div>
+
+<!-- 定义分配信审员页面start -->
+<script type="text/html" id="assistXinshen">
+    <div style="margin:15px auto;width:93%;">
+        <form id="xinshenForm" class="layui-form" action="" autocomplete="off">
+            <table class="layui-table" lay-skin="line" id="xisnhenList"></table>
+            <div class="layui-inline" style="margin-top: 20px; ">
+                <button class="layui-btn layui-btn-radius layui-btn-sm y-btn-red"   id="distri_submits" style=" margin-left:245px; min-width:100px;"    lay-submit="" lay-filter="assistXinshenForm"   > <%distribution%> </button><!-- 分配 -->
+            </div>
+        </form>
+    </div>
+</script>
+
+
+
+<script type="text/javascript">
+
+    layui.use(['finalAppeal'], function(){
+        layui.finalAppeal.initView();
+        layui.finalAppeal.tool();
+    });
+
+</script>

@@ -1,0 +1,168 @@
+
+<div id="paramPage">
+	<div class="y-page-title"><%role_manager%></div>
+	<div class="y-page-body" style="padding:20px">
+		<form class="layui-form layui-form-pane">
+			<div class="layui-form-item" id="hid_add_role" style="display: none;">
+				<div class="layui-form-inline" style="float:right;width:100px;">
+					<a class="layui-btn layui-btn-radius layui-btn-sm y-btn-red" onclick="layui.roleManager.viewAdd()"><%add_role%></a>
+				</div>
+			</div>
+		</form>
+
+		<div class="y-data-table">
+			<div id="roleManagerTable" class="layui-table" lay-filter="roleManagerEvent"></div>
+			<div id="roleManagerPage"></div>
+		</div>
+	</div>
+</div>
+
+<script type="text/html" id="roleManagerTool">
+	{{# if(d.role_id != '1'){ }}
+		<a class="layui-btn layui-btn-xs y-btn-red" lay-event="edit"><%edit%></a>
+		{{# if(d.status == '0'){ }}
+		<a class="layui-btn layui-btn-xs y-btn-warm " lay-event="forbidden"><%forbidden%></a>
+		{{# }else{ }}
+		<a class="layui-btn layui-btn-xs y-btn-moren" lay-event="active"><%active%></a>
+		{{# } }}
+	{{# } }}
+</script>
+
+
+<!-- 定义编辑页面start -->
+
+<div id="itemPage" style="display:none;">
+	<div class="y-page-title"><%edit_role%></div>
+	<div class="y-page-body" style="padding:20px">
+		<form id="editRoleForm" class="layui-form" autocomplete="off">
+			<input type="hidden" id="role_id" name="role_id">
+			<div class="layui-form-item">
+				<label class="layui-form-label layui-form-label-id"><%role_name%></label>
+				<div class="layui-input-inline">
+					<input type="text" id="role_name" name="role_name" lay-verify="roleName" v-bind:placeholder="input_role_name" class="layui-input" style="width:300px">
+				</div>
+			</div>
+			<div class="layui-form-item layui-form-text">
+				<label class="layui-form-label layui-form-label-id"><%role_desc%></label>
+				<div class="layui-input-inline">
+					<textarea id="role_desc" name="role_desc" lay-verify="roleDesc" v-bind:placeholder="textarea_role_desc" class="layui-textarea" style="width:300px"></textarea>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label layui-form-label-id"><%status%></label>
+				<div class="layui-input-block">
+					<input type="checkbox" id="status" name="status" lay-skin="switch" lay-filter="switchStatus" v-bind:lay-text="opened +'|'+ closed">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label layui-form-label-id"><%cp_name%></label>
+				<div class="layui-input-inline" style="width:300px">
+
+					<select id="company_id" name="company_id" lay-verify="companyId"></select>
+				</div>
+			</div>
+			<!--<div class="layui-form-item">-->
+				<!--<label class="layui-form-label layui-form-label-id"><%role_type%></label>-->
+				<!--<div class="layui-input-inline" style="width:300px">-->
+					<!--<select id="role_type" name="admin_class" lay-verify="roleType"></select>-->
+				<!--</div>-->
+			<!--</div>-->
+
+			<!--<div class="layui-form-item">-->
+				<!--<label class="layui-form-label layui-form-label-id"><%permission_allocation%></label>-->
+				<!--<div id="xtree2" style="height:600px;overflow:auto;" class="xtree_contianer"></div>-->
+			<!--</div>-->
+
+			<div class="layui-form-item">
+				<label class="layui-form-label layui-form-label-id"><%permission_allocation%></label>
+				<!--<label class="layui-form-label">选择权限</label>-->
+				<div class="layui-form-block">
+					<!--<button type="button" class="layui-btn layui-btn-primary" onclick="layui.roleManager.getMaxDept('#LAY-auth-tree-index')">获取树的深度</button>-->
+					<button type="button" class="layui-btn layui-btn-primary layui-btn-sm" onclick="layui.roleManager.checkAll('#LAY-auth-tree-index')">全选</button>
+					<button type="button" class="layui-btn layui-btn-primary layui-btn-sm" onclick="layui.roleManager.uncheckAll('#LAY-auth-tree-index')">全不选</button>
+					<button type="button" class="layui-btn layui-btn-primary layui-btn-sm" onclick="layui.roleManager.showAll('#LAY-auth-tree-index')">全部展开</button>
+					<button type="button" class="layui-btn layui-btn-primary layui-btn-sm" onclick="layui.roleManager.closeAll('#LAY-auth-tree-index')">全部隐藏</button>
+					<!--<button type="button" class="layui-btn layui-btn-primary" onclick="layui.roleManager.getNodeStatus('#LAY-auth-tree-index')">获取节点状态</button>-->
+				</div>
+				<div class="layui-input-block" style="margin-top: 10px ;">
+					<div id="LAY-auth-tree-index"></div>
+				</div>
+			</div>
+
+
+			<div class="layui-form-item" style="margin-top: 10px;">
+				<div class="layui-input-block">
+					<button class="layui-btn layui-btn-radius y-btn-red layui-btn-id" lay-submit lay-filter="editRoleForm" type="button"><%now_submit%></button>
+				</div>
+			</div>
+			<!--<div class="layui-form-item">-->
+				<!--<div class="layui-input-block">-->
+					<!--<button class="layui-btn layui-btn-sm layui-btn-radius y-btn-red layui-btn-id" id="edit_role_form" type="button"><%now_submit%></button>-->
+				<!--</div>-->
+			<!--</div>-->
+		</form>
+	</div>
+</div>
+
+
+
+<!-- 定义添加页面start -->
+<div id="addPage" style="display:none;">
+	<div class="y-page-title"><%add_role%></div>
+	<div class="y-page-body" style="padding:20px">
+		<form id="addRoleForm" class="layui-form" autocomplete="off">
+			<!--<input type="hidden" id="role_id" name="role_id">-->
+			<div class="layui-form-item">
+				<label class="layui-form-label layui-form-label-id"><%role_name%></label>
+				<div class="layui-input-inline">
+					<input type="text" id="role_name_add" name="role_name_add" lay-verify="roleName" v-bind:placeholder="input_role_name" class="layui-input" style="width:300px">
+				</div>
+			</div>
+			<div class="layui-form-item layui-form-text">
+				<label class="layui-form-label layui-form-label-id"><%role_desc%></label>
+				<div class="layui-input-inline">
+					<textarea id="role_desc_add" name="role_desc_add" lay-verify="roleDesc" v-bind:placeholder="textarea_role_desc" class="layui-textarea" style="width:300px"></textarea>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label layui-form-label-id"><%status%></label>
+				<div class="layui-input-block">
+					<input type="checkbox" id="status_add" name="status_add" lay-skin="switch" lay-filter="switchStatusAdd" v-bind:lay-text="opened +'|'+ closed">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label layui-form-label-id"><%cp_name%></label>
+				<div class="layui-input-inline" style="width:300px">
+					<select id="company_id_add" name="company_id_add" lay-verify="companyId">
+					</select>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label layui-form-label-id"><%role_type%></label>
+				<div class="layui-input-inline" style="width:300px">
+					<select id="role_type_add" name="admin_class" lay-verify="roleType"></select>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<div class="layui-input-block">
+					<button class="layui-btn layui-btn-radius y-btn-red layui-btn-id" lay-submit lay-filter="addRoleForm"><%now_submit%></button>
+				</div>
+			</div>
+		</form>
+	</div>  
+</div>
+<!-- 定义添加页面end -->
+
+
+
+<script type="text/javascript">
+layui.use(['roleManager'],function(){
+	var roleManager = layui.roleManager;
+	//初始化页面
+	roleManager.initView();
+	//处理监听事件
+	roleManager.tool();
+})
+
+</script>
+

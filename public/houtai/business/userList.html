@@ -1,0 +1,41 @@
+<div id="page_user_list">
+<div class="y-page-title"><%user_list%></div>
+<div class="y-page-body" style="padding:20px">
+	<form class="layui-form layui-form-pane">
+		<div class="layui-form-item">
+			<div class="y-left-pane layui-form-inline">
+				<label class="layui-form-label  "><i class="fa fa-calendar fa-lg"></i></label>
+				<div class="layui-input-inline"  >
+					<input type="text" class="layui-input" id="date"  v-bind:placeholder="reg_time" autocomplete="off" />
+				</div>
+			</div>
+			<div id="hid_company" class="layui-form-inline  y-right-pane y-select" style="display:none;">
+				<div class="layui-input-inline">
+					<select id="company_id" name="company_id"  style="border-radius: 0px 100px 100px 0px;">
+					</select>
+				</div>
+			</div>
+			<div class="y-right-pane layui-form-inline">
+				<div class="y-right-box" style="width:300px;">
+					<input type="text" id="search_string" v-bind:placeholder="user_name +'/'+ idcard_no +'/'+ phone_no" autocomplete="off" class="layui-input"  />
+					<label class="layui-form-label" onclick="layui.userList.getData(1,50)"><i class="fa fa-search fa-lg"></i></label>
+				</div>
+			</div>
+		</div>
+	</form>
+	<div class="y-data-table">
+		<div id="userListTable" class="layui-table"></div>
+		<div id="userListPage"></div>
+	</div>
+</div>
+</div>
+
+
+<script type="text/javascript">
+layui.use(['userList'],function(){
+	var userList = layui.userList;
+	//初始化页面
+	userList.initView();
+})
+
+</script>

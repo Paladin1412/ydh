@@ -1,0 +1,131 @@
+<div id="page_business_statistical">
+	<div class="y-page-title-report">
+		<span><%business_statistical%></span>
+		<form class="layui-form layui-form-pane" style="width:80%;display:block;margin-left:25%;margin-top:-30px;">
+			<div class="layui-form-item ">
+				<div class="layui-form-inline  y-left-pane " >
+					<label class="layui-form-label  "><i class="fa fa-calendar fa-lg"></i></label>
+					<div class="layui-input-inline">
+						<input name="date" type="text" id="date" class="layui-input" id="all_verify_date" v-bind:placeholder="click_time" />
+					</div>
+				</div>
+				<div id="hid_company" class="y-right-pane y-select">
+					<div class="layui-input-inline">
+						<select id="company_id" name="company_id" lay-filter='companyId' style="border-radius: 0px 100px 100px 0px;">
+						</select>
+					</div>
+				</div>
+				<div id="hid_search_btn">
+					<a class="layui-btn layui-btn-sm layui-btn-normal" onclick="layui.businessStatistics.search()"><%search%></a>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="layui-row" id="businessStatistics">
+		<div class="layui-col-xs6" >
+			<div  id="clickAmountDiv" class="y-echars-col2">
+				<div id="clickAmount" class="y-echars-height350"></div>
+				<div id="clickAmountSpan" class="y-echars-span"></div>
+			</div>
+		</div><!-- 总点击量 -->
+	     
+	    <div class="layui-col-xs6" >
+			<div  id="channelRatioDiv" class="y-echars-col2">
+				<div id="channelRatio" class="y-echars-height350"></div>
+				<div id="channelRatioSpan" class="y-echars-span">
+				</div>
+			</div>
+		</div><!-- 渠道点击占比 -->
+	
+
+		<div class="layui-col-xs6" >
+			<div  id="downloadRatioDiv" class="y-echars-col2">
+				<div id="downloadRatio" class="y-echars-height350"></div>
+				<div id="downloadRatioSpan" class="y-echars-span">
+				</div>
+			</div>
+		</div><!-- 下载占比 -->
+		
+		<div class="layui-col-xs6" >
+			<div  id="channelDownloadRatioDiv" class="y-echars-col2">
+				<div id="channelDownloadRatio" class="y-echars-height350"></div>
+				<div id="channelDownloadRatioSpan" class="y-echars-span"></div>
+			</div>
+		</div><!-- 渠道下载占比 -->
+
+		<div class="layui-col-xs6" >
+			<div  id="regRatioDiv" class="y-echars-col2">
+				<div id="regRatio" class="y-echars-height350"></div>
+				<div id="regRatioSpan" class="y-echars-span">
+				</div>
+			</div>
+		</div><!-- 注册占比 -->
+		
+		<div class="layui-col-xs6" >
+			<div  id="channelRegRatioDiv" class="y-echars-col2">
+				<div id="channelRegRatio" class="y-echars-height350"></div>
+				<div id="channelRegRatioSpan" class="y-echars-span">
+				</div>
+			</div>
+		</div><!-- 渠道注册占比 -->
+		
+		<div class="layui-col-xs6" >
+			<div  id="applyRatioDiv" class="y-echars-col2">
+				<div id="applyRatio" class="y-echars-height350"></div>
+				<div id="applyRatioSpan" class="y-echars-span">
+				</div>
+			</div>
+		</div><!-- 申请占比 -->
+		
+		<div class="layui-col-xs6" >
+			<div  id="channelApplyRatioDiv" class="y-echars-col2">
+				<div id="channelApplyRatio" class="y-echars-height350"></div>
+				<div id="channelApplyRatioSpan" class="y-echars-span">
+				</div>
+			</div>
+		</div><!-- 渠道申请占比 -->
+	</div>
+<div>
+	<div class="y-page-title">
+		<button id="channel_show" class="layui-btn layui-btn-radius layui-btn-xs y-btn-red echart-btn-show" onclick="layui.businessStatistics.echart_show();" >
+			<i class="fa fa-angle-double-down"></i><span style="color:#b5b5b5">&nbsp;&nbsp;<%echart_show%></span>
+		</button><!--展示-->
+	</div>
+	<div class="y-page-title">
+		<button  id="channel_hidden" class="layui-btn layui-btn-radius layui-btn-xs y-btn-red echart-btn-hide" style="display:none" onclick="layui.businessStatistics.echart_hidden();" >
+			<i class="fa fa-angle-double-up"></i><span style="color:#b5b5b5">&nbsp;&nbsp;<%echart_hide%></span>
+		</button> <!--收起-->
+	</div>
+</div>
+	<div id="Channel_list" style="display:none"><!--各个渠道信息列表-->
+		<div class="y-page-body" >
+			<div class="layui-row">
+				<!--<div class="layui-col-xs6 layui-col-md12" >-->
+					<!--<form class="layui-form layui-form-pane" id="statisticsDetailsListForm" action="">-->
+						<!--<div class="layui-form-item  y-left-pane" style="height:30px" >-->
+							<!--<label class="layui-form-label" style="height: 25px;line-height: 25px !important;"><i class="fa fa-calendar fa-lg"></i></label>-->
+							<!--<div class="layui-input-inline">-->
+								<!--<input type="text" class="layui-input" id="date"   name="date"   v-bind:placeholder="return_date"   autocomplete="off"  style="height: 25px;"/>-->
+							<!--</div>-->
+						<!--</div>-->
+					<!--</form>-->
+					<!-- 渠道明细页面列表-->
+					<!--<div id="Channellist" style="display:none">-->
+					<div>
+						<div id="ChannelMainTable" class="layui-table"  lay-filter="ChannelMainTableEvent" style="margin-top:5px;"></div>
+						<div id="ChannelMainPage"></div>
+					</div>
+				<!--</div>-->
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+layui.use(['businessStatistics'],function(){
+	var businessStatistics = layui.businessStatistics;
+	//初始化页面
+	businessStatistics.initView();
+})
+
+</script>

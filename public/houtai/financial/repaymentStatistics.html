@@ -1,0 +1,94 @@
+<style>
+    /*.layui-table-main .layui-table-cell{ height:10px;line-height: 10px;}*/
+    /*.layui-table-header table tr th { height:20px;}*/
+</style>
+<div  id="viewDetail">
+    <div id="paramPage">
+        <div class="y-page-title"><%repay_statistic%></div><!--还款统计-->
+        <div class="y-page-body" style="">
+            <div class="layui-row" style="">
+                <div class="layui-col-xs6 layui-col-md12" style="">
+                    <form class="layui-form layui-form-pane" id="repaymentStatisticsListForm" action="">
+                         <div class="layui-form-item  y-left-pane" >
+                            <label class="layui-form-label"><i class="fa fa-calendar fa-lg"></i></label>
+                            <div class="layui-input-inline">
+                                <input type="text" class="layui-input" id="date"   name="date"   v-bind:placeholder="return_date"   autocomplete="off" />
+                            </div>
+                             <div class="layui-form-inline  y-right-pane y-select"  id="companyList" style="display: none;">
+                                 <div class="layui-input-inline" >
+                                     <select name="company_id" id="company_id" lay-filter="company_id"  style="border-radius: 0px 100px 100px 0px;"></select>
+                                 </div>
+                             </div>
+                        </div>
+                    </form>
+
+                     <!-- 统计明细页面列表-->
+                    <div id="caiwulist">
+                             <div id="DetailsListTable" class="layui-table"  lay-filter="DetailsListTableEvent" style="margin-top:5px;"></div>
+                             <div id="DetailsListPage"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="y-page-body"  >
+            <div id="guest_cost_list"><!--获客成本列表-->
+                    <div id="GuestCostTable" class="layui-table"  lay-filter="GuestCostTableEvent" style="margin-top:5px;"></div>
+            </div>
+        </div>
+        <div class="y-page-title">
+            <button id="echart_show" class="layui-btn layui-btn-radius layui-btn-xs y-btn-oldLace echart-btn-show" style="display: block;" onclick="layui.repaymentStatistics.echart_show();" >
+                <i class="fa fa-angle-double-down" style="color:#1c3368"></i><span class="show_span">&nbsp;&nbsp;<%echart_show%></span>
+            </button><!--展示-->
+        </div>
+        <div class="y-page-title">
+            <button  id="echart_hidden" class="layui-btn layui-btn-radius layui-btn-xs y-btn-oldLace echart-btn-hide" style="display:none" onclick="layui.repaymentStatistics.echart_hidden();" >
+                <i class="fa fa-angle-double-up" style="color:#1c3368"></i><span class="show_span">&nbsp;&nbsp;<%echart_hide%></span>
+            </button> <!--收起-->
+        </div>
+
+        <!--所有财务统计报表-->
+        <div class="layui-row"  id="financeStatistics" style="display: none;">
+            <!--<div class="layui-col-xs6"  >-->
+                <!--<div  id="yingshouHuikuanDiv" class="y-echars-col2" >-->
+                    <!--<div id="yingshouHuikuanRatio" class="y-echars-height350"></div>-->
+                    <!--&lt;!&ndash;<div class="finance-charts">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<label class="finance-tag">应还本息 : </label> <a>158932200</a>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                    <!--<div id="yingshouHuikuanRatioSpan" class="y-echars-span"></div>-->
+                <!--</div>-->
+            <!--</div>&lt;!&ndash; 本息回收（应收回款） &ndash;&gt;-->
+
+            <!--<div class="layui-col-xs6"  >-->
+                <!--<div  id="sumHuikuanDiv" class="y-echars-col2">-->
+                    <!--<div id="sumHuikuanRatio" class="y-echars-height350"></div>-->
+                <!--</div>-->
+                <!--&lt;!&ndash;<div class="finance-charts">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<label class="finance-tag">应收总额 : </label> <a>158932200</a>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--<div id="sumHuikuanRatioSpan" class="y-echars-span"></div>-->
+            <!--</div>&lt;!&ndash; 总回款(含罚息) &ndash;&gt;-->
+            <div class="layui-col-xs6" >
+                <div  id="huiShouDiv" class="y-echars-col2" style="height: 400px;">
+                    <div id="huiShouRatio" class="y-echars-height350" style="height: 380px"></div>
+                </div>
+                <div id="huiShouRatioSpan" class="y-echars-span"></div>
+            </div><!-- 回收报告 -->
+            <div class="layui-col-xs6">
+                <div  id="benjinHuishouDiv" class="y-echars-col2" style="height: 400px;">
+                    <div id="benjinHuishouRatio" class="y-echars-height350" style="height: 380px"></div>
+                </div>
+                <div id="benjinHuishouRatioSpan" class="y-echars-span" style="right:28%;"></div>
+                <!--<div id="benjinHuishouRatioSpan" class="y-benjinhuishou-echars-span" style="border:1px solid red;"></div>-->
+            </div><!-- 本金回收 -->
+
+        </div>
+
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    layui.use(['repaymentStatistics'], function(){
+        layui.repaymentStatistics.initView();
+    });
+</script>

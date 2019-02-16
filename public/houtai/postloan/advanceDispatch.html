@@ -1,0 +1,78 @@
+<div  id="viewDetail">
+    <div id="paramPage">
+             <div class="y-page-title"><%advanceDispatch%></div><!--提早派单-->
+             <div class="y-page-body" >
+              <!--<span class="raunwen-title"><%not_over_order%></span> &lt;!&ndash;未逾期订单&ndash;&gt;-->
+            <div id="hid_fenpei" style="display:none;  float:left;">
+                <div class="layui-inline" id="Distribution" >
+                    <button class="layui-btn layui-btn-radius layui-btn-sm y-btn-red"  type="button"  style="margin-left:10px; margin-bottom:5px;min-width: 65px;" onclick="layui.advanceDispatch.Distribution();" ><%distribution%></button><!--分配-->
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn layui-btn-radius layui-btn-sm y-btn-red"  type="button"  style="margin-left:10px;margin-bottom:5px"  onclick="layui.advanceDispatch.freeDistribution()" ><%free_fistribution%></button><!--自由分配-->
+                </div>
+            </div>
+
+        <form  id="advanceDispatchForm" class="layui-form layui-form-pane" action="" style="margin-top: 10px;">
+            <div class="layui-form-item  y-left-pane" >
+                <input type="hidden"  id="order_field"  name="order_field" value=""> <!-- 排序字段 -->
+                <input type="hidden"  id="order_sort"   name="order_sort"  value=""> <!-- 排序类型 -->
+                <label class="layui-form-label  "><i class="fa fa-calendar fa-lg"></i></label>
+                <div class="layui-input-inline"  style="position:relative;">
+                    <input type="text" class="layui-input" name="date"  id="date"    v-bind:placeholder="return_date" autocomplete="off" />
+                </div>
+                <div class="layui-form-inline  y-right-pane y-select" id="companyList"  style="display:none;">
+                    <div class="layui-input-inline">
+                        <select name="company_id"  id="company_id"  lay-filter="company_id" style="border-radius: 0px 100px 100px 0px;"></select>
+                    </div>
+                </div>
+                <div class="layui-form-inline  y-right-pane y-select " id="csyList" style="margin-left:10px;display: none;">
+                    <!-- <label class="layui-form-label "><span style="color: #A7EDD8;" class="fa fa-user fa-lg"></span></label> -->
+                    <div class="layui-input-inline">
+                        <select name="admin_id" id="admin_id"  style="border-radius: 0px 100px 100px 0px;"></select>
+                    </div>
+                </div>
+            
+                <div class="y-right-pane cuishou"   >
+                    <div class="y-right-box searching" >
+                        <input type="text" name="search_string" id="search_string"  v-bind:placeholder="order_no+'/'+fullname+'/'+phone_no"   autocomplete="off" class="layui-input"  />
+                        <label class="layui-form-label" onclick="layui.advanceDispatch.getData(1,20)"><i class="fa fa-search fa-lg"></i></label>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+
+        <div id="advanceDispatchListTable" class="layui-table" lay-filter="advanceDispatchListTableEvent" ></div>
+        <div id="advanceDispatchListPage"></div>
+    </div>
+    </div>
+
+    <!--催收详情-->
+    <div id="allColDetail"></div>
+</div>
+
+
+<!-- 定义分配催收员页面start -->
+<script type="text/html" id="assistCollector">
+    <div style="margin:15px auto;width:93%;">
+        <form id="assistCollectorForm" class="layui-form" action="" autocomplete="off">
+            <table class="layui-table" lay-skin="line" id="CollectorList"></table>
+            <div class="layui-inline" style="margin-top: 20px;" >
+                    <button class="layui-btn layui-btn-radius layui-btn-sm y-btn-red"  id="distri_submit" style="min-width:100px; margin-left:370px;"    lay-submit="" lay-filter="assistCollectorForm" > <%distribution%></button><!--分配-->
+            </div>
+        </form>
+    </div>
+</script>
+
+
+
+
+<script type="text/javascript">
+    layui.use(['advanceDispatch'],function(){
+        var advanceDispatch = layui.advanceDispatch;
+        //初始化页面
+        advanceDispatch.initView();
+        //处理监听事件
+        advanceDispatch.tool();
+    });
+</script>

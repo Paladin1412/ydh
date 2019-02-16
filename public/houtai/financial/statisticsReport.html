@@ -1,0 +1,50 @@
+<!--<div id="y-page-channel">-->
+<div id="y-page-user">
+    <div class="y-page-title-report">
+        <span><%statistic_report%></span>
+        <form class="layui-form layui-form-pane" style="width:20%;display:block;margin-left:250px;margin-top:-30px;">
+            <div id="hid_company" class="y-right-pane y-select" style="display: none;">
+                <div class="layui-input-inline" >
+                    <select id="company_id" name="company_id" lay-filter='companyId' style="border-radius: 0px 100px 100px 0px;"></select>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="layui-row" style="">
+        <div class="layui-col-xs6 layui-col-md12" style="">
+            <!--收支金额统计报表-->
+            <div  id="szStatisticsDiv" class="y-echars-col-md12">
+                <span class="eharts-title"><a href="javascript:;" style="font-size: 20px;"><%shouzhi_report%></a></span><!--收支金额统计-->
+                <div id="szStatistics" class="y-echars-height500"></div>
+                <div class="layui-form-item lay-echarts" style="top:20px;">
+                    <div class="layui-form-item y-echars-date" style="top: 10px;">
+                        <label class="layui-form-label" style="border: #A7EDD8 solid 1px;"><i class="fa fa-calendar fa-lg"></i></label>
+                        <div class="layui-input-block" style="width: 180px;">
+                            <input type="text" class="layui-input" id="sztjDate" v-bind:placeholder="please_select_time" />
+                        </div>
+                        <div class="lay-echarts-date-btn">
+                            <div class="left szStatistics-btn-left" onclick="layui.statisticsReport.initszStatistics('2')">
+                                <span><%week%></span>
+                            </div>
+                            <div class="right szStatistics-btn-right" onclick="layui.statisticsReport.initszStatistics('1')">
+                                <span><%month%></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script type="text/javascript">
+
+    layui.use('statisticsReport',function(){
+        layui.statisticsReport.initView();
+        layui.statisticsReport.tool();
+    })
+
+</script>

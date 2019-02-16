@@ -1,0 +1,1025 @@
+---------------------------------------------------------------
+[ 2019-02-14T17:12:15+08:00 ] 192.168.10.1 GET /
+[ info ] www.ydh.work/ [运行时间：0.237170s][吞吐率：4.22req/s] [内存消耗：360.22kb] [文件加载：48]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.ydh.work',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\channel\controller\Index->index[ /home/vagrant/code/admin_ydh/application/channel/controller/Index.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ BEHAVIOR ] Run app\loan\behavior\MongoLog @app_end [ RunTime:0.014458s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-14T17:12:16+08:00 ] 192.168.10.1 GET /
+[ info ] www.ydh.work/ [运行时间：0.114923s][吞吐率：8.70req/s] [内存消耗：226.04kb] [文件加载：48]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.ydh.work',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\channel\controller\Index->index[ /home/vagrant/code/admin_ydh/application/channel/controller/Index.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ BEHAVIOR ] Run app\loan\behavior\MongoLog @app_end [ RunTime:0.009308s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-14T17:14:15+08:00 ] 192.168.10.1 GET /
+[ info ] www.ydh.work/ [运行时间：0.061663s][吞吐率：16.22req/s] [内存消耗：226.04kb] [文件加载：48]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.ydh.work',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\channel\controller\Index->index[ /home/vagrant/code/admin_ydh/application/channel/controller/Index.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ BEHAVIOR ] Run app\loan\behavior\MongoLog @app_end [ RunTime:0.008553s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-14T17:15:56+08:00 ] 192.168.10.1 GET /
+[ info ] www.ydh.work/ [运行时间：0.085669s][吞吐率：11.67req/s] [内存消耗：226.04kb] [文件加载：48]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.ydh.work',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\channel\controller\Index->index[ /home/vagrant/code/admin_ydh/application/channel/controller/Index.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ BEHAVIOR ] Run app\loan\behavior\MongoLog @app_end [ RunTime:0.005680s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-14T17:18:43+08:00 ] 192.168.10.1 GET /
+[ info ] www.ydh.work/ [运行时间：30.186436s][吞吐率：0.03req/s] [内存消耗：392.22kb] [文件加载：53]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Mobile Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.ydh.work',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/public/../application/admin/lang/zh-cn.php
+[ info ] [ RUN ] app\admin\controller\Index->index[ /home/vagrant/code/admin_ydh/application/admin/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\loan\behavior\MongoLog @app_end [ RunTime:30.078763s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-14T17:18:43+08:00 ] 192.168.10.1 POST /admin/Base/get_role_type
+[ info ] www.ydh.work/admin/Base/get_role_type [运行时间：0.091019s][吞吐率：10.99req/s] [内存消耗：258.94kb] [文件加载：44]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Base',
+    2 => 'get_role_type',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ydh.work/houtai/',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.ydh.work',
+  'accept' => '*/*',
+  'content-length' => '6',
+  'connection' => 'keep-alive',
+  'host' => 'www.ydh.work',
+)
+[ info ] [ PARAM ] array (
+  'type' => '2',
+)
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/public/../application/admin/lang/zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-14T17:18:43+08:00 ] 192.168.10.1 POST /admin/Base/menu_list
+[ info ] www.ydh.work/admin/Base/menu_list [运行时间：0.221613s][吞吐率：4.51req/s] [内存消耗：257.34kb] [文件加载：44]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Base',
+    2 => 'menu_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ydh.work/houtai/',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.ydh.work',
+  'accept' => '*/*',
+  'content-length' => '0',
+  'connection' => 'keep-alive',
+  'host' => 'www.ydh.work',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/public/../application/admin/lang/zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-14T17:18:43+08:00 ] 192.168.10.1 POST /admin/Base/get_role_type
+[ info ] www.ydh.work/admin/Base/get_role_type [运行时间：0.243009s][吞吐率：4.12req/s] [内存消耗：257.75kb] [文件加载：44]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Base',
+    2 => 'get_role_type',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ydh.work/houtai/',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.ydh.work',
+  'accept' => '*/*',
+  'content-length' => '6',
+  'connection' => 'keep-alive',
+  'host' => 'www.ydh.work',
+)
+[ info ] [ PARAM ] array (
+  'type' => '1',
+)
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/public/../application/admin/lang/zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-14T17:18:43+08:00 ] 192.168.10.1 POST /admin/Base/get_user_info
+[ info ] www.ydh.work/admin/Base/get_user_info [运行时间：0.187088s][吞吐率：5.35req/s] [内存消耗：257.35kb] [文件加载：44]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Base',
+    2 => 'get_user_info',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ydh.work/houtai/',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.ydh.work',
+  'accept' => '*/*',
+  'content-length' => '0',
+  'connection' => 'keep-alive',
+  'host' => 'www.ydh.work',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/public/../application/admin/lang/zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-14T17:19:13+08:00 ] 192.168.10.1 POST /admin/Login/set_lang
+[ info ] www.ydh.work/admin/Login/set_lang [运行时间：30.081570s][吞吐率：0.03req/s] [内存消耗：333.16kb] [文件加载：55]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Login',
+    2 => 'set_lang',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ctiiphlu7h0ndme6c7frru2m7g',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ydh.work/houtai/login.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.ydh.work',
+  'accept' => '*/*',
+  'content-length' => '7',
+  'connection' => 'keep-alive',
+  'host' => 'www.ydh.work',
+)
+[ info ] [ PARAM ] array (
+  'lang' => 'cn',
+)
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/public/../application/admin/lang/zh-cn.php
+[ info ] [ RUN ] app\admin\controller\Login->set_lang[ /home/vagrant/code/admin_ydh/application/admin/controller/Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\loan\behavior\MongoLog @app_end [ RunTime:30.030572s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-14T17:19:19+08:00 ] 192.168.10.1 POST /admin/Login/set_lang
+[ info ] www.ydh.work/admin/Login/set_lang [运行时间：30.097124s][吞吐率：0.03req/s] [内存消耗：331.88kb] [文件加载：55]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Login',
+    2 => 'set_lang',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ctiiphlu7h0ndme6c7frru2m7g',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ydh.work/houtai/login.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.ydh.work',
+  'accept' => '*/*',
+  'content-length' => '7',
+  'connection' => 'keep-alive',
+  'host' => 'www.ydh.work',
+)
+[ info ] [ PARAM ] array (
+  'lang' => 'cn',
+)
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/public/../application/admin/lang/zh-cn.php
+[ info ] [ RUN ] app\admin\controller\Login->set_lang[ /home/vagrant/code/admin_ydh/application/admin/controller/Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\loan\behavior\MongoLog @app_end [ RunTime:30.043154s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-14T17:19:20+08:00 ] 192.168.10.1 POST /admin/Login/set_lang
+[ info ] www.ydh.work/admin/Login/set_lang [运行时间：30.068620s][吞吐率：0.03req/s] [内存消耗：331.88kb] [文件加载：55]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Login',
+    2 => 'set_lang',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ctiiphlu7h0ndme6c7frru2m7g',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ydh.work/houtai/login.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.ydh.work',
+  'accept' => '*/*',
+  'content-length' => '7',
+  'connection' => 'keep-alive',
+  'host' => 'www.ydh.work',
+)
+[ info ] [ PARAM ] array (
+  'lang' => 'cn',
+)
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/public/../application/admin/lang/zh-cn.php
+[ info ] [ RUN ] app\admin\controller\Login->set_lang[ /home/vagrant/code/admin_ydh/application/admin/controller/Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\loan\behavior\MongoLog @app_end [ RunTime:30.013555s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-14T17:19:21+08:00 ] 192.168.10.1 POST /admin/Login/set_lang
+[ info ] www.ydh.work/admin/Login/set_lang [运行时间：30.118916s][吞吐率：0.03req/s] [内存消耗：331.88kb] [文件加载：55]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Login',
+    2 => 'set_lang',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ctiiphlu7h0ndme6c7frru2m7g',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ydh.work/houtai/login.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.ydh.work',
+  'accept' => '*/*',
+  'content-length' => '7',
+  'connection' => 'keep-alive',
+  'host' => 'www.ydh.work',
+)
+[ info ] [ PARAM ] array (
+  'lang' => 'cn',
+)
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/public/../application/admin/lang/zh-cn.php
+[ info ] [ RUN ] app\admin\controller\Login->set_lang[ /home/vagrant/code/admin_ydh/application/admin/controller/Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\loan\behavior\MongoLog @app_end [ RunTime:30.040590s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-14T17:19:30+08:00 ] 192.168.10.1 POST /admin/Login/set_lang
+[ info ] www.ydh.work/admin/Login/set_lang [运行时间：30.206024s][吞吐率：0.03req/s] [内存消耗：332.57kb] [文件加载：55]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Login',
+    2 => 'set_lang',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ctiiphlu7h0ndme6c7frru2m7g',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ydh.work/houtai/login.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Mobile Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.ydh.work',
+  'accept' => '*/*',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'content-length' => '7',
+  'connection' => 'keep-alive',
+  'host' => 'www.ydh.work',
+)
+[ info ] [ PARAM ] array (
+  'lang' => 'cn',
+)
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/public/../application/admin/lang/zh-cn.php
+[ info ] [ RUN ] app\admin\controller\Login->set_lang[ /home/vagrant/code/admin_ydh/application/admin/controller/Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\loan\behavior\MongoLog @app_end [ RunTime:30.049583s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-14T17:20:00+08:00 ] 192.168.10.1 POST /admin/Login/verify_open?0.6474366000199774
+[ info ] www.ydh.work/admin/Login/verify_open?0.6474366000199774 [运行时间：30.097487s][吞吐率：0.03req/s] [内存消耗：330.64kb] [文件加载：54]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Login',
+    2 => 'verify_open',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ctiiphlu7h0ndme6c7frru2m7g; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ydh.work/houtai/login.html',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.ydh.work',
+  'accept' => '*/*',
+  'content-length' => '0',
+  'connection' => 'keep-alive',
+  'host' => 'www.ydh.work',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  '0_6474366000199774' => '',
+)
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/public/../application/admin/lang/zh-cn.php
+[ info ] [ RUN ] app\admin\controller\Login->verify_open[ /home/vagrant/code/admin_ydh/application/admin/controller/Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] Connection timed out[/home/vagrant/code/admin_ydh/thinkphp/library/think/db/Connection.php:295]
+---------------------------------------------------------------
+[ 2019-02-14T17:20:09+08:00 ] 192.168.10.1 POST /admin/Login/login
+[ info ] www.ydh.work/admin/Login/login [运行时间：30.075988s][吞吐率：0.03req/s] [内存消耗：331.09kb] [文件加载：54]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ctiiphlu7h0ndme6c7frru2m7g; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ydh.work/houtai/login.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.ydh.work',
+  'accept' => '*/*',
+  'content-length' => '60',
+  'connection' => 'keep-alive',
+  'host' => 'www.ydh.work',
+)
+[ info ] [ PARAM ] array (
+  'user_name' => 'tupulian',
+  'password' => 'weilaihao123',
+  'verify' => '',
+  'remember' => 'on',
+)
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/public/../application/admin/lang/zh-cn.php
+[ info ] [ RUN ] app\admin\controller\Login->login[ /home/vagrant/code/admin_ydh/application/admin/controller/Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] Connection timed out[/home/vagrant/code/admin_ydh/thinkphp/library/think/db/Connection.php:295]
+---------------------------------------------------------------
+[ 2019-02-14T17:20:30+08:00 ] 192.168.10.1 GET /admin/Login/login
+[ info ] www.ydh.work/admin/Login/login [运行时间：30.082450s][吞吐率：0.03req/s] [内存消耗：330.52kb] [文件加载：54]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ctiiphlu7h0ndme6c7frru2m7g; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.ydh.work',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/public/../application/admin/lang/zh-cn.php
+[ info ] [ RUN ] app\admin\controller\Login->login[ /home/vagrant/code/admin_ydh/application/admin/controller/Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\loan\behavior\MongoLog @app_end [ RunTime:30.035355s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-14T17:20:39+08:00 ] 192.168.10.1 POST /admin/Login/login
+[ info ] www.ydh.work/admin/Login/login [运行时间：58.204336s][吞吐率：0.02req/s] [内存消耗：331.09kb] [文件加载：54]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ctiiphlu7h0ndme6c7frru2m7g; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ydh.work/houtai/login.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.ydh.work',
+  'accept' => '*/*',
+  'content-length' => '60',
+  'connection' => 'keep-alive',
+  'host' => 'www.ydh.work',
+)
+[ info ] [ PARAM ] array (
+  'user_name' => 'tupulian',
+  'password' => 'weilaihao123',
+  'verify' => '',
+  'remember' => 'on',
+)
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/public/../application/admin/lang/zh-cn.php
+[ info ] [ RUN ] app\admin\controller\Login->login[ /home/vagrant/code/admin_ydh/application/admin/controller/Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] Connection timed out[/home/vagrant/code/admin_ydh/thinkphp/library/think/db/Connection.php:295]
+---------------------------------------------------------------
+[ 2019-02-14T17:21:09+08:00 ] 192.168.10.1 POST /admin/Login/login
+[ info ] www.ydh.work/admin/Login/login [运行时间：82.876944s][吞吐率：0.01req/s] [内存消耗：331.16kb] [文件加载：54]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ctiiphlu7h0ndme6c7frru2m7g; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ydh.work/houtai/login.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Mobile Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.ydh.work',
+  'accept' => '*/*',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'content-length' => '60',
+  'connection' => 'keep-alive',
+  'host' => 'www.ydh.work',
+)
+[ info ] [ PARAM ] array (
+  'user_name' => 'tupulian',
+  'password' => 'weilaihao123',
+  'verify' => '',
+  'remember' => 'on',
+)
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/public/../application/admin/lang/zh-cn.php
+[ info ] [ RUN ] app\admin\controller\Login->login[ /home/vagrant/code/admin_ydh/application/admin/controller/Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] Connection timed out[/home/vagrant/code/admin_ydh/thinkphp/library/think/db/Connection.php:295]
+---------------------------------------------------------------
+[ 2019-02-14T17:21:39+08:00 ] 192.168.10.1 POST /admin/Login/login
+[ info ] www.ydh.work/admin/Login/login [运行时间：106.844800s][吞吐率：0.01req/s] [内存消耗：408.84kb] [文件加载：54]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ctiiphlu7h0ndme6c7frru2m7g; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ydh.work/houtai/login.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Mobile Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.ydh.work',
+  'accept' => '*/*',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'content-length' => '60',
+  'connection' => 'keep-alive',
+  'host' => 'www.ydh.work',
+)
+[ info ] [ PARAM ] array (
+  'user_name' => 'tupulian',
+  'password' => 'weilaihao123',
+  'verify' => '',
+  'remember' => 'on',
+)
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/public/../application/admin/lang/zh-cn.php
+[ info ] [ RUN ] app\admin\controller\Login->login[ /home/vagrant/code/admin_ydh/application/admin/controller/Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] Connection timed out[/home/vagrant/code/admin_ydh/thinkphp/library/think/db/Connection.php:295]
+---------------------------------------------------------------
+[ 2019-02-14T17:21:58+08:00 ] 192.168.10.1 POST /admin/Login/set_lang
+[ info ] www.ydh.work/admin/Login/set_lang [运行时间：30.153992s][吞吐率：0.03req/s] [内存消耗：332.57kb] [文件加载：55]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Login',
+    2 => 'set_lang',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ctiiphlu7h0ndme6c7frru2m7g; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ydh.work/houtai/login.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Mobile Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.ydh.work',
+  'accept' => '*/*',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'content-length' => '7',
+  'connection' => 'keep-alive',
+  'host' => 'www.ydh.work',
+)
+[ info ] [ PARAM ] array (
+  'lang' => 'cn',
+)
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/public/../application/admin/lang/zh-cn.php
+[ info ] [ RUN ] app\admin\controller\Login->set_lang[ /home/vagrant/code/admin_ydh/application/admin/controller/Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\loan\behavior\MongoLog @app_end [ RunTime:30.047394s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-14T17:22:04+08:00 ] 192.168.10.1 POST /admin/Login/set_lang
+[ info ] www.ydh.work/admin/Login/set_lang [运行时间：30.121191s][吞吐率：0.03req/s] [内存消耗：332.50kb] [文件加载：55]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Login',
+    2 => 'set_lang',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ctiiphlu7h0ndme6c7frru2m7g; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ydh.work/houtai/login.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.ydh.work',
+  'accept' => '*/*',
+  'content-length' => '7',
+  'connection' => 'keep-alive',
+  'host' => 'www.ydh.work',
+)
+[ info ] [ PARAM ] array (
+  'lang' => 'cn',
+)
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/public/../application/admin/lang/zh-cn.php
+[ info ] [ RUN ] app\admin\controller\Login->set_lang[ /home/vagrant/code/admin_ydh/application/admin/controller/Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\loan\behavior\MongoLog @app_end [ RunTime:30.042151s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-14T17:22:05+08:00 ] 192.168.10.1 POST /admin/Login/set_lang
+[ info ] www.ydh.work/admin/Login/set_lang [运行时间：30.116390s][吞吐率：0.03req/s] [内存消耗：332.50kb] [文件加载：55]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Login',
+    2 => 'set_lang',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ctiiphlu7h0ndme6c7frru2m7g; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ydh.work/houtai/login.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.ydh.work',
+  'accept' => '*/*',
+  'content-length' => '7',
+  'connection' => 'keep-alive',
+  'host' => 'www.ydh.work',
+)
+[ info ] [ PARAM ] array (
+  'lang' => 'cn',
+)
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/public/../application/admin/lang/zh-cn.php
+[ info ] [ RUN ] app\admin\controller\Login->set_lang[ /home/vagrant/code/admin_ydh/application/admin/controller/Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\loan\behavior\MongoLog @app_end [ RunTime:30.040549s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-14T17:22:09+08:00 ] 192.168.10.1 POST /admin/Login/login
+[ info ] www.ydh.work/admin/Login/login [运行时间：89.970167s][吞吐率：0.01req/s] [内存消耗：408.84kb] [文件加载：54]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ctiiphlu7h0ndme6c7frru2m7g; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ydh.work/houtai/login.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Mobile Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.ydh.work',
+  'accept' => '*/*',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'content-length' => '60',
+  'connection' => 'keep-alive',
+  'host' => 'www.ydh.work',
+)
+[ info ] [ PARAM ] array (
+  'user_name' => 'tupulian',
+  'password' => 'weilaihao123',
+  'verify' => '',
+  'remember' => 'on',
+)
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/public/../application/admin/lang/zh-cn.php
+[ info ] [ RUN ] app\admin\controller\Login->login[ /home/vagrant/code/admin_ydh/application/admin/controller/Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] Connection timed out[/home/vagrant/code/admin_ydh/thinkphp/library/think/db/Connection.php:295]
+---------------------------------------------------------------
+[ 2019-02-14T17:22:09+08:00 ] 192.168.10.1 POST /admin/Login/set_lang
+[ info ] www.ydh.work/admin/Login/set_lang [运行时间：30.097387s][吞吐率：0.03req/s] [内存消耗：332.50kb] [文件加载：55]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Login',
+    2 => 'set_lang',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ctiiphlu7h0ndme6c7frru2m7g; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ydh.work/houtai/login.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.ydh.work',
+  'accept' => '*/*',
+  'content-length' => '7',
+  'connection' => 'keep-alive',
+  'host' => 'www.ydh.work',
+)
+[ info ] [ PARAM ] array (
+  'lang' => 'cn',
+)
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/public/../application/admin/lang/zh-cn.php
+[ info ] [ RUN ] app\admin\controller\Login->set_lang[ /home/vagrant/code/admin_ydh/application/admin/controller/Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\loan\behavior\MongoLog @app_end [ RunTime:30.039929s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-14T17:22:28+08:00 ] 192.168.10.1 POST /admin/Login/set_lang
+[ info ] www.ydh.work/admin/Login/set_lang [运行时间：30.062526s][吞吐率：0.03req/s] [内存消耗：332.50kb] [文件加载：55]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Login',
+    2 => 'set_lang',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ctiiphlu7h0ndme6c7frru2m7g; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ydh.work/houtai/login.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.ydh.work',
+  'accept' => '*/*',
+  'content-length' => '7',
+  'connection' => 'keep-alive',
+  'host' => 'www.ydh.work',
+)
+[ info ] [ PARAM ] array (
+  'lang' => 'cn',
+)
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/public/../application/admin/lang/zh-cn.php
+[ info ] [ RUN ] app\admin\controller\Login->set_lang[ /home/vagrant/code/admin_ydh/application/admin/controller/Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\loan\behavior\MongoLog @app_end [ RunTime:30.022215s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-14T17:22:34+08:00 ] 192.168.10.1 POST /admin/Login/set_lang
+[ info ] www.ydh.work/admin/Login/set_lang [运行时间：30.072299s][吞吐率：0.03req/s] [内存消耗：332.50kb] [文件加载：55]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Login',
+    2 => 'set_lang',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ctiiphlu7h0ndme6c7frru2m7g; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ydh.work/houtai/login.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.ydh.work',
+  'accept' => '*/*',
+  'content-length' => '7',
+  'connection' => 'keep-alive',
+  'host' => 'www.ydh.work',
+)
+[ info ] [ PARAM ] array (
+  'lang' => 'cn',
+)
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/public/../application/admin/lang/zh-cn.php
+[ info ] [ RUN ] app\admin\controller\Login->set_lang[ /home/vagrant/code/admin_ydh/application/admin/controller/Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run app\loan\behavior\MongoLog @app_end [ RunTime:30.036744s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-02-14T17:23:04+08:00 ] 192.168.10.1 POST /admin/Login/verify_open?0.5408213002296902
+[ info ] www.ydh.work/admin/Login/verify_open?0.5408213002296902 [运行时间：30.047829s][吞吐率：0.03req/s] [内存消耗：329.44kb] [文件加载：54]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Login',
+    2 => 'verify_open',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ctiiphlu7h0ndme6c7frru2m7g; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ydh.work/houtai/login.html',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.ydh.work',
+  'accept' => '*/*',
+  'content-length' => '0',
+  'connection' => 'keep-alive',
+  'host' => 'www.ydh.work',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  '0_5408213002296902' => '',
+)
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/public/../application/admin/lang/zh-cn.php
+[ info ] [ RUN ] app\admin\controller\Login->verify_open[ /home/vagrant/code/admin_ydh/application/admin/controller/Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] Connection timed out[/home/vagrant/code/admin_ydh/thinkphp/library/think/db/Connection.php:295]

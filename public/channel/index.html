@@ -1,0 +1,496 @@
+﻿<html><head>
+    <meta content="text/html; charset=UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta content="width=320, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>易贷还</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <link href="./css/common6.css?v=1.22" rel="stylesheet" type="text/css">
+    <link href="./css/user.css?v=1.22" rel="stylesheet" type="text/css">
+</head>
+<body id="id1">
+
+<style>
+    @media (min-device-width:414px) and (max-device-width:736px) and (-webkit-min-device-pixel-ratio:3){
+        /*iphone6plus*/
+    }
+</style>
+
+    <div class="app-reg">
+        <img src="./image/background-register.jpg"/>
+    </div>
+<div class="nb-dialog save-success" id="dialog-success">
+    <div class="mask"></div>
+    <div class="dialog-box">
+        <i class="icon-success-line"></i>
+        <p>注册成功</p>
+    </div>
+</div>
+<div class="big-box">
+    <div class="app">
+
+        <div class="app-body">
+            <form id="user-form" method="post" action="/user/profile">
+                <div class="wrap user-profile">
+                    <div class="user-info">
+                        <ul>
+                            <li class="user-tel">
+                                <div class="utel-box">
+                                    <div class="ui-input">
+                                        <input autocomplete="off" type="number" placeholder="请输入手机号" maxlength="11"
+                                               class="order-telphone" id="order-telphone" name="phone" tel=""
+                                               value="">
+                                        <a href="javascript:;" class="ui-input-clear icon-fail-fill"></a>
+                                        <a href="javascript:;" class="icon-telphone"><img src="./image/phone.png"></a>
+                                    </div>
+                                </div>
+                                <div class="utel-code" style="display: block">
+                                    <div class="ui-input">
+                                        <input autocomplete="off" maxlength="4" placeholder="请输入验证码" type="number"
+                                               class="order-telcode" id="order-code" name="authcode" value="">
+                                        <a href="javascript:;" class="ui-input-clear icon-fail-fill"></a>
+                                        <a href="javascript:;" class="ut-getcode ut-getcode-disable">获取验证码</a>
+                                        <a href="javascript:;" class="icon-code"><img src="./image/code.png"></a>
+                                    </div>
+
+                                </div>
+                                <div class="utel-password" style="display: block">
+                                    <div class="ui-input">
+                                        <input autocomplete="off" type="password" placeholder="请设置密码"
+                                               class="input-password" id="order-password" name="password" tel="" value="">
+                                        <a href="javascript:;" class="ui-input-clear icon-fail-fill"></a>
+                                        <a href="javascript:;" class="icon-password"><img src="./image/password.png"></a>
+                                    </div>
+                                    <input type="hidden" id="read_status" name="is_agree" value="0">
+                                    <input type="hidden" id="channel_code" name="code" value="0">
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="action user-profile-btn">
+                    <a href="javascript:;" id="save-profile" class="nb-btn">点我用钱</a>
+                </div>
+            <div id="page-mask" class="page-mask"></div>
+           </form>
+        </div>
+
+
+    </div>
+    <div class="box-bottom"><img src="./image/box_bottom.jpg"/></div>
+</div>
+    <div class="reg-footer">
+        <div class="reg-text">
+            <span class="check-box"></span>
+            <span class="reader-box">阅读并接受《易贷还用户协议》</span>
+        </div>
+    </div>
+
+<div id="alert-dialog" class="alert-dialog" style="display: none;">
+    <div class="alert-box">
+        <a href="javascript:$('#alert-dialog').hide();" class="close icon-close"></a>
+        <div class="alert-header">
+            <i class="icon-warning"></i>
+        </div>
+        <div class="alert-content">
+        </div>
+        <div class="alert-footer">
+            <a href="javascript:void(0)" class="action-btn">好</a>
+        </div>
+    </div>
+    <div class="mask"></div>
+</div>
+
+<div id="user-read" class="alert-dialog" style="display:none;">
+    <div class="alert-box alert-box-read">
+        <a href="javascript:$('#user-read').hide();" class="close icon-close"></a>
+
+        <div class="alert-content" id="user_register" style="overflow: scroll;width: 90%;height: 85%; margin: 20px auto 0 auto">
+
+        </div>
+        <div class="alert-footer1">
+             <a href="javascript:void(0)" id="click-read" class="action-btn">同意协议</a>
+        </div>
+    </div>
+    <div class="mask"></div>
+</div>
+
+<script src="./js/jQuery-2.1.4.min.js"></script>
+<script src="./js/fastclick.js"></script>
+<script src="./js/mobile-detect.js"></script>
+<script src="./js/config.js"></script>
+<script>
+
+    var $telCodeVerified=false;
+    // input获得焦点时显示删除按钮
+    (function(){
+
+        var md = new MobileDetect(window.navigator.userAgent);
+        //获取url参数方法
+
+        //alert(channel_code);
+        $('.ui-input').find('input').click(function(e){
+            $('.ui-input-active').removeClass('ui-input-active');
+
+            if($(this).parents('.utel-box').size() > 0){
+                $(this).parents('.utel-box').addClass('utel-box-active');
+            } else {
+                $('.utel-box-active').removeClass('utel-box-active');
+                $(this).parent().addClass('ui-input-active');
+            }
+            e.stopPropagation();
+        }).end().find('.ui-input-clear').click(function(e){
+            $(this).parent().addClass('ui-input-active').find('input').val('');
+            $(this).parents('.utel-code').removeClass('ui-input-success');
+            if($('#order-coupon input').size() > 0){
+                $('#order-coupon input').keyup();
+            }
+            e.stopPropagation();
+        });
+        $('body').click(function(){
+            $('.ui-input-active').each(function(){
+                $(this).removeClass('ui-input-active');
+            })
+        })
+
+        $.post(get_click_url,{code:channel_code}, function(data){
+            //console.log(data);
+            //alert(data);
+            //alert(JSON.stringify(data));
+        });
+
+    })();
+
+
+    function customAlert(status, message, actionText, callback) {
+        var statusClass = '';
+        if(status == 'error') {
+            statusClass = 'error';
+            $('#alert-dialog').addClass(statusClass);
+        }
+
+        $('#alert-dialog .alert-content').html(message);
+        $('#alert-dialog .action-btn').html(actionText);
+        $('#alert-dialog .action-btn').on('click', function() {
+            if (callback != null) {
+                callback($('#alert-dialog'));
+            }
+            $('#alert-dialog').hide();
+        });
+        $('#alert-dialog').show();
+        var h = $('#alert-dialog .alert-box').height();
+        $('#alert-dialog .alert-box').height(h);
+        $('#alert-dialog .alert-box').css('margin-top', -h/2)
+    }
+
+    $('.mask').on('click', function() {
+        $(this).parent().hide();
+    });
+
+
+    $('.reg-text').click(function(){
+        $('#user-read').show();
+        $("#user_register").load("./user_register.html");
+
+    });
+
+    $('#click-read').click(function(){
+
+        $('.check-box').addClass('is-read');
+        $('#read_status').attr("value",1);
+        // alert($('#read_status').val())
+        $('#user-read').hide()
+
+    });
+
+    $('.check-box').click(function(){
+
+        $('.check-box').addClass('is-read');
+        $('#read_status').attr("value",1);
+        // alert($('#read_status').val())
+        $('#user-read').hide()
+
+    });
+
+</script>
+
+<script>
+
+    // 手机号码校验
+    $('.order-telphone').bind('input', function(){
+        var tel = $.trim($(this).val());
+
+        if(tel.charAt(0)==1) //cn
+        {
+            if(tel.length == 11)
+                $(this).parents('.ui-input-error').removeClass('ui-input-error');
+        }
+
+        if(tel.charAt(0)==5 || tel.charAt(0)==6 || tel.charAt(0)==9) //cn
+        {
+            if(tel.length == 8)
+                $(this).parents('.ui-input-error').removeClass('ui-input-error');
+        }
+
+    });
+
+    // 显示手机验证码
+    (function(){
+        var canSendCode = false;
+        // 验证码倒计时
+        var countDown = function(el, callback){
+            var count = el.data('countdown');
+            var timer = setInterval(function(){
+                if(count <= 1){
+                    clearInterval(timer);
+                    callback();
+                }else{
+                    el.removeData('countdown');
+                    el.html('重新获取('+ count +')');
+                    count--;
+                }
+            }, 1000);
+        }
+
+        $('.user-tel .utel-box')
+                .find('input').bind('input', function(){
+            var el = $(this);
+            el.val(el.val().replace(/[^\d]/g, ''));
+            var originPhone = el.attr('tel');
+            var phone = el.val();
+
+
+            if(phone.charAt(0)==1) //cn
+            {
+                //el.parents('.utel-box').find('.ut-getcode').html('获取验证码');
+                el.parents('.utel-code').find('.ut-getcode').html('获取验证码');
+                if(phone.length == 11)
+                {
+                    // 修改了手机号或者以前没有输入过手机号时需要验证
+                    if(originPhone == '' || phone != originPhone){
+                        canSendCode = true;
+                        el.parents('.user-tel').find('.utel-code')
+                                .removeClass('ui-input-success')
+                                .removeClass('ui-input-error');
+                       // el.parents('.utel-box').find('.ut-getcode').removeClass('ut-getcode-disable');
+                        //alert("sss");
+                        el.parents('.user-tel').find('.ut-getcode').removeClass('ut-getcode-disable');
+                       // el.parents('.user-tel').find('.utel-code').show();
+                    } else {
+                        canSendCode = false;
+                        el.parents('.user-tel').find('.ut-getcode').addClass('ut-getcode-disable');
+                       // el.parents('.user-tel').find('.utel-code').hide();
+                    }
+                }
+                else
+                {
+                    canSendCode = false;
+                    //el.parents('.utel-box').find('.ut-getcode').addClass('ut-getcode-disable');
+                    el.parents('.user-tel').find('.ut-getcode').addClass('ut-getcode-disable');
+                   // el.parents('.user-tel').find('.utel-code').hide();
+                }
+            }
+
+            if(phone.charAt(0)==5 || phone.charAt(0)==6 || phone.charAt(0)==9) //cn
+            {
+                canSendCode = false;
+                if(phone.length == 8)
+                {
+                    $telCodeVerified=true;
+                    el.parents('.user-tel').find('.utel-code')
+                            .removeClass('ui-input-success')
+                            .removeClass('ui-input-error');
+                    el.parents('.utel-box').find('.ut-getcode').removeClass('ut-getcode-disable').html('无需验证码');
+                }
+                else
+                {
+                    $telCodeVerified=false;
+                    el.parents('.utel-box').find('.ut-getcode').html('获取验证码');
+                    el.parents('.utel-box').find('.ut-getcode').addClass('ut-getcode-disable');
+                   // el.parents('.user-tel').find('.utel-code').hide();
+                }
+            }
+
+
+        }).keyup()
+                .end().find('.utel-code .ut-getcode').click(function(){
+        });
+
+        $('.utel-code .ut-getcode').click(function(){
+
+            var el = $(this);
+            var tel = $('#order-telphone').val();
+            var myreg = /^((1[0-9]{2})+\d{8})$/;
+
+            if(!myreg.test(tel))
+            {
+                customAlert('error', '请输入有效的手机号码！', '好');
+                return false;
+            }
+
+            if(tel.length === 11 )
+            {
+                if(!canSendCode)
+                {
+                    customAlert('error', '请勿重复发送验证码', '好');
+                }
+                else
+                {
+                    canSendCode = false;
+                    el.addClass('ut-getcode-disable');
+                    //////////////////////////////////////////////////////////////////////get_code_url获取验证接口请求////////////////////////////////////////////// ////////////////////////////////////////////////
+                    $.post(get_code_url, {phone:tel,companycode:companycode,type:1},function(data){
+                        //console.log(data);
+                        //alert(JSON.stringify(data));
+
+                        if(data.status==200){
+                            el.data('countdown', 60);
+                            countDown(el, function(){
+                                el.html('获取验证码');
+                                canSendCode = true;
+                            });
+                        }else{
+
+                            canSendCode = true;
+                            customAlert('error', data.msg, '好');
+
+                           // if(data.hint)
+                                //customAlert('', data.msg, '好');
+                        }
+                    });
+                }
+            }else {
+                customAlert('error', "请输入正确的手机号", '好');
+            }
+        });
+
+
+        // 校验验证码
+        $('.utel-code input').bind('input', function(){
+            var el = $(this);
+            var tel_code = el.val();
+            var tel = $('#order-telphone').val();
+           // alert(tel_code);
+            if(tel_code.length == 6){
+                //////////////////////////////////////////////////////////////////////verification_code_url验证验证接口请求//////////////////////////////////
+                //alert("ssssss");
+                $.post(verification_code_url, {phone:tel,authcode:tel_code},function(data){
+                    
+                    if(data.status==200){
+                        $telCodeVerified=true;
+                        el.parents('.utel-code').removeClass('ui-input-error').addClass('ui-input-success');
+                    }else{
+                        customAlert('error', data.message, '好');
+                        $telCodeVerified=false;
+                        el.parents('.utel-code').removeClass('ui-input-success').addClass('ui-input-error');
+                    }
+                });
+            }
+        });
+    })();
+
+    $('#user-form').on('change', 'input', function() {
+        if ($(this).val() != '')
+            $('#save-profile').removeClass('nb-btn-disable').addClass('nb-btn-primary');
+        else
+            $('#save-profile').removeClass('nb-btn-primary').addClass('nb-btn-disable');
+
+    });
+
+    function hasError(){
+
+        var has_error = false;
+        $('.user-info').each(function(){
+
+            var originPhone = $(this).find('.order-telphone').attr('tel');
+            var phone = $(this).find('.order-telphone').val().replace(/\s/g, '');
+            var code = $(this).find('.order-telcode').val().replace(/\s/g, '');
+           var password = $(this).find('#order-password').val().replace(/\s/g, '');
+
+
+
+
+            if(phone.length == 11 && phone.length == 8){
+                has_error = true;
+                $(this).find('.order-telphone').focus();
+                $(this).find('.utel-box').addClass('ui-input-error');
+                return false;
+            }else{
+                $(this).find('.utel-box').removeClass('ui-input-error');
+
+                console.log('telCodeVerified: ');
+                console.log($telCodeVerified);
+                // 校验验证码
+                if(!originPhone || originPhone == '' || originPhone != phone ){
+                    //if(!$(this).find('.utel-code').hasClass('ui-input-success')){
+                    if($telCodeVerified==false){
+                        has_error = true;
+                        $(this).find('.order-telcode').focus();
+                        $(this).find('.utel-code').addClass('ui-input-error');
+                        return false;
+                    }
+                }
+            }
+
+            if(password == ''){
+                has_error = true;
+                $(this).find('#order-password').focus();
+                $(this).find('.utel-password').addClass('ui-input-error');
+                return false;
+            }
+            if(password.length <=7||password.length >=15){
+                customAlert('error', "密码必须8-14位", '好')
+                has_error = true;
+                $(this).find('#order-password').focus();
+                $(this).find('.utel-password').addClass('ui-input-error');
+            }else {
+                $(this).find('.utel-password').removeClass('ui-input-error');
+            }
+
+
+
+        });
+        return has_error;
+    }
+    //hasError();
+
+    $('#save-profile').click(function(){
+        var n=parseInt($('#read_status').val());
+        if (n) {
+            if (!hasError()) {
+                //////////////////////////////////////////////////////////////////////user_reg_url提交注册接口//////////////////////////////////
+
+                $.post(user_reg_url, $('#user-form').serialize(), function (result) {
+                   // alert(JSON.stringify(result));
+                    if (result.status==200) {
+
+                        //console.log(result);
+                        $('#dialog-success').show();
+                        setTimeout(function () {
+                            location.href="./download.html";
+                        }, 2000);
+                    }else if (result.status==1) {
+
+                        customAlert('error', "手机号已经注册过", '去下载', function(){
+                            window.location.href = "./download.html";
+                        });
+                    }
+                    else {
+                        customAlert('error', result.message, '好');
+                    }
+                });
+            }
+        } else {
+            customAlert('error', '请阅读用户协议', '好');
+        }
+
+    });
+</script>
+
+
+
+</body>
+</html>

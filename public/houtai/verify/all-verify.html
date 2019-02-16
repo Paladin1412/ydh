@@ -1,0 +1,124 @@
+<html></html>
+<div id="page_all_verify">
+ <div id="all_verify_parent"> 
+	<div class="y-page-title"><%title_all_verify%>
+		<button class="layui-btn layui-btn-radius layui-btn-xs y-btn-oldLace echart-btn-show"  id="echart_show" onclick="layui.all_verify.echartSwitch(false)">
+			<i class="fa fa-angle-double-down" style="color:#1c3368"></i>
+			<span class="show_span" >&nbsp;&nbsp;<%echart_show%></span>
+		</button><!--展示-->
+	</div>
+	<div id="all-approval-report" style="display:none;">
+		<div id="hid_approval_report" class="layui-inline echarts"><!-- 考核报表 -->
+			<div class="y-page-body">
+				<span class="eharts-title-nodate"><a href="javascript:;"><%approval_report%></a></span>
+				<div id="approvalReport" class="echarts-main"></div>
+			</div>
+		</div>
+		<div id="hid_approval_order_report" class="layui-inline echarts">
+			<div class="y-page-body">
+				<span class="eharts-title-nodate"><a href="javascript:;"><%approval_order_report%></a></span>
+				<div id="approvalOrderReport" class="echarts-main"></div><!-- 订单走势报表 -->
+				
+		       <div class="layui-form-item lay-echarts">
+					<div class="layui-form-item y-echars-date" style="top:10px;">
+						<label class="layui-form-label"><i class="fa fa-calendar fa-lg"></i></label>
+						<div class="layui-input-block" style="width:200px;">
+							<input name="orderTime" type="text" class="layui-input" id="orderTime" v-bind:placeholder="create_date" />
+						</div>
+						<div class="layui-inline lay-echarts-date-btn">
+							<div class="left verify-btn-left" onclick="layui.all_verify.getDates('1')">
+								<span><%this_week%></span>
+							</div>
+							<div class="right verify-btn-right" onclick="layui.all_verify.getDates('2')">
+								<span><%this_month%></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <div class="y-page-title">
+		<button class="layui-btn layui-btn-radius layui-btn-xs y-btn-oldLace echart-btn-hide" style="display:none"  id="echart_hidden"  onclick="layui.all_verify.echartSwitch(true)">
+			<i class="fa fa-angle-double-up" style="color:#1c3368"></i>
+			<span class="show_span" >&nbsp;&nbsp;<%echart_hide%></span>
+		</button><!--收起-->
+    </div>
+	<div class="y-page-body">
+		<form id="all_verify_form" action="" class="layui-form layui-form-pane">
+			<div class="layui-form-item ">
+			   <div style="margin-bottom: 10px;">
+					<span class="raunwen-title"><%all_verify_order%></span>
+				</div>
+				<input name="order_field" type="hidden" id="order_field"/><!-- 排序字段 -->
+				<input name="order_sort" type="hidden" id="order_sort"/><!-- 排序类型 -->
+				<div class="layui-form-inline  y-left-pane" >
+					<label class="layui-form-label "><i class="fa fa-calendar fa-lg"></i></label>
+					<div class="layui-input-inline  y-left-pane">
+						<input name="date" type="text" class="layui-input" id="all_verify_date" v-bind:placeholder="apply_date" /><!-- 申请日期 -->
+					</div>
+				</div>
+				
+				<div class="layui-form-inline  y-left-pane " >
+					<label class="layui-form-label  "><i class="fa fa-calendar fa-lg"></i></label>
+					<div class="layui-input-inline  y-left-pane">
+						<input name="approval_time" type="text" class="layui-input" id="approval_time" v-bind:placeholder="refuse_time" /><!-- 审批时间 -->
+					</div>
+				</div>
+
+				<div id="hid_company" class="layui-form-inline  y-right-pane y-select" style="display:none;">
+					
+						<div class="layui-input-inline">
+							<select name="company_id" id="company_id"  style="border-radius: 0px 100px 100px 0px;" lay-filter="company_id">
+							</select>
+						</div>
+
+				</div>
+				
+				<div id="hid_user"  class="layui-form-inline y-right-pane y-select " style="display:none;">
+					<div class="layui-input-inline">
+						<select name="admin_id" id="admin_id"  style="border-radius: 0px 100px 100px 0px;">
+						</select>
+					</div>
+				</div>
+
+				<div class="layui-form-inline  y-right-pane y-select" >
+						<div class="layui-input-inline">
+							<select name="handle_state" id="handle_state"  style="border-radius: 0px 100px 100px 0px;">
+							</select>
+						</div>
+				</div>
+				
+				
+
+
+				<div class="layui-form-inline  y-right-pane ">
+					<div class="y-right-box" style="width:240px;">
+						<input name="search_string" id="search_string" type="text" class="layui-input" v-bind:placeholder="order_no+'/'+fullname+'/'+phone_no+'/'+idcard_no" /> 
+						<label class="layui-form-label" onclick="layui.all_verify.getData(1,50)"><i class="fa fa-search fa-lg"></i></label>
+					</div>
+
+				</div>
+
+
+			</div>
+		</form>
+		<div class="y-data-table">
+			<div id="all_verify_table" lay-filter="allVerifyTableEvent"></div>
+			<div id="all_verify_page"></div>
+		</div>
+	</div>
+</div> 
+<div id="all_verify_detail"></div>
+</div>
+
+<script type="text/javascript">
+
+layui.use(['all_verify'], function(){
+	  
+	  layui.all_verify.initView();
+	  //监听事件
+	  layui.all_verify.tool();
+	});
+	
+</script>

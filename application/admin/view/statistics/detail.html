@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=8">
+<meta http-equiv="Expires" content="0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache"  content="no-cache">
+<meta http-equiv="Cache-control" content="no-cache">
+<style>
+body{font-family:"微软雅黑"}
+#title{height: 50px;width: 100%;text-align:center;font-size: 25px;margin-top:30px;}
+.demo-input{padding-left: 10px; height: 38px; min-width: 262px; line-height: 38px; border: 1px solid #e6e6e6;  background-color: #fff;  border-radius: 2px;}
+table{width: 100%;}
+.table-d table{ background:#ccc;margin-top: 30px;text-align: center;} 
+.table-d table td{ background:#FFF;line-height: 35px;} 
+.table-d .header{font-weight:bold;}
+</style>
+
+<script type="text/javascript" src="/admin/js/jquery.js"></script>
+<script src="/admin/js/laydate/laydate.js"></script>
+<script>
+    lay('#version').html('-v'+ laydate.v);
+    //日期范围
+    laydate.render({
+      elem: '#test6'
+      ,range: true
+      ,done(data){
+      		$("#test6").val(data);
+      		$("#doForm").submit();
+      },change: function(data){
+      		//alert('aa');
+      		//$("#test6").val(data)
+      }
+    });
+</script>
+</head>
+<body>
+<div id="title">渠道详情</div>
+<form id="doForm" action="/admin/Statistics/detail" method="get">
+	<div id="search">
+		时间筛选：<input type="text" name="date" class="demo-input" placeholder="日期范围" id="test6" value="{$Think.get.date}">
+		<input type="hidden" name="code" value="{$Think.get.code}"/>
+ 	</div>
+</form>
+<div class="table-d"> 
+	<table width="400" border="0" cellspacing="1" cellpadding="0"> 
+	<tr class="header"> 
+		<td>点击</td> 
+		<td>下载</td> 
+		<td>注册</td> 
+		<td>下单</td> 
+	</tr> 
+	<tr> 
+		<td>{$click}</td>
+		<td>{$download}</td>
+		<td>{$register}</td>
+		<td>{$order}</td>
+	</tr> 
+	</table> 
+</div>
+
+</body>
+</html>

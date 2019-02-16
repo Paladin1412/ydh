@@ -1,0 +1,204 @@
+<div id="viewDetail">
+    <div id="paramPage">
+             <div class="y-page-title"><%all_collection%>
+                <button id="echart_show" class="layui-btn layui-btn-radius layui-btn-xs y-btn-oldLace echart-btn-show" style="display: none;" onclick="layui.allCollection.echart_show();" >
+                 <i class="fa fa-angle-double-down" style="color:#1c3368" ></i><span class="show_span" >&nbsp;&nbsp;<%echart_show%></span>
+                 </button><!--展示-->
+              </div><!--所有催收-->
+                <!--所有催收报表统计-->
+             <div id="echartShow">
+                    <div  id="echarts" style="display: none" >
+                        <!--催收考核报表-->
+                        <div id="cuiShouKaoHe_div" class=" layui-inline echarts">
+                            <div class="y-page-body">
+                                <span class="eharts-title-nodate"><a href="javascript:;"><%approval_report%></a></span>
+                                <div id="cuiShouKaoHe"  class="echarts-main"></div>
+                            </div>
+                        </div>
+
+                        <!--催收订单走势报表 -->
+                         <div id="cuiDingDanZouShi_div" class=" layui-inline echarts"  >
+                            <div class="y-page-body">
+                                <span class="eharts-title"><a href="javascript:;"><%approval_order_report%></a></span>
+                                <div id="cuiDingDanZouShi"   class="echarts-main"> </div>
+                                <div class="layui-form-item lay-echarts">
+                                    <div class="layui-form-item y-echars-date" style="top:10px;">
+                                        <label class="layui-form-label  " style="border: #A7EDD8 solid 1px;"><i class="fa fa-calendar fa-lg"></i></label>
+                                        <div class="layui-input-block" style="width:200px;">
+                                            <input name="date" type="text" class="layui-input" id="ddzs_date" v-bind:placeholder="please_select_time" />
+                                        </div>
+                                        <div class="layui-inline lay-echarts-date-btn">
+                                            <div class="left allcollection-btn-left" onclick="layui.allCollection.getDingDanZouShiDates('1')">
+                                                <span><%this_week%></span>
+                                            </div>
+                                            <div class="right allcollection-btn-right" onclick="layui.allCollection.getDingDanZouShiDates('2')">
+                                                <span><%this_month%></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 费用减免金额 -->
+                        <div id="feiYongJianMian_div" class=" layui-inline echarts" >
+                            <div class="y-page-body">
+                                <span class="eharts-title"><a href="javascript:;"><%cost_derate_amount%></a></span>
+                                <div id="feiYongJianMian"   class="echarts-main"> </div>
+                                <div class="layui-form-item lay-echarts">
+                                    <div class="layui-form-item y-echars-date" style="top:10px;">
+                                        <label class="layui-form-label"><i class="fa fa-calendar fa-lg"></i></label>
+                                        <div class="layui-input-block" style="width:200px;">
+                                            <input name="date" type="text" class="layui-input" id="fyjm_date" v-bind:placeholder="please_select_time" />
+                                        </div>
+                                        <div class="layui-inline lay-echarts-date-btn">
+                                            <div class="left fyjm-btn-left" onclick="layui.allCollection.getFeiYongJianMianDates('1')">
+                                                <span><%this_week%></span>
+                                            </div>
+                                            <div class="right fyjm-btn-right" onclick="layui.allCollection.getFeiYongJianMianDates('2')">
+                                                <span><%this_month%></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 订单还款走势表 -->
+                        <div id="cuiDingDanRepay_div" class=" layui-inline echarts" >
+                            <div class="y-page-body">
+                                <span class="eharts-title"><a href="javascript:;"><%repay_order_chart%></a></span>
+                                <div id="cuiDingDanRepay"   class="echarts-main"> </div>
+                                <div class="layui-form-item lay-echarts">
+                                    <div class="layui-form-item y-echars-date" style="top:10px;">
+                                        <label class="layui-form-label" ><i class="fa fa-calendar fa-lg"></i></label>
+                                        <div class="layui-input-block" style="width:200px;">
+                                            <input name="date" type="text" class="layui-input" id="ddrp_date" v-bind:placeholder="please_select_time" />
+                                        </div>
+                                        <div class="layui-inline lay-echarts-date-btn">
+                                            <div class="left repay-btn-left" onclick="layui.allCollection.getDingDanRepayDates('1')">
+                                                <span><%this_week%></span>
+                                            </div>
+                                            <div class="right repay-btn-right" onclick="layui.allCollection.getDingDanRepayDates('2')">
+                                                <span><%this_month%></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="y-page-title">
+                            <button  id="echart_hidden" class="layui-btn layui-btn-radius layui-btn-xs y-btn-oldLace echart-btn-hide" style="display:none" onclick="layui.allCollection.echart_hidden();" >
+                                <i class="fa fa-angle-double-up" style="color:#1c3368"></i>
+                                <span class="show_span">&nbsp;&nbsp;<%echart_hide%></span>
+                            </button> <!--收起-->
+                        </div>
+						<div class="y-page-title"><%promise_sepayment_statistics%></div><!--承诺还款统计-->
+	                    <div class="y-page-body">
+				            <div class="layui-row">
+				                <div class="layui-col-xs6 layui-col-md12">
+				                    <form class="layui-form layui-form-pane" id="promiseRepaymentStatisticsListForm">
+				                        <div class="layui-form-item  y-left-pane" >
+				                            <label class="layui-form-label"><i class="fa fa-calendar fa-lg"></i></label>
+				                            <div class="layui-input-inline">
+				                                <input type="text" class="layui-input" id="promise_time" name="promise_time" v-bind:placeholder="promise_time" autocomplete="off" />
+				                            </div>
+				                        </div>
+				                    </form>
+				                    <!-- 承诺还款统计列表-->
+				                    <div id="PromiseRepaymentlist">
+				                        <div id="PromiseRepaymentTable" class="layui-table"></div>
+				                    </div>
+				                </div>
+				            </div>
+				        </div>
+                    </div>
+
+             </div>
+
+                <!--所有催收数据列表-->
+               <div class="y-page-body" >
+                    <!--<div class="layui-form-item  y-left-pane">-->
+                        <span class="raunwen-title"><%col_order%></span> <!--催收订单-->
+
+                    <form class="layui-form layui-form-pane"  id="allCollectionForm" action="" style=" margin-top: 10px;width: 100%;">
+                        <div class="layui-form-item  y-left-pane">
+                            <input type="hidden"  id="order_field"  name="order_field" value=""> <!-- 排序字段 -->
+                            <input type="hidden"  id="order_sort"   name="order_sort"  value=""> <!-- 排序类型 -->
+                            <label class="layui-form-label  "><i class="fa fa-calendar fa-lg"></i></label>
+                            <div class="layui-input-inline"  >
+                                <input type="text" class="layui-input" id="date"  name="date"  v-bind:placeholder="return_date" autocomplete="off" />
+                            </div>
+                            <div class="layui-form-inline  y-left-pane" >
+                                <label class="layui-form-label  "><i class="fa fa-calendar fa-lg"></i></label>
+                                <div class="layui-input-inline y-left-pane"  >
+                                    <!--<input type="text" class="layui-input" id="date"  name="date"  v-bind:placeholder="return_date" autocomplete="off" />-->
+                                    <input type="text" class="layui-input" id="follow_date"  name="follow_date"  v-bind:placeholder="cuishou_date" autocomplete="off" />
+                                </div>
+                            </div>
+                            <div class="layui-form-inline  y-right-pane y-select"  id="companyList"  style="display: none;">
+                                <div class="layui-input-inline">
+                                    <select name="company_id"  lay-filter="company_id" id="company_id"  style="border-radius: 0px 100px 100px 0px;"></select>
+                                </div>
+                            </div>
+                            <div class="layui-form-inline  y-right-pane y-select" id="csyList" style="display:none;">
+                                <div class="layui-input-inline">
+                                    <select name="admin_id"  id="admin_id" style="border-radius: 0px 100px 100px 0px;"></select>
+                                </div>
+                            </div>
+                            <div class="layui-form-inline  y-right-pane y-select" id="followFeed" >
+                                <div class="layui-input-inline" >
+                                    <select name="collection_feedback"  id="collection_feedback" style="border-radius: 0px 100px 100px 0px;"></select>
+                                </div>
+                            </div>
+
+
+                            <div class=" layui-form-inline  y-right-pane cuishou"  >
+                                <div class="y-right-box searching" >
+                                    <input type="text" name="search_string" id="search_string"  v-bind:placeholder="order_no+'/'+fullname+'/'+phone_no" autocomplete="off" class="layui-input"  />
+                                    <label class="layui-form-label" onclick="layui.allCollection.getData(1,50)"><i class="fa fa-search fa-lg"></i></label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+
+                    <!-- 所有催收页面列表-->
+                    <div id="allColListTable" class="layui-table" lay-filter="allColListTableEvent"></div>
+                    <div id="allColListPage"></div>
+          </div>
+    </div>
+
+    <!--催收详情-->
+    <div id="allColDetail"></div>
+</div>
+
+
+<!-- 定义分配催收员页面start -->
+<script type="text/html" id="assistCollectorAll">
+    <div style="margin:15px auto;width:93%;">
+        <form id="assistCollectorAllForm" class="layui-form" action="" autocomplete="off">
+            <!--<table class="layui-table" lay-skin="line" id="allCollectorList"></table>-->
+            <table class="layui-table" id="allCollectorList"></table>
+            <div class="layui-inline" style="margin-top: 20px; ">
+                <button class="layui-btn layui-btn-radius layui-btn-sm y-btn-green"   id="distri_submits" style=" margin-left:370px; min-width:100px;"    lay-submit="" lay-filter="assistCollectorAllForm"   > <%distribution%> </button><!-- 分配 -->
+            </div>
+        </form>
+    </div>
+</script>
+
+
+<!--<script type="text/html" id="orderNo">-->
+    <!--{{# if(d.order_no != null){ }}-->
+    <!--<a href="#" style="color:#4ACE9B;" onclick="layui.allCollection.collectionDetail({{d.order_no}})">{{d.order_no}}</a>-->
+    <!--{{# } }}-->
+<!--</script>-->
+
+<script type="text/javascript">
+    layui.use(['allCollection'],function(){
+        //初始化页面
+        layui.allCollection.initView();
+        //处理监听事件
+        layui.allCollection.tool();
+    });
+</script>

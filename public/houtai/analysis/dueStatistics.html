@@ -1,0 +1,175 @@
+<div id="page_due_statistical">
+	<div class="y-page-title-report">
+		<div class="y-page-title"><%due_statistical%></div>
+		<form class="layui-form layui-form-pane" style="width:80%;display:block;margin-left:25%;margin-top:-30px;">
+			<div class="layui-form-item ">
+				<div class="layui-form-inline  y-left-pane " >
+					<label class="layui-form-label  "><i class="fa fa-calendar fa-lg"></i></label>
+					<div class="layui-input-inline">
+						<input name="date" type="text" id="date" class="layui-input" id="all_verify_date" v-bind:placeholder="repayment_time" />
+					</div>
+				</div>
+				<div id="hid_company" class="y-right-pane y-select">
+					<div class="layui-input-inline">
+						<select id="company_id" name="company_id" lay-filter='companyId' style="border-radius: 0px 100px 100px 0px;">
+						</select>
+					</div>
+				</div>
+				<div id="hid_search_btn">
+					<a class="layui-btn layui-btn-sm layui-btn-normal" onclick="layui.dueStatistics.search()"><%search%></a>
+				</div>
+			</div>
+		</form>
+	</div>
+    <div class="layui-row" id="dueStatistics">
+     			
+		<div class="layui-col-xs6" >
+			<div  id="inCollectRatioDiv" class="y-echars-col2">
+				<div id="inCollectRatio" class="y-echars-height350"></div>
+				<div id="inCollectRatioSpan" class="y-echars-span"></div>
+			</div>
+		</div><!-- 入催率 -->
+		
+		<div class="layui-col-xs6" >
+			<div  id="channelInCollectRatioDiv" class="y-echars-col2">
+				<div id="channelInCollectRatio" class="y-echars-height350"></div>
+				<div id="channelInCollectRatioSpan" class="y-echars-span"></div>
+					<!--<table style="position: absolute;bottom:10px;width:93%;margin:5px 2%; "  class="y-page-table detail_tab chart_table" id="customer_info"  >-->
+					<!--<colgroup>-->
+						<!--<col width="15%">-->
+						<!--<col width="10%">-->
+						<!--<col width="15%">-->
+						<!--<col width="10%">-->
+						<!--<col width="15%">-->
+						<!--<col width="10%">-->
+					<!--</colgroup>-->
+					<!--<tr>-->
+						<!--<td>qudao18</td>-->
+						<!--<td>10</td>-->
+						<!--<td>PinjamanRuphia</td>-->
+						<!--<td>20</td>-->
+						<!--<td>Zoomygocredit</td>-->
+						<!--<td>300</td>-->
+						<!--<td>qudao18</td>-->
+						<!--<td>10</td>-->
+					<!--</tr>-->
+					<!--<tr>-->
+						<!--<td>PinjamanRuphia</td>-->
+						<!--<td>20</td>-->
+						<!--<td>Zoomygocredit</td>-->
+						<!--<td>300</td>-->
+						<!--<td>qudao18</td>-->
+						<!--<td>10</td>-->
+						<!--<td>PinjamanRuphia</td>-->
+						<!--<td>20</td>-->
+					<!--</tr>-->
+					<!--<tr>-->
+						<!--<td>Zoomygocredit</td>-->
+						<!--<td>300</td>-->
+						<!--<td>DokterUang</td>-->
+						<!--<td>10</td>-->
+						<!--<td>UUang</td>-->
+						<!--<td>20</td>-->
+						<!--<td>pingt</td>-->
+						<!--<td>100</td>-->
+					<!--</tr>-->
+					<!--<tr>-->
+						<!--<td>RuphiaSapi</td>-->
+						<!--<td>10</td>-->
+						<!--<td>ceshi</td>-->
+						<!--<td>20</td>-->
+						<!--<td>qudao333</td>-->
+						<!--<td>300</td>-->
+						<!--<td>qudao30</td>-->
+						<!--<td>10</td>-->
+					<!--</tr>-->
+					<!--<tr>-->
+						<!--<td>DanaNow</td>-->
+						<!--<td>20</td>-->
+						<!--<td>cari rupiah</td>-->
+						<!--<td>100</td>-->
+						<!--<td>pinjaman cash</td>-->
+						<!--<td>10</td>-->
+						<!--<td>Credy</td>-->
+						<!--<td>20</td>-->
+
+					<!--</tr>-->
+					<!--<tr>-->
+						<!--<td>首逾总量</td>-->
+						<!--<td>0</td>-->
+					<!--</tr>-->
+				<!--</table>-->
+					<!--<div class="layui-col-md11" style="position: absolute;top:10px; text-align:center;border:1px solid red;">-->
+							<!--<div class="grid-demo">内部列</div>-->
+					<!--</div>-->
+				<!--</div>-->
+			</div>
+		</div><!-- 渠道入催率 -->
+     
+		<div class="layui-col-xs6" >
+			<div  id="dueOrderRatioDiv" class="y-echars-col2">
+				<div id="dueOrderRatio" class="y-echars-height350"></div>
+				<div id="dueOrderRatioSpan" class="y-echars-span"></div>
+			</div>
+		</div><!-- 逾期/订单占比 -->
+		
+		<div class="layui-col-xs6" >
+			<div  id="dueRatioDiv" class="y-echars-col2">
+				<div id="dueRatio" class="y-echars-height350"></div>
+				<div id="dueRatioSpan" class="y-echars-span"></div>
+			</div>
+		</div><!-- 逾期占比 -->
+		
+		<div class="layui-col-xs6" >
+			<div  id="channelDueRatioDiv" class="y-echars-col2">
+				<div id="channelDueRatio" class="y-echars-height350"></div>
+				<div id="channelDueRatioSpan" class="y-echars-span"></div>
+			</div>
+		</div><!-- 渠道逾期占比 -->
+		
+		<div class="layui-col-xs6" >
+			<div  id="dueThreeDaysRatioDiv" class="y-echars-col2">
+				<div id="dueThreeDaysRatio" class="y-echars-height350"></div>
+				<div id="dueThreeDaysRatioSpan" class="y-echars-span"></div>
+			</div>
+		</div><!-- 逾期3天占比 -->
+		
+		<div class="layui-col-xs6" >
+			<div  id="dueTenDaysRatioDiv" class="y-echars-col2">
+				<div id="dueTenDaysRatio" class="y-echars-height350"></div>
+				<div id="dueTenDaysRatioSpan" class="y-echars-span"></div>
+			</div>
+		</div><!-- 逾期10天占比 -->
+		
+		<div class="layui-col-xs6" >
+			<div  id="dueFifteenDaysRatioDiv" class="y-echars-col2">
+				<div id="dueFifteenDaysRatio" class="y-echars-height350"></div>
+				<div id="dueFifteenDaysRatioSpan" class="y-echars-span"></div>
+			</div>
+		</div><!-- 逾期15天占比 -->
+		
+		<div class="layui-col-xs6" >
+			<div  id="dueThirtyDaysRatioDiv" class="y-echars-col2">
+				<div id="dueThirtyDaysRatio" class="y-echars-height350"></div>
+				<div id="dueThirtyDaysRatioSpan" class="y-echars-span"></div>
+			</div>
+		</div><!-- 逾期30天占比 -->
+		
+		<div class="layui-col-xs6" >
+			<div  id="dueOverThirtyDaysRatioDiv" class="y-echars-col2">
+				<div id="dueOverThirtyDaysRatio" class="y-echars-height350"></div>
+				<div id="dueOverThirtyDaysRatioSpan" class="y-echars-span"></div>
+			</div>
+		</div><!-- 逾期超过30天占比 -->
+		
+    </div>
+</div>
+
+<script type="text/javascript">
+layui.use(['dueStatistics'],function(){
+	var dueStatistics = layui.dueStatistics;
+	//初始化页面
+	dueStatistics.initView();
+})
+
+</script>

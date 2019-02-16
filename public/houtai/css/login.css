@@ -1,0 +1,78 @@
+@charset "utf-8";
+
+.banner-lump img{ width: 100%; height: 100%;padding:0px 0px;}
+
+/*.login-list:nth-child(1){ width:50%; height:600px; background: red; margin:50px auto }*/
+/*.login-list:nth-child(2){ height: 200px; background: blue;}*/
+/*.login-list:nth-child(3){ height: 200px; background: yellow;}*/
+
+.layadmin-user-login-icon{position:absolute;left:0px;width:45px;text-align:center;}
+/*.layadmin-user-login-icon img{ width:38px; height:38px;}*/
+.layadmin-user-login-icon img{ width:45px; height:45px;}
+/*.layui-input{border:1.4px solid #0bc07d;margin-left: 43px;width:130%}*/
+
+.login_form{
+    margin-top:15px;
+    padding:0px 13%;
+    /*width:200%*/
+    /*margin-left:10%;*/
+}
+
+.login_input_box input{
+    width:150%;
+    height:45px;
+    margin-left:45px;
+    border : 1.4px solid #F03232;
+    border-radius: 0px 2px 2px 0px;
+}
+
+.login_input_box input:hover{
+    border-color: #e0a88d!important;
+}
+
+
+/*记住密码背景色*/
+#container {margin: 15px auto;}
+#container span {position: relative;}
+#container .input_check {position: absolute;visibility: hidden;}
+#container .input_check+label {
+    display: inline-block;
+    /*width:  20px;*/
+    /*height: 20px;*/
+    width: 17px;
+    height: 17px;
+    border: 1px solid #F03232;
+    background-color: #F03232;
+    border-radius: 5px;
+}
+#container .input_check:checked+label:after {
+    content: "";
+    position: absolute;
+    left: -16px;
+    bottom: 5px;
+    width: 9px;
+    height: 4px;
+    border: 2px solid #ffffff;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    -ms-transform: rotate(-60deg);
+    -moz-transform: rotate(-60deg);
+    -webkit-transform: rotate(-60deg);
+    transform: rotate(-45deg);
+}
+#container label{
+    float:left;
+    top: 15px;
+}
+#login_btn{
+    background-color: #F03232;  !important;
+    border-radius: 5px; !important;
+    font-size: 18px !important;
+}
+
+
+/*input 提示颜色*/
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { /* WebKit browsers */ color: #e0a88d; font-size:15px; }
+input:-moz-placeholder, textarea:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ color: #e0a88d;}
+input::-moz-placeholder, textarea::-moz-placeholder { /* Mozilla Firefox 19+ */ color: #e0a88d;}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {   /* Internet Explorer 10+ */color: #e0a88d;}

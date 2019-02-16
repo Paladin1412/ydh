@@ -1,0 +1,63 @@
+<div id="page_risk_statistical">
+	<div class="y-page-title-report">
+		<div class="y-page-title"><%risk_statistical%></div><!--催收中-->
+		<form class="layui-form layui-form-pane" style="width:80%;display:block;margin-left:25%;margin-top:-30px;">
+			<div class="layui-form-item ">
+				<div class="layui-form-inline  y-left-pane " >
+					<label class="layui-form-label  "><i class="fa fa-calendar fa-lg"></i></label>
+					<div class="layui-input-inline">
+						<input name="date" type="text" id="date" class="layui-input" id="all_verify_date" v-bind:placeholder="order_time" />
+					</div>
+				</div>
+				<div id="hid_company" class="y-right-pane y-select">
+					<div class="layui-input-inline">
+						<select id="company_id" name="company_id" lay-filter='companyId' style="border-radius: 0px 100px 100px 0px;">
+						</select>
+					</div>
+					
+				</div>
+				<div id="hid_search_btn">
+					<a class="layui-btn layui-btn-sm layui-btn-normal" onclick="layui.riskStatistics.search()"><%search%></a>
+				</div>
+			</div>
+		</form>
+	</div>
+    <div class="layui-row" id="riskStatistics">
+    	<div class="layui-col-xs6" >
+			<div  id="riskPassRatioDiv" class="y-echars-col2">
+				<div id="riskPassRatio" class="y-echars-height350"></div>
+				<div id="riskPassRatioSpan" class="y-echars-span"></div>
+			</div>
+		</div><!-- 跑分占比(相当于风控占比) -->
+		
+		<div class="layui-col-xs6" >
+			<div  id="channelRiskPassRatioDiv" class="y-echars-col2">
+				<div id="channelRiskPassRatio" class="y-echars-height350"></div>
+				<div id="channelRiskPassRatioSpan" class="y-echars-span"></div>
+			</div>
+		</div><!-- 渠道跑分占比(相当于渠道风控通过占比) -->
+		
+		<div class="layui-col-xs6" >
+			<div  id="approvalPassRatioDiv" class="y-echars-col2">
+				<div id="approvalPassRatio" class="y-echars-height350"></div>
+				<div id="approvalPassRatioSpan" class="y-echars-span"></div>
+			</div>
+		</div><!-- 信审通过量占比 -->
+		
+		<div class="layui-col-xs6" >
+			<div  id="channelApprovalPassRatioDiv" class="y-echars-col2">
+				<div id="channelApprovalPassRatio" class="y-echars-height350"></div>
+				<div id="channelApprovalPassRatioSpan" class="y-echars-span"></div>
+			</div>
+		</div><!-- 渠道信审通过量占比 -->
+    </div>
+</div>
+
+<script type="text/javascript">
+layui.use(['riskStatistics'],function(){
+	var riskStatistics = layui.riskStatistics;
+	//初始化页面
+	riskStatistics.initView();
+})
+
+</script>

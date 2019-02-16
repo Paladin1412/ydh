@@ -1,0 +1,36 @@
+<div  id="viewDetail">
+        <!--渠道详情-->
+        <div class="y_title_detail" > <%channel_detail%>
+             <i style=" float:right;  margin-right:10px;" onclick="layui.col_common.showChannelDetailPage('parent');">
+                 <img src="image/close.png"  style="width:38px;height:38px;"alt=""></i>
+        </div>
+
+    <div class="y-page-body" >
+        <form  id ="cost_derate_form" class="layui-form layui-form-pane" action="" style="margin-top:10px;">
+            <div class="layui-form-item  y-left-pane" style="margin-left:0px">
+                <label class="layui-form-label  "><i class="fa fa-calendar fa-lg"></i></label>
+                <div class="layui-input-inline"  >
+                    <input   type="text" class="layui-input"  name="date1"  id="date1" v-bind:placeholder="search_date" autocomplete="off" />
+                </div>
+                <!--<div class="layui-form-inline  y-right-pane y-select" id="companyList" style="display:none;" >-->
+                    <!--<div class="layui-input-inline">-->
+                        <!--<select name="company_id"  id="company_id"  lay-filter="company_id" style="border-radius: 0px 100px 100px 0px;"></select>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="y-right-pane" >-->
+                    <!--<div class="y-right-box searching">-->
+                        <!--<input type="text"  name="search_string" id="search_string"   v-bind:placeholder="order_no+'/'+fullname" autocomplete="off" class="layui-input"  />-->
+                        <!--<label class="layui-form-label" onclick="layui.costDerate.getData(1,20)"><i class="fa fa-search fa-lg"></i></label>-->
+                    <!--</div>-->
+                <!--</div>-->
+            </div>
+        </form>
+        <div id="channelDetailTable" class="layui-table" lay-filter="channelDetailTableEvent" ></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    layui.use(['channelDetail'], function () {
+        var channelDetail = layui.channelDetail;
+    });
+</script>

@@ -1,0 +1,214 @@
+<div>
+<div class="y-page-title">公共样式页面</div>
+<div class="y-page-body">
+<span id="msg" ></span>
+<button class="layui-btn layui-btn-radius y-btn-green">公共标准按钮，大部分用这个</button>
+<button class="layui-btn layui-btn-radius layui-btn-sm y-btn-green">公共小型按钮</button>
+
+<button class="layui-btn layui-btn-radius layui-btn-xs y-btn-green">公共迷你按钮，主要放在表格里面的操作按钮</button>
+	<form class="layui-form" action="" style="margin-top: 10px; width: 600px;">
+
+		<form class="layui-form" action="">
+  <div class="layui-form-item">
+    <label class="layui-form-label">输入框</label>
+    <div class="layui-input-block">
+      <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">密码框</label>
+    <div class="layui-input-inline">
+      <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+    </div>
+    <div class="layui-form-mid layui-word-aux">辅助文字</div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">选择框</label>
+    <div class="layui-input-block">
+      <select name="city" lay-verify="required">
+        <option value=""></option>
+        <option value="0">北京</option>
+        <option value="1">上海</option>
+        <option value="2">广州</option>
+        <option value="3">深圳</option>
+        <option value="4">杭州</option>
+      </select>
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">复选框</label>
+    <div class="layui-input-block">
+      <input type="checkbox" name="like[write]" title="写作">
+      <input type="checkbox" name="like[read]" title="阅读" checked>
+      <input type="checkbox" name="like[dai]" title="发呆">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">开关</label>
+    <div class="layui-input-block">
+      <input type="checkbox" name="switch" lay-skin="switch">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">单选框</label>
+    <div class="layui-input-block">
+      <input type="radio" name="sex" value="男" title="男">
+      <input type="radio" name="sex" value="女" title="女" checked>
+    </div>
+  </div>
+  <div class="layui-form-item layui-form-text">
+    <label class="layui-form-label">文本域</label>
+    <div class="layui-input-block">
+      <textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <div class="layui-input-block">
+      <button class="layui-btn layui-btn-radius y-btn-green" lay-submit lay-filter="formDemo">立即提交</button>
+      <button type="reset " class="layui-btn  layui-btn-radius layui-btn-primary">重置</button>
+    </div>
+  </div>
+</form>
+
+
+
+
+
+
+<form class="layui-form layui-form-pane" action="" style="margin-top: 10px; width: 600px;">
+
+  <div class="layui-form-item  y-left-pane ">
+    <label class="layui-form-label " ><span style="color: #A7EDD8;" class="fa fa-user fa-lg"></span></label>
+    <div class="layui-input-block"  >
+      <select name="city" lay-verify="required" style="border-radius:  0px 100px  100px 0px  ;">
+        <option value=""></option>
+        <option value="0">北京</option>
+        <option value="1">上海</option>
+        <option value="2">广州</option>
+        <option value="3">深圳</option>
+        <option value="4">杭州</option>
+      </select>
+    </div>
+  </div>
+  
+  <div class="layui-form-item  y-left-pane ">
+    <label class="layui-form-label  "><i class="fa fa-calendar fa-lg"></i></label>
+    <div class="layui-input-block"  >
+      <input type="text" class="layui-input" id="date" />
+    </div>
+  </div>
+  
+  <div class="layui-form-item  y-right-pane ">
+    <div class="y-right-box"  >
+      <input type="text" class="layui-input"  />
+      <label class="layui-form-label  "><i class="fa fa-search fa-lg"></i></label>
+    </div>
+    
+  </div>
+  
+  <div class="layui-form-item  y-right-pane y-select ">
+      <div class="layui-input-block"  >
+      <select name="city" lay-verify="required" style="border-radius:  0px 100px  100px 0px  ;">
+        <option value="">状态</option>
+        <option value="0">北京</option>
+        <option value="1">上海</option>
+        <option value="2">广州</option>
+        <option value="3">深圳</option>
+        <option value="4">杭州</option>
+      </select>
+     
+    </div>
+    
+  </div>
+
+
+</form>
+<div><img src="image/催收系统.jpg"/></div>
+<div class="y-page-title"> 国际化</div>
+<div>
+	<div id="need_language">
+	     <div>{{param1}}</div>
+	     <div>{{param2}}</div>
+	</div>
+	<pre class="layui-code">
+	  1. html代码：  加入需要的国际化的参数
+	{{param1}}
+	{{param2}}
+	  
+	2. 配置语言:
+	
+	   在cn.js,en.js,id.js文件加入
+	   ,'param1':'indonesia1'		
+       ,'param2':'indonesia2'
+       
+    3. 渲染
+    
+                  在页面显示的时候  ，执行js,传入需要国际化的id，不需要加‘#’
+                  var language = layui.language;
+        	language.render('need_language');
+                 
+  
+	</pre>
+</div>
+</div>
+
+<!-- 添加详情页面通用表格样式 -->
+<div class="y-page-body" style="margin-top:30px;padding:0px;">
+            <div class="layui-inline y-page-info">
+                <span>订单详细</span>
+            </div>
+            <table class="y-page-table" id="order_info">
+            	<tr>
+            		<td class="td_bg">订单号</td>
+            		<td>2</td>
+            		<td class="td_bg">姓名</td>
+            		<td>4</td>
+            		<td class="td_bg">手机号码</td>
+            		<td>6</td>
+            	</tr>
+            	<tr>
+            		<td class="td_bg">贷款金额</td>
+            		<td>8</td>
+            		<td class="td_bg">还款金额</td>
+            		<td>1</td>
+            		<td class="td_bg">银行名称</td>
+            		<td>3</td>
+            	</tr>
+            	<tr>
+            		<td class="td_bg">银行卡号</td>
+            		<td>5</td>
+            		<td class="td_bg">贷款时间</td>
+            		<td>7</td>
+            		<td class="td_bg">借款期限</td>
+            		<td>9</td>
+            	</tr>
+            	<tr>
+            		<td class="td_bg">审批时间</td>
+            		<td>2</td>
+            		<td class="td_bg">放款时间</td>
+            		<td>4</td>
+            		<td class="td_bg">还款结清时间</td>
+            		<td>6</td>
+            	</tr>
+            	<tr>
+            		<td class="td_bg">状态</td>
+            		<td>2</td>
+            		<td class="td_bg">信审审核</td>
+            		<td>4</td>
+            		<td class="td_bg">不通过原因</td>
+            		<td>6</td>
+            	</tr>
+            </table>
+    </div>
+
+
+
+</div>
+<script type="text/javascript">
+
+layui.use(['style'], function(){
+	  var style = layui.style;
+	  style.initView();
+	});
+	
+</script>

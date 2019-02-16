@@ -1,0 +1,529 @@
+---------------------------------------------------------------
+[ 2018-11-27T20:36:09+08:00 ] 192.168.10.1 POST /loan/Test/n%20b
+[ info ] www.ydh.work/loan/Test/n%20b [运行时间：0.135845s][吞吐率：7.36req/s] [内存消耗：356.82kb] [文件加载：42]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'loan',
+    1 => 'Test',
+    2 => 'n b',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'content-length' => '165',
+  'content-type' => 'multipart/form-data; boundary=--------------------------594485799526753891229955',
+  'accept-encoding' => 'gzip, deflate',
+  'host' => 'www.ydh.work',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.1.1',
+  'postman-token' => 'c9fc5fc9-9f66-4cff-a5de-4380a392eaaa',
+  'cache-control' => 'no-cache',
+)
+[ info ] [ PARAM ] array (
+  'scene' => 'wefds',
+)
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/public/../application/loan/lang/zh-cn.php
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-11-27T20:36:16+08:00 ] 192.168.10.1 POST /loan/Test/weilaiwx
+[ info ] www.ydh.work/loan/Test/weilaiwx [运行时间：0.082361s][吞吐率：12.14req/s] [内存消耗：229.91kb] [文件加载：44]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'loan',
+    1 => 'Test',
+    2 => 'weilaiwx',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'content-length' => '165',
+  'content-type' => 'multipart/form-data; boundary=--------------------------500566363650172960462328',
+  'accept-encoding' => 'gzip, deflate',
+  'host' => 'www.ydh.work',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.1.1',
+  'postman-token' => '6c53251f-61ff-44ba-879c-866879f12448',
+  'cache-control' => 'no-cache',
+)
+[ info ] [ PARAM ] array (
+  'scene' => 'wefds',
+)
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/public/../application/loan/lang/zh-cn.php
+[ info ] [ RUN ] app\loan\controller\Test->weilaiwx[ /home/vagrant/code/admin_ydh/application/loan/controller/Test.php ]
+[ info ] [ LOG ] INIT File
+[ error ] [0]致命错误: Class 'app\loan\controller\SmsOperator' not found[/home/vagrant/code/admin_ydh/application/loan/controller/Test.php:30]
+---------------------------------------------------------------
+[ 2018-11-27T20:38:36+08:00 ] 192.168.10.1 POST /loan/Test/weilaiwx
+[ info ] www.ydh.work/loan/Test/weilaiwx [运行时间：0.064369s][吞吐率：15.54req/s] [内存消耗：229.23kb] [文件加载：44]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'loan',
+    1 => 'Test',
+    2 => 'weilaiwx',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'content-length' => '165',
+  'content-type' => 'multipart/form-data; boundary=--------------------------082926238423123702287244',
+  'accept-encoding' => 'gzip, deflate',
+  'host' => 'www.ydh.work',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.1.1',
+  'postman-token' => '1fa8b2f5-20a2-44fe-9d13-92b0f913677b',
+  'cache-control' => 'no-cache',
+)
+[ info ] [ PARAM ] array (
+  'scene' => 'wefds',
+)
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/public/../application/loan/lang/zh-cn.php
+[ info ] [ RUN ] app\loan\controller\Test->weilaiwx[ /home/vagrant/code/admin_ydh/application/loan/controller/Test.php ]
+[ info ] [ LOG ] INIT File
+[ error ] [0]致命错误: Class 'app\loan\controller\SmsOperator' not found[/home/vagrant/code/admin_ydh/application/loan/controller/Test.php:30]
+---------------------------------------------------------------
+[ 2018-11-27T20:38:37+08:00 ] 192.168.10.1 POST /loan/Test/weilaiwx
+[ info ] www.ydh.work/loan/Test/weilaiwx [运行时间：0.062247s][吞吐率：16.07req/s] [内存消耗：227.98kb] [文件加载：44]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'loan',
+    1 => 'Test',
+    2 => 'weilaiwx',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'content-length' => '165',
+  'content-type' => 'multipart/form-data; boundary=--------------------------028252892318227751298709',
+  'accept-encoding' => 'gzip, deflate',
+  'host' => 'www.ydh.work',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.1.1',
+  'postman-token' => '21a8c2d4-610a-45d9-bfe5-612e3ed90ffb',
+  'cache-control' => 'no-cache',
+)
+[ info ] [ PARAM ] array (
+  'scene' => 'wefds',
+)
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/public/../application/loan/lang/zh-cn.php
+[ info ] [ RUN ] app\loan\controller\Test->weilaiwx[ /home/vagrant/code/admin_ydh/application/loan/controller/Test.php ]
+[ info ] [ LOG ] INIT File
+[ error ] [0]致命错误: Class 'app\loan\controller\SmsOperator' not found[/home/vagrant/code/admin_ydh/application/loan/controller/Test.php:30]
+---------------------------------------------------------------
+[ 2018-11-27T20:40:13+08:00 ] 192.168.10.1 POST /loan/Test/weilaiwx
+[ info ] www.ydh.work/loan/Test/weilaiwx [运行时间：0.044109s][吞吐率：22.67req/s] [内存消耗：229.82kb] [文件加载：44]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'loan',
+    1 => 'Test',
+    2 => 'weilaiwx',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'content-length' => '165',
+  'content-type' => 'multipart/form-data; boundary=--------------------------662885678092773239081178',
+  'accept-encoding' => 'gzip, deflate',
+  'host' => 'www.ydh.work',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.1.1',
+  'postman-token' => 'bfd9634e-d092-4d6c-93d7-d9608186ebd2',
+  'cache-control' => 'no-cache',
+)
+[ info ] [ PARAM ] array (
+  'scene' => 'wefds',
+)
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/public/../application/loan/lang/zh-cn.php
+[ info ] [ RUN ] app\loan\controller\Test->weilaiwx[ /home/vagrant/code/admin_ydh/application/loan/controller/Test.php ]
+[ info ] [ LOG ] INIT File
+[ error ] [0]致命错误: Class 'app\loan\controller\SmsOperator' not found[/home/vagrant/code/admin_ydh/application/loan/controller/Test.php:30]
+---------------------------------------------------------------
+[ 2018-11-27T20:42:35+08:00 ] 192.168.10.1 POST /loan/Test/weilaiwx
+[ info ] www.ydh.work/loan/Test/weilaiwx [运行时间：0.061863s][吞吐率：16.16req/s] [内存消耗：228.56kb] [文件加载：44]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'loan',
+    1 => 'Test',
+    2 => 'weilaiwx',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'content-length' => '165',
+  'content-type' => 'multipart/form-data; boundary=--------------------------310592910960072943120994',
+  'accept-encoding' => 'gzip, deflate',
+  'host' => 'www.ydh.work',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.1.1',
+  'postman-token' => '61733a39-9ca9-41a0-a872-09d6fac49194',
+  'cache-control' => 'no-cache',
+)
+[ info ] [ PARAM ] array (
+  'scene' => 'wefds',
+)
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/public/../application/loan/lang/zh-cn.php
+[ info ] [ RUN ] app\loan\controller\Test->weilaiwx[ /home/vagrant/code/admin_ydh/application/loan/controller/Test.php ]
+[ info ] [ LOG ] INIT File
+[ error ] [0]致命错误: Class 'app\loan\controller\SmsOperator' not found[/home/vagrant/code/admin_ydh/application/loan/controller/Test.php:30]
+---------------------------------------------------------------
+[ 2018-11-27T20:44:24+08:00 ] 192.168.10.1 POST /loan/Test/weilaiwx
+[ info ] www.ydh.work/loan/Test/weilaiwx [运行时间：0.084730s][吞吐率：11.80req/s] [内存消耗：234.15kb] [文件加载：47]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'loan',
+    1 => 'Test',
+    2 => 'weilaiwx',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'content-length' => '165',
+  'content-type' => 'multipart/form-data; boundary=--------------------------859074305915599551249466',
+  'accept-encoding' => 'gzip, deflate',
+  'host' => 'www.ydh.work',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.1.1',
+  'postman-token' => '65e9d7d3-3430-47c8-911e-db12090c1142',
+  'cache-control' => 'no-cache',
+)
+[ info ] [ PARAM ] array (
+  'scene' => 'wefds',
+)
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/public/../application/loan/lang/zh-cn.php
+[ info ] [ RUN ] app\loan\controller\Test->weilaiwx[ /home/vagrant/code/admin_ydh/application/loan/controller/Test.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ BEHAVIOR ] Run app\loan\behavior\MongoLog @app_end [ RunTime:0.013208s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-11-27T20:45:18+08:00 ] 192.168.10.1 POST /loan/Test/weilaiwx
+[ info ] www.ydh.work/loan/Test/weilaiwx [运行时间：0.076971s][吞吐率：12.99req/s] [内存消耗：317.23kb] [文件加载：47]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'loan',
+    1 => 'Test',
+    2 => 'weilaiwx',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'content-length' => '165',
+  'content-type' => 'multipart/form-data; boundary=--------------------------123714097848577381879425',
+  'accept-encoding' => 'gzip, deflate',
+  'host' => 'www.ydh.work',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.1.1',
+  'postman-token' => '277c099d-5e5f-4b3e-a71a-222c74b8a177',
+  'cache-control' => 'no-cache',
+)
+[ info ] [ PARAM ] array (
+  'scene' => 'wefds',
+)
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/public/../application/loan/lang/zh-cn.php
+[ info ] [ RUN ] app\loan\controller\Test->weilaiwx[ /home/vagrant/code/admin_ydh/application/loan/controller/Test.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ BEHAVIOR ] Run app\loan\behavior\MongoLog @app_end [ RunTime:0.007821s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-11-27T20:45:51+08:00 ] 192.168.10.1 POST /loan/Test/weilaiwx
+[ info ] www.ydh.work/loan/Test/weilaiwx [运行时间：0.058835s][吞吐率：17.00req/s] [内存消耗：235.87kb] [文件加载：50]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'loan',
+    1 => 'Test',
+    2 => 'weilaiwx',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'content-length' => '165',
+  'content-type' => 'multipart/form-data; boundary=--------------------------716503975650103450783515',
+  'accept-encoding' => 'gzip, deflate',
+  'host' => 'www.ydh.work',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.1.1',
+  'postman-token' => '5c9e6bcf-a175-4601-b12c-adb20a1b63ef',
+  'cache-control' => 'no-cache',
+)
+[ info ] [ PARAM ] array (
+  'scene' => 'wefds',
+)
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/public/../application/loan/lang/zh-cn.php
+[ info ] [ RUN ] app\loan\controller\Test->weilaiwx[ /home/vagrant/code/admin_ydh/application/loan/controller/Test.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ BEHAVIOR ] Run app\loan\behavior\MongoLog @app_end [ RunTime:0.005797s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-11-27T20:46:17+08:00 ] 192.168.10.1 POST /loan/Test/weilaiwx
+[ info ] www.ydh.work/loan/Test/weilaiwx [运行时间：0.132626s][吞吐率：7.54req/s] [内存消耗：234.57kb] [文件加载：49]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'loan',
+    1 => 'Test',
+    2 => 'weilaiwx',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'content-length' => '165',
+  'content-type' => 'multipart/form-data; boundary=--------------------------754578091211940165395171',
+  'accept-encoding' => 'gzip, deflate',
+  'host' => 'www.ydh.work',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.1.1',
+  'postman-token' => 'c74d5447-c730-41af-8dc0-31ec8422e728',
+  'cache-control' => 'no-cache',
+)
+[ info ] [ PARAM ] array (
+  'scene' => 'wefds',
+)
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/public/../application/loan/lang/zh-cn.php
+[ info ] [ RUN ] app\loan\controller\Test->weilaiwx[ /home/vagrant/code/admin_ydh/application/loan/controller/Test.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ BEHAVIOR ] Run app\loan\behavior\MongoLog @app_end [ RunTime:0.004346s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-11-27T21:41:55+08:00 ] 192.168.10.1 POST /loan/Common/send_msg
+[ info ] www.ydh.work/loan/Common/send_msg [运行时间：0.123661s][吞吐率：8.09req/s] [内存消耗：237.70kb] [文件加载：49]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'loan',
+    1 => 'Common',
+    2 => 'send_msg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'content-length' => '386',
+  'content-type' => 'multipart/form-data; boundary=--------------------------643622874263143979366335',
+  'accept-encoding' => 'gzip, deflate',
+  'host' => 'www.ydh.work',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.1.1',
+  'postman-token' => '0663254a-2ae8-4dbb-ae99-fb77568a4534',
+  'cache-control' => 'no-cache',
+  'companycode' => '5aab9fb19ecea',
+)
+[ info ] [ PARAM ] array (
+  'phone' => '18529113912',
+  'type' => '1',
+  'scene' => 'sdfdsfs',
+)
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/public/../application/loan/lang/zh-cn.php
+[ info ] [ RUN ] app\loan\controller\Common->send_msg[ /home/vagrant/code/admin_ydh/application/loan/controller/Common.php ]
+[ info ] [ LOG ] INIT File
+[ error ] [0]致命错误: Call to undefined function Sms\mport()[/home/vagrant/code/admin_ydh/extend/Sms/WeiLaiWuXian.php:40]
+---------------------------------------------------------------
+[ 2018-11-27T21:42:17+08:00 ] 192.168.10.1 POST /loan/Common/send_msg
+[ info ] www.ydh.work/loan/Common/send_msg [运行时间：1.270062s][吞吐率：0.79req/s] [内存消耗：433.76kb] [文件加载：62]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'loan',
+    1 => 'Common',
+    2 => 'send_msg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'content-length' => '386',
+  'content-type' => 'multipart/form-data; boundary=--------------------------164707678479881607193945',
+  'accept-encoding' => 'gzip, deflate',
+  'host' => 'www.ydh.work',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.1.1',
+  'postman-token' => '3422a4db-e201-4e32-aac0-92af429212c9',
+  'cache-control' => 'no-cache',
+  'companycode' => '5aab9fb19ecea',
+)
+[ info ] [ PARAM ] array (
+  'phone' => '18529113912',
+  'type' => '1',
+  'scene' => 'sdfdsfs',
+)
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/public/../application/loan/lang/zh-cn.php
+[ info ] [ RUN ] app\loan\controller\Common->send_msg[ /home/vagrant/code/admin_ydh/application/loan/controller/Common.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ BEHAVIOR ] Run app\loan\behavior\MongoLog @app_end [ RunTime:0.002418s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-11-27T21:43:08+08:00 ] 192.168.10.1 POST /loan/Common/send_msg
+[ info ] www.ydh.work/loan/Common/send_msg [运行时间：0.668217s][吞吐率：1.50req/s] [内存消耗：433.09kb] [文件加载：62]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'loan',
+    1 => 'Common',
+    2 => 'send_msg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'content-length' => '386',
+  'content-type' => 'multipart/form-data; boundary=--------------------------678291910923438387601091',
+  'accept-encoding' => 'gzip, deflate',
+  'host' => 'www.ydh.work',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.1.1',
+  'postman-token' => '0593806d-33f0-4e20-afe7-568f557318db',
+  'cache-control' => 'no-cache',
+  'companycode' => '5aab9fb19ecea',
+)
+[ info ] [ PARAM ] array (
+  'phone' => '18529113912',
+  'type' => '1',
+  'scene' => 'sdfdsfs',
+)
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/public/../application/loan/lang/zh-cn.php
+[ info ] [ RUN ] app\loan\controller\Common->send_msg[ /home/vagrant/code/admin_ydh/application/loan/controller/Common.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ BEHAVIOR ] Run app\loan\behavior\MongoLog @app_end [ RunTime:0.003152s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-11-27T21:47:20+08:00 ] 192.168.10.1 POST /loan/Common/send_msg
+[ info ] www.ydh.work/loan/Common/send_msg [运行时间：0.594645s][吞吐率：1.68req/s] [内存消耗：433.09kb] [文件加载：62]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'loan',
+    1 => 'Common',
+    2 => 'send_msg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'content-length' => '386',
+  'content-type' => 'multipart/form-data; boundary=--------------------------886792883959380382982257',
+  'accept-encoding' => 'gzip, deflate',
+  'host' => 'www.ydh.work',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.1.1',
+  'postman-token' => 'b68f7a38-fdce-4e8d-ab0e-7b3ceecb4350',
+  'cache-control' => 'no-cache',
+  'companycode' => '5aab9fb19ecea',
+)
+[ info ] [ PARAM ] array (
+  'phone' => '18529113912',
+  'type' => '2',
+  'scene' => 'sdfdsfs',
+)
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/public/../application/loan/lang/zh-cn.php
+[ info ] [ RUN ] app\loan\controller\Common->send_msg[ /home/vagrant/code/admin_ydh/application/loan/controller/Common.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ BEHAVIOR ] Run app\loan\behavior\MongoLog @app_end [ RunTime:0.002811s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-11-27T21:47:29+08:00 ] 192.168.10.1 POST /loan/Common/send_msg
+[ info ] www.ydh.work/loan/Common/send_msg [运行时间：0.551048s][吞吐率：1.81req/s] [内存消耗：431.99kb] [文件加载：62]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'loan',
+    1 => 'Common',
+    2 => 'send_msg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'content-length' => '386',
+  'content-type' => 'multipart/form-data; boundary=--------------------------623920528826229197448663',
+  'accept-encoding' => 'gzip, deflate',
+  'host' => 'www.ydh.work',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.1.1',
+  'postman-token' => 'ff2aa724-19c9-4e2c-bcac-a077689aa399',
+  'cache-control' => 'no-cache',
+  'companycode' => '5aab9fb19ecea',
+)
+[ info ] [ PARAM ] array (
+  'phone' => '18529113912',
+  'type' => '3',
+  'scene' => 'sdfdsfs',
+)
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/public/../application/loan/lang/zh-cn.php
+[ info ] [ RUN ] app\loan\controller\Common->send_msg[ /home/vagrant/code/admin_ydh/application/loan/controller/Common.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ BEHAVIOR ] Run app\loan\behavior\MongoLog @app_end [ RunTime:0.002404s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-11-27T21:48:40+08:00 ] 192.168.10.1 POST /loan/Common/send_msg
+[ info ] www.ydh.work/loan/Common/send_msg [运行时间：0.043528s][吞吐率：22.97req/s] [内存消耗：243.59kb] [文件加载：52]
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'loan',
+    1 => 'Common',
+    2 => 'send_msg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'content-length' => '386',
+  'content-type' => 'multipart/form-data; boundary=--------------------------525400250198442047961233',
+  'accept-encoding' => 'gzip, deflate',
+  'host' => 'www.ydh.work',
+  'accept' => '*/*',
+  'user-agent' => 'PostmanRuntime/7.1.1',
+  'postman-token' => '18d0fdcf-7d93-419a-a39e-e133aa53a862',
+  'cache-control' => 'no-cache',
+  'companycode' => '5aab9fb19ecea',
+)
+[ info ] [ PARAM ] array (
+  'phone' => '18529113912',
+  'type' => '3',
+  'scene' => 'sdfdsfs',
+)
+[ info ] [ LANG ] /home/vagrant/code/admin_ydh/public/../application/loan/lang/zh-cn.php
+[ info ] [ RUN ] app\loan\controller\Common->send_msg[ /home/vagrant/code/admin_ydh/application/loan/controller/Common.php ]
+[ info ] [ DB ] INIT \think\mongo\Connection
+[ info ] [ BEHAVIOR ] Run app\loan\behavior\MongoLog @app_end [ RunTime:0.003339s ]
+[ info ] [ LOG ] INIT File

@@ -1,0 +1,24 @@
+<div id="homePage">
+    <div class="y-page-title"><%finance_statistic_report%></div>
+    <div class="layui-col-xs12" >
+        <div id="huiShouDiv" class="y-echars-col2">
+            <div id="huiShouRatio" class="y-echars-height350" style="width:50%;margin-left: 25%"></div>
+        </div>
+        <div id="huiShouRatioSpan" class="y-echars-span" style="right:25%"></div>
+    </div><!-- 回收报告 -->
+
+    <div class="layui-col-xs12" style="display: block;" >
+        <div  id="benjinHuishouDiv" class="y-echars-col2" style="height: 400px;">
+            <div id="benjinHuishouRatio" class="y-echars-height350"  style="height: 380px"></div>
+        </div>
+        <div id="benjinHuishouRatioSpan" class="y-echars-span" style="right:40%;"></div>
+    </div><!-- 本金回收 -->
+</div>
+
+<script>
+    layui.use(['index_report'], function(){
+        var index_report = layui.index_report;
+        //页面初始化
+        index_report.initView();
+    });
+</script>

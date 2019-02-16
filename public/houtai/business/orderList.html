@@ -1,0 +1,193 @@
+<div id="paramPage" class="order-scroll">
+	<div class="y-page-title"><%order_list%></div>
+	<div class="y-page-body" style="padding:20px">
+		<form class="layui-form layui-form-pane" id="orderListForm">
+			<div class="layui-form-item">
+				<div class="y-left-pane layui-form-inline">
+					<label class="layui-form-label  "><i class="fa fa-calendar fa-lg"></i></label>
+					<div class="layui-input-inline"  >
+						<input type="text" class="layui-input" id="date" name="date"  v-bind:placeholder="apply_date" autocomplete="off" />
+					</div>
+				</div>
+				<div class="y-left-pane layui-form-inline">
+					<label class="layui-form-label  "><i class="fa fa-calendar fa-lg"></i></label>
+					<div class="layui-input-inline"  >
+						<input type="text" class="layui-input" id="date2" name="date2"  v-bind:placeholder="return_date" autocomplete="off" />
+					</div>
+				</div>
+				<div class="y-left-pane layui-form-inline">
+					<label class="layui-form-label  "><i class="fa fa-calendar fa-lg"></i></label>
+					<div class="layui-input-inline"  >
+						<input type="text" class="layui-input" id="date3" name="date3"  v-bind:placeholder="repay_date" autocomplete="off" />
+					</div>
+				</div>
+				<div id="hid_company" class="layui-form-inline  y-right-pane y-select" style="display:none;">
+					<div class="layui-input-inline">
+						<select id="company_id" name="company_id" lay-filter="company_id" style="border-radius: 0px 100px 100px 0px;"></select>
+					</div>
+				</div>
+				<div id="statistical_div" class="layui-form-inline  y-right-pane y-select" style="display: none" >
+					<div class="layui-input-inline" style="width:150px;">
+						<select id="statistical_code" name="statistical_code"  style="border-radius: 0px 100px 100px 0px;"></select>
+					</div>
+				</div>
+				<div class="layui-form-inline  y-right-pane y-select">
+					<div class="layui-input-inline" style="width:150px;">
+						<select id="order_status" name="order_status"  style="border-radius: 0px 100px 100px 0px;"></select>
+					</div>
+				</div>
+				<!--风控审批状态-->
+				<div class="layui-form-inline  y-right-pane y-select">
+					<div class="layui-input-inline" style="width:150px;">
+						<select id="risk_status" name="risk_status"  style="border-radius: 0px 100px 100px 0px;">
+							<option value=""><%risk_status%></option>
+							<option value="0"><%no_going%></option>
+							<option value="1"><%pass%></option>
+							<option value="2"><%no_pass%></option>
+						</select>
+					</div>
+				</div>
+				<!--信审审批状态-->
+				<div class="layui-form-inline  y-right-pane y-select">
+					<div class="layui-input-inline" style="width:150px;">
+						<select id="handle_status" name="handle_status"  style="border-radius: 0px 100px 100px 0px;">
+							<option value=""><%handle_status%></option>
+							<option value="1"><%no_going%></option>
+							<option value="2"><%pass%></option>
+							<option value="3"><%no_pass%></option>
+						</select>
+					</div>
+				</div>
+				<!--放款状态-->
+				<div class="layui-form-inline  y-right-pane y-select">
+					<div class="layui-input-inline" style="width:150px;">
+						<select id="pay_status" name="pay_status"  style="border-radius: 0px 100px 100px 0px;">
+							<option value=""><%pay_status%></option>
+							<option value="0"><%no_going%></option>
+							<option value="1"><%success%></option>
+							<option value="2"><%fail%></option>
+						</select>
+					</div>
+				</div>
+				<div class="y-right-pane layui-form-inline">
+					<div class="y-right-box" style="width:260px;">
+						<input type="text" id="search_string" name="search_string" v-bind:placeholder="order_no +'/'+ fullname +'/'+ idcard_no +'/'+ phone_no" autocomplete="off" class="layui-input"/>
+						<label class="layui-form-label" onclick="layui.orderList.getData(1,20)"><i class="fa fa-search fa-lg"></i></label>
+					</div>
+				</div>
+			</div>
+		</form>
+	
+		<div class="y-data-table">
+			<div id="orderListTable" class="layui-table"></div>
+			<div id="orderListPage"></div>
+		</div>
+	</div>
+</div>
+
+<div id="itemPage" style="display:none" class="details_box">
+	<div class=" y_title_detail">
+	    <%order_info%>
+	    <div style="float: right">
+	        <!--<a href="#" onclick="layui.orderList.orderInfo()"> <i class="layui-icon">&#x1006;</i></a>-->
+			<i style=" float:right;  margin-right:10px;" onclick="layui.orderList.orderInfo()"> <img src="image/close.png"  style="width:38px;height:38px;"alt=""></i>
+		</div>
+	</div>
+	<div class="y-page-body y-page-top10">
+            <div class="layui-inline y-page-info">
+                <span class="detail_tab_title">&nbsp;<%order_details%></span>
+            </div>
+            <table class="y-page-table" id="order_info"></table>
+    </div>
+    <div class="y-page-body y-page-top10">
+            <div class="layui-inline y-page-info">
+                <span class="detail_tab_title">&nbsp;<%loan_debit_record_info%></span>
+            </div>
+            <table class="y-page-table" id="loan_debit_record_info"></table>
+    </div>
+    <div class="y-page-body y-page-top10">
+            <div class="layui-inline y-page-info">
+                <span class="detail_tab_title">&nbsp;<%repayment_debit_record_info%></span>
+            </div>
+            <table class="y-page-table" id="repayment_debit_record_info"></table>
+    </div>
+
+	<!--<div class="y-page-body y-page-top10">-->
+		<!--<div class="layui-inline y-page-info">-->
+			<!--<span class="detail_tab_title">&nbsp;<%repay_code_record%></span>-->
+		<!--</div>-->
+		<!--<table class="y-page-table" id="repayment_code_record_info"></table>-->
+	<!--</div>-->
+    
+</div>
+
+<script type="text/html" id="orderNo">
+	{{# if(d.order_no != null){ }}
+		<a class="td_a"   href="javascript:;"  onclick="layui.orderList.orderDetails('{{d.order_no}}')">{{d.order_no}}</a>
+	{{# } }}
+</script>
+
+
+<!-- 定义order_info table模板 -->
+<script type="text/html" id="orderInfo">
+	<colgroup>
+		<col width="10%">
+		<col width="20%">
+		<col width="10%">
+		<col width="20%">
+		<col width="10%">
+		<col width="20%">
+	</colgroup>
+
+<tr>
+	<td class="td_bg"><%order_no%></td>
+	<td>{{d.order_no || ''}}</td>
+	<td class="td_bg"><%name%></td>
+	<td>{{d.name || ''}}</td>
+	<td class="td_bg"><%phone_no%></td>
+	<td>{{d.phone || ''}}</td>
+</tr>
+<tr>
+	<td class="td_bg"><%application_amount%></td>
+	<td>{{d.application_amount}}</td>
+	<td class="td_bg"><%paid_amount%></td>
+	<td>{{d.paid_amount || ''}}</td>
+	<td class="td_bg"><%bankcard_name%></td>
+	<td>{{d.bankcard_name || ''}}</td>
+</tr>
+<tr>
+	<td class="td_bg"><%card_num%></td>
+	<td>{{d.card_num || ''}}</td>
+	<td class="td_bg"><%add_time%></td>
+	<td>{{d.add_time || '-'}}</td>
+	<td class="td_bg"><%chushen_time%></td>
+	<td>{{d.check_time1 || '-'}}</td>
+</tr>
+<tr>
+	<td class="td_bg"><%lending_time%></td>
+	<td>{{d.lending_time || '-'}}</td>
+	<td class="td_bg"><%end_time%></td>
+	<td>{{d.end_time || '-'}}</td>
+	<td class="td_bg"><%status%></td>
+	<td>{{d.order_status}}</td>
+</tr>
+<tr>
+	<td class="td_bg"><%not_pass_info%></td>
+	<td>{{d.not_pass_info || ''}}</td>
+	<td class="td_bg"></td>
+	<td></td>
+	<td class="td_bg"><%zhongshen_time%></td>
+	<td>{{d.check_time2 || '-'}}</td>
+</tr>
+</script>
+
+
+
+<script type="text/javascript">
+layui.use(['orderList'],function(){
+	var orderList = layui.orderList;
+	//初始化页面
+	orderList.initView();
+})
+
+</script>

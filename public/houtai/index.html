@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=8">
+<meta http-equiv="Expires" content="0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache"  content="no-cache">
+<meta http-equiv="Cache-control" content="no-cache">
+
+<title id="index_host_title"><%index_host_title%></title><!--<%index_host_title%>后台管理-->
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="layui-2.2.6/dist/css/layui.css">
+    <!--<link rel="stylesheet" href="css/iconfont.css">-->
+    <!--<link rel="stylesheet" type="text/css" href="css/reportNew.css?v=201708101"/>-->
+<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/common.css?v=1.0.0.0">
+<link rel="stylesheet" href="css/style.css?v=1.0.0.0">
+<link rel="stylesheet" href="css/style_ydh.css?v=1.0.0.0">
+<link rel="stylesheet" href="viewer/css/viewer.min.css"><!--图片展示css-->
+
+<!--[if lt IE 9]>
+<script type="text/javascript" src="layui-2.2.6/ext/html5.js"></script>
+<script type="text/javascript" src="layui-2.2.6/ext/respond.min.js"></script>
+<![endif]-->
+
+<script type="text/javascript" src="layui-2.2.6/ext/vue.min.js"></script>
+<script type="text/javascript" src="module/cn.js?v=1.0.0.0"></script>
+<script type="text/javascript" src="module/en.js?v=1.0.0.0"></script>
+</head>
+
+<body>
+  <div id="main_content">
+     <div class="layui-logo div-inline" id="left-logo">
+        <img src="image/logo.png"/>
+     </div>
+  <div id="left"> </div>
+  
+  <div id="main"></div>
+</div>
+
+<!-- header start -->
+<div  id="header">
+    <div class="layui-logo div-inline">
+        <img src="image/logo.png"/>
+    </div>
+    <div class="div-inline" style="margin-left:20px;">
+    	 <img id="memu_close" src="image/memu-close.png"  onclick="layui.index.memuOpen('close')">
+    	 <img id="memu_open" style="display:none" src="image/memu-open.png" onclick="layui.index.memuOpen('open')">
+    </div>
+    
+    <div class="div-inline" style="float:right;margin-right: 38px;">
+    	 <img src="image/index_user.png" style="margin-left:30px">
+         <div class="div-inline" id="realname_div">  </div>
+    	 <img src="image/logout.png" style="margin-left:30px" />
+    	 <a href="javascript:;" style="font-size:16px;margin-left:10px" id="loginout" onclick="layui.index.logout();">Logout</a><!--安全退出-->
+    </div>
+
+
+    <div class="lanBar">
+    	<div class="lanItem">
+    		<a><span id="curr_lan" style=""></span></a><!--切换语言-->
+    		<div id="subLan" class="subLan">
+        		<ul >
+        			<li  class="lang_li" ><span onclick="layui.index.switchLanguage('cn')"><%index_cn%></span></li>
+        			<li  class="lang_li" style="margin-bottom:10px;" ><span onclick="layui.index.switchLanguage('en')"><%index_en%></span></li>
+        		</ul>
+        	</div>
+    	</div>
+    </div>
+
+  </div>
+<div class="main-boder"></div>
+<!-- header end -->
+<div id="dataStore"></div>
+
+<script type="text/javascript" src="module/common.js?v=1.0.0.0"> </script>
+<script type="text/javascript" src="layui-2.2.6/ext/global.js?v=1.0.0.0"></script>
+<script type="text/javascript" src="layui-2.2.6/dist/layui.all.js"></script>
+<script type="text/javascript" src="layui-2.2.6/ext/echarts3.min.js"></script>
+<script type="text/javascript" src="layui-2.2.6/dist/layui-xtree.js?v=1.0.0.0"></script>
+<script type="text/javascript">
+
+    layui.config({
+          base: 'module/',
+          version:'1.0.0.0'
+
+	});
+        var domain = document.domain;  //获取当前域名
+        var basePath='../../';
+        var localhost_ary = new Array('tpl_yidaihuan.com');
+        // if( localhost_ary.indexOf(domain) > -1 ){
+        //     // basePath = 'http://developing.china.tupulian.com/';
+        // }
+</script>
+
+  <script src="viewer/js/jquery.min.js"></script>
+  <script src="viewer/js/viewer-jquery.min.js"></script>
+<script type="text/javascript">
+
+    layui.use(['index'], function(){
+          var index = layui.index;
+          //页面初始化
+          index.initView();
+	});
+
+
+</script>
+
+</body>
+</html>

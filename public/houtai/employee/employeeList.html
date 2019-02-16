@@ -1,0 +1,115 @@
+<div id="page_employee_list">
+<div class="y-page-title"><%employee_list%></div>
+<div class="y-page-body" style="padding:20px">
+	<form class="layui-form layui-form-pane">
+		<div class="layui-form-item">
+			<div class="layui-form-inline y-left-pane">
+				<label class="layui-form-label"><i class="fa fa-calendar fa-lg"></i></label>
+				<div class="layui-input-inline">
+					<input type="text" class="layui-input" id="date"  v-bind:placeholder="apply_date" autocomplete="off" />
+				</div>
+
+				<div class="y-right-pane layui-form-inline cuishou">
+					<div class="y-right-box" style="width:300px;">
+						<input type="text" id="search_string" v-bind:placeholder="user_name +'/'+ fullname" autocomplete="off" class="layui-input"  />
+						<label class="layui-form-label" onclick="layui.employeeList.getData(1,50)"><i class="fa fa-search fa-lg"></i></label>
+					</div>
+				</div>
+				<div class="layui-form-inline" style="display:inline-block;float:right;width:100px;margin-top:-35px;">
+					<a class="layui-btn layui-btn-radius layui-btn-sm y-btn-red" onclick="layui.employeeList.viewAdd()"><%add_employee%></a>
+				</div>
+			</div>
+		</div>
+	</form>
+
+	<div class="y-data-table">
+		<div id="employeeListTable" class="layui-table" lay-filter="employeeListTableEvent"></div>
+		<div id="employeeListPage"></div>
+	</div>
+</div>
+</div>
+
+<script type="text/html" id="employeeListTool">
+	{{# if(d.admin_id != '1'){ }}
+		<a class="layui-btn layui-btn-xs y-btn-red" lay-event="edit"><%edit%></a>
+		{{# if(d.status == '0'){ }}
+		<a class="layui-btn layui-btn-xs y-btn-warm" lay-event="forbidden"><%forbidden%></a>
+		{{# }else{ }}
+		<a class="layui-btn layui-btn-xs y-btn-moren" lay-event="active"><%active%></a>
+		{{# } }}
+	{{# } }}
+</script>
+
+
+<!-- 定义新增和修改页面start -->
+<script type="text/html" id="addemployee">
+<div class="y-page-body" style=" padding:0 20px;margin:15px auto; color:#999999;border:none;">
+<form id="addemployeeForm" class="layui-form" autocomplete="off">
+	<input type="hidden" id="admin_id" name="admin_id" value="{{d.admin_id}}" />
+	<div class="layui-form-item">
+		<label class="layui-form-label layui-form-label-id"><%user_name%></label>
+		<div class="layui-input-inline layui-input-inline-id">
+			<input type="text" id="user_name" name="user_name" lay-verify="user_name" v-bind:placeholder="input_user_name" class="layui-input" value="{{d.user_name}}" />
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label layui-form-label-id"><%real_name%></label>
+		<div class="layui-input-inline layui-input-inline-id">
+			<input type="text" id="real_name" name="real_name" lay-verify="real_name" v-bind:placeholder="input_real_name" class="layui-input" value="{{d.real_name}}" />
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label layui-form-label-id"><%email%></label>
+		<div class="layui-input-inline layui-input-inline-id">
+			<input type="text" id="email" name="email" lay-verify="email" v-bind:placeholder="input_email" class="layui-input" value="{{d.email}}" />
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label layui-form-label-id"><%log_password%></label>
+		<div class="layui-input-inline layui-input-inline-id">
+			<input type="password" id="password" name="password" lay-verify="password" v-bind:placeholder="input_log_password" class="layui-input" value="{{d.password}}" />
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label layui-form-label-id"><%cp_name%></label>
+		<div class="layui-input-inline layui-input-inline-id">
+			<select id="company_id" name="company_id" class="layui-select" lay-verify="companyId" lay-filter='companyId' >
+			</select>
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label layui-form-label-id"><%roles%></label>
+		<div class="layui-input-inline layui-input-inline-id">
+			<select id="role_id" name="role_id" class="layui-select" lay-verify="roles" lay-filter='roleId' >
+			</select>
+		</div>
+	</div>
+
+<div class="layui-form-item">
+	<ul style="margin-left:100px;" id="roles_menu">
+	</ul>
+</div>
+	<div class="layui-form-item" style="text-align: center;margin-top:30px;">
+  		<div class="layui-inline">
+    		<button class="layui-btn layui-btn-radius layui-btn-sm y-btn-red" lay-submit lay-filter="addOrUpdateemployeeForm"><%now_submit%></button>
+  		</div>
+	</div>
+</form>
+</div>
+
+</script>
+<!-- 定义新增和修改页面end -->
+
+
+
+<script type="text/javascript">
+layui.use(['employeeList'],function(){
+	var employeeList = layui.employeeList;
+	//初始化页面
+	employeeList.initView();
+	//处理监听事件
+	employeeList.tool();
+})
+
+</script>
+
